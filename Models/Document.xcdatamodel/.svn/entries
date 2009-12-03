@@ -1,0 +1,54 @@
+8
+
+dir
+14
+http://oleg@svn.lan/xilinus/SmtpTestServer/trunk/MyDocument.xcdatamodel
+http://oleg@svn.lan/xilinus
+
+
+
+2009-11-11T14:13:42.457686Z
+10
+oleg
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+deb6c6b8-c6ce-de11-b5df-000c296375b5
+
+elements
+file
+25
+
+
+
+2009-11-24T15:40:27.000000Z
+f6e689f5c20254e45a11b9c0eed3130d
+2009-11-26T11:29:33.672221Z
+25
+oleg
+has-props
+
+layout
+file
+25
+
+
+
+2009-11-24T15:40:27.000000Z
+d5f5df222d53245c34d146efa24b24a4
+2009-11-26T11:29:33.672221Z
+25
+oleg
+has-props
+

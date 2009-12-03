@@ -1,0 +1,76 @@
+8
+
+dir
+14
+http://oleg@svn.lan/xilinus/SmtpTestServer/trunk/Importer
+http://oleg@svn.lan/xilinus
+
+
+
+2009-11-11T14:12:27.991186Z
+5
+oleg
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+deb6c6b8-c6ce-de11-b5df-000c296375b5
+
+Importer-Info.plist
+file
+
+
+
+
+2009-11-11T14:27:56.000000Z
+4ee8e9c15f517275c37fc4c12ad34d4f
+2009-11-11T14:07:59.172141Z
+3
+oleg
+
+main.c
+file
+
+
+
+
+2009-11-11T14:27:56.000000Z
+9a968b85f04eece2cf1dd321f7d51d5b
+2009-11-11T14:07:59.172141Z
+3
+oleg
+
+GetMetadataForFile.c
+file
+
+
+
+
+2009-11-11T14:27:56.000000Z
+78dbe424c886a9d968e09f0c556459f7
+2009-11-11T14:07:59.172141Z
+3
+oleg
+
+Importer Read Me.txt
+file
+
+
+
+
+2009-11-11T14:27:56.000000Z
+e47f4eab3af6f146e77f41e3323bacfc
+2009-11-11T14:07:59.172141Z
+3
+oleg
+
