@@ -40,6 +40,8 @@
 - (IBAction)start:(id)sender;
 - (IBAction)stop:(id)sender;
 
+- (IBAction)clearLog:(id)sender;
+
 @property (nonatomic, assign) IBOutlet SmtpServer *smtpServer;
 
 @property (nonatomic, assign) IBOutlet NSToolbarItem *startToolbarItem;

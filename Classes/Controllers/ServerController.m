@@ -54,15 +54,24 @@
     
     if (port == savedPort && [mPort intValue] != savedPort)
     {
-        mPort = [NSNumber numberWithInt:port];
-        [self stop:self];
-        [self start:self];
+        if(mPort)
+        {
+            mPort = [NSNumber numberWithInt:port];
+            [self stop:self];
+            [self start:self];
+        }
     }
 }
 
 - (void)log:(NSString *)msg
 {
     [mLog appendFormat:@"%@ - %@\n", [[NSDate alloc] init], msg];
+    [self setLogString:[mLog copy]];
+}
+
+- (IBAction)clearLog:(id)sender
+{
+    [mLog setString:@""];
     [self setLogString:[mLog copy]];
 }
 
