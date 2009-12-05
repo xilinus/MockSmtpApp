@@ -21,8 +21,6 @@
 }
 
 - (void)save;
-- (void)create;
-- (void)cancel;
 
 @property (nonatomic, assign) NSManagedObject *server;
 

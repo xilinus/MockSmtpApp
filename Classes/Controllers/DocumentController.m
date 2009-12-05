@@ -68,11 +68,7 @@
         && (![mFileName isEqualToString:savedName] || ![mLocation isEqualToString:savedLocation]))
     {
         
-        for (Document *document in [self documents])
-        {
-            [document save];
-            [document close];
-        }
+        NSArray *docs = [[self documents] copy];
         
         mFileName = name;
         mLocation = location;
@@ -108,12 +104,14 @@
         }
         
         [doc save];
+        
+        for (Document *document in docs)
+        {
+            [document save];
+            [document close];
+        }
+        
     }
-}
-
-- (void)windowWillClose:(NSNotification *)notification
-{
-    [[NSApplication sharedApplication] terminate:self];
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender

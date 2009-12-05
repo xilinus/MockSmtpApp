@@ -104,9 +104,17 @@
     [super saveDocument:self];
 }
 
-- (void)cancel
+- (void)close
 {
-    [self close];
+    [super close];
+    
+    NSDocumentController *dc = [NSDocumentController sharedDocumentController];
+    
+    NSArray *docs = [dc documents];
+    if ([docs count] == 0)
+    {
+        [[NSApplication sharedApplication] terminate:self];
+    }
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
