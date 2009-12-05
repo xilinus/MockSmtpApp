@@ -18,7 +18,9 @@
 - (void)setContent:(id)content
 {
     [super setContent:content];
-    [[_webView mainFrame] loadHTMLString:content baseURL:nil];
+    NSString *body = [content valueForKey:@"body"];
+    [content setValue:[NSNumber numberWithBool:YES] forKey:@"read"];
+    [[_webView mainFrame] loadHTMLString:body baseURL:nil];
 }
 
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation
