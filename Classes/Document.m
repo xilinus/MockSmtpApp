@@ -8,7 +8,7 @@
 
 #import "Document.h"
 #import "MainWindowController.h"
-#import "NewServerWindowController.h"
+#import "TrialWindowController.h"
 
 @implementation Document
 
@@ -77,17 +77,20 @@
 
 - (void)makeWindowControllers
 {
-    mMainWindowController = [[MainWindowController alloc] init];
-    //mNewServerWindowController = [[NewServerWindowController alloc] init];
+    NSDate *date = [[NSDate alloc] init];
+    NSCalendar *cal = [NSCalendar currentCalendar];
     
-    //if (mIsNewFile)
-   // {
-    //    [self addWindowController:mNewServerWindowController];
-    //}
-    //else
-    //{
+    NSDateComponents *comp = [cal components:NSYearCalendarUnit fromDate:date];
+    if ([comp year] > 2009)
+    {
+        TrialWindowController *twc = [[TrialWindowController alloc] init];
+        [self addWindowController:twc];
+    }
+    else
+    {
+        mMainWindowController = [[MainWindowController alloc] init];
         [self addWindowController:mMainWindowController];
-    //}
+    }
 }
 
 - (void)create

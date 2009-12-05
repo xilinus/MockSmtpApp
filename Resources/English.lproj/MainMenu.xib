@@ -8,7 +8,6 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="417"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -193,9 +192,10 @@
 				<string key="NSWindowTitle">Smtp Test Server Preferences</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
+				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{529, 189}</string>
 				<object class="NSView" key="NSWindowView" id="35783981">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -413,7 +413,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{529, 189}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 1002}}</string>
 				<string key="NSMinSize">{529, 205}</string>
@@ -423,12 +422,6 @@
 				<string key="NSClassName">PreferencesController</string>
 			</object>
 			<object class="NSUserDefaultsController" id="695056486">
-				<object class="NSMutableArray" key="NSDeclaredKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>port</string>
-					<string>fileName</string>
-					<string>location</string>
-				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
@@ -987,7 +980,6 @@
 					<string>385.IBPluginDependency</string>
 					<string>414.IBPluginDependency</string>
 					<string>416.IBEditorWindowLastContentRect</string>
-					<string>416.IBPluginDependency</string>
 					<string>416.IBWindowTemplateEditedContentRect</string>
 					<string>416.NSWindowTemplate.visibleAtLaunch</string>
 					<string>416.windowTemplate.hasMinSize</string>
@@ -1014,6 +1006,7 @@
 					<string>438.IBPluginDependency</string>
 					<string>439.IBPluginDependency</string>
 					<string>442.IBPluginDependency</string>
+					<string>452.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -1056,11 +1049,11 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{377, 474}, {529, 189}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{377, 474}, {529, 189}}</string>
 					<boolean value="NO"/>
 					<boolean value="YES"/>
 					<string>{529, 189}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1112,7 +1105,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">458</int>
+			<int key="maxID">467</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1126,7 +1119,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">DocumentController.h</string>
+						<string key="minorKey">Classes/Controllers/DocumentController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1178,13 +1171,13 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">PreferencesController.h</string>
+						<string key="minorKey">Classes/Controllers/PreferencesController.h</string>
 					</object>
 				</object>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../SmtpTestServer.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../SmtpTestServer.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

@@ -110,7 +110,12 @@
         [doc save];
     }
 }
-    
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    [[NSApplication sharedApplication] terminate:self];
+}
+
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
 {
     return NO;

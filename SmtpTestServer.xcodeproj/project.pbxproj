@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F7446C30DB6CCE400F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446BF0DB6CCE400F9684A /* MainMenu.xib */; };
 		2F7446C40DB6CCE400F9684A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446C10DB6CCE400F9684A /* MainWindow.xib */; };
+		3A1722EF10C97DF8007E7EE3 /* TrialWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */; };
+		3A17230310CA6F59007E7EE3 /* TrialWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17230210CA6F59007E7EE3 /* TrialWindowController.m */; };
 		3A5500B210B6B67E001B095C /* SmtpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B110B6B67E001B095C /* SmtpConnection.m */; };
 		3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B410B6BEA0001B095C /* SmtpSession.m */; };
 		3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B710B6DE96001B095C /* SmtpSessionState.m */; };
@@ -17,8 +19,6 @@
 		3A550C6C10BC3A3E001B095C /* stop-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A550C6B10BC3A3E001B095C /* stop-icon-128.png */; };
 		3A550CB510BE7496001B095C /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550CB410BE7496001B095C /* DocumentController.m */; };
 		3A550D5210BE9F8D001B095C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550D5110BE9F8D001B095C /* MainWindowController.m */; };
-		3A550DA110BEA346001B095C /* NewServerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550DA010BEA346001B095C /* NewServerWindowController.m */; };
-		3A550DA310BEA398001B095C /* NewServerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A550DA210BEA398001B095C /* NewServerWindow.xib */; };
 		3A55F5FD10ADA9F1001B095C /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55F5FC10ADA9F1001B095C /* Message.m */; };
 		3A55F84310B30ECE001B095C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55F84210B30ECE001B095C /* WebViewController.m */; };
 		3A55FA4710B41C1D001B095C /* OutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FA4610B41C1D001B095C /* OutlineViewController.m */; };
@@ -94,6 +94,9 @@
 		2F7446C00DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2F7446C20DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		32DBCF750370BD2300C91783 /* SmtpTestServer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpTestServer_Prefix.pch; sourceTree = "<group>"; };
+		3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrialWindow.xib; sourceTree = "<group>"; };
+		3A17230110CA6F59007E7EE3 /* TrialWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrialWindowController.h; sourceTree = "<group>"; };
+		3A17230210CA6F59007E7EE3 /* TrialWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrialWindowController.m; sourceTree = "<group>"; };
 		3A5500B010B6B67E001B095C /* SmtpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpConnection.h; sourceTree = "<group>"; };
 		3A5500B110B6B67E001B095C /* SmtpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpConnection.m; sourceTree = "<group>"; };
 		3A5500B310B6BEA0001B095C /* SmtpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpSession.h; sourceTree = "<group>"; };
@@ -108,9 +111,6 @@
 		3A550CB410BE7496001B095C /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
 		3A550D5010BE9F8D001B095C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		3A550D5110BE9F8D001B095C /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		3A550D9F10BEA346001B095C /* NewServerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewServerWindowController.h; sourceTree = "<group>"; };
-		3A550DA010BEA346001B095C /* NewServerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewServerWindowController.m; sourceTree = "<group>"; };
-		3A550DA210BEA398001B095C /* NewServerWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewServerWindow.xib; sourceTree = "<group>"; };
 		3A55F5FB10ADA9F1001B095C /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		3A55F5FC10ADA9F1001B095C /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		3A55F84110B30ECE001B095C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 				3ABE08DA10C85004007A2C9D /* Images */,
 				2F7446BF0DB6CCE400F9684A /* MainMenu.xib */,
 				2F7446C10DB6CCE400F9684A /* MainWindow.xib */,
-				3A550DA210BEA398001B095C /* NewServerWindow.xib */,
+				3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
@@ -285,10 +285,10 @@
 				3A550C0610BC2F6B001B095C /* SegmentController.m */,
 				3A550D5010BE9F8D001B095C /* MainWindowController.h */,
 				3A550D5110BE9F8D001B095C /* MainWindowController.m */,
-				3A550D9F10BEA346001B095C /* NewServerWindowController.h */,
-				3A550DA010BEA346001B095C /* NewServerWindowController.m */,
 				3ABE013510C42ECB007A2C9D /* PreferencesController.h */,
 				3ABE013610C42ECB007A2C9D /* PreferencesController.m */,
+				3A17230110CA6F59007E7EE3 /* TrialWindowController.h */,
+				3A17230210CA6F59007E7EE3 /* TrialWindowController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -445,8 +445,8 @@
 				2F7446C40DB6CCE400F9684A /* MainWindow.xib in Resources */,
 				3A550C6810BC39EF001B095C /* play-icon-128.png in Resources */,
 				3A550C6C10BC3A3E001B095C /* stop-icon-128.png in Resources */,
-				3A550DA310BEA398001B095C /* NewServerWindow.xib in Resources */,
 				3ABE08CD10C84F9B007A2C9D /* Info.plist in Resources */,
+				3A1722EF10C97DF8007E7EE3 /* TrialWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,8 +488,8 @@
 				3A550C0710BC2F6B001B095C /* SegmentController.m in Sources */,
 				3A550CB510BE7496001B095C /* DocumentController.m in Sources */,
 				3A550D5210BE9F8D001B095C /* MainWindowController.m in Sources */,
-				3A550DA110BEA346001B095C /* NewServerWindowController.m in Sources */,
 				3ABE013710C42ECB007A2C9D /* PreferencesController.m in Sources */,
+				3A17230310CA6F59007E7EE3 /* TrialWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
