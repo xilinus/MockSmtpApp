@@ -93,11 +93,9 @@
     }
 }
 
-- (void)create
+- (BOOL)isDocumentEdited
 {
-    //[self removeWindowController:mNewServerWindowController];
-    //[self addWindowController:mMainWindowController];
-    //[mMainWindowController showWindow:self];
+    return NO;
 }
 
 - (void)save

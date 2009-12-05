@@ -27,6 +27,7 @@
 - (void)windowWillClose:(NSNotification *)notification
 {
     [mServerController stop:self];
+    [[self document] saveDocument:self];
 }
 
 @end

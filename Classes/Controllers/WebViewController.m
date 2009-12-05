@@ -20,6 +20,7 @@
     [super setContent:content];
     NSString *body = [content valueForKey:@"body"];
     [content setValue:[NSNumber numberWithBool:YES] forKey:@"read"];
+    [[self managedObjectContext] processPendingChanges];
     [[_webView mainFrame] loadHTMLString:body baseURL:nil];
 }
 
