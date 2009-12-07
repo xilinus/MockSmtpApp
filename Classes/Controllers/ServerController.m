@@ -16,6 +16,8 @@
 #import "Message.h"
 #import "MainWindowController.h"
 
+#import "EDMessage.h"
+
 @implementation ServerController
 
 @synthesize smtpServer = mSmtpServer;
@@ -156,7 +158,13 @@
      forConnection:(SmtpConnection *)connection
 {
     [self log:[NSString stringWithFormat:@"Received message from %@ with content:\n%@",
-               sender, [[NSString alloc] initWithData:body encoding:NSASCIIStringEncoding]]];
+               sender, [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]]];
+    
+    EDInternetMessage *imsg = [[EDInternetMessage alloc] initWithTransferData:body];
+    EDCompositeContentCoder *coder = [[EDCompositeContentCoder alloc] initWithMessagePart:imsg];
+    NSArray *subparts = [coder subparts];
+    
+    NSLog(@"%@", subparts);
     
     NSString *b = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
     
