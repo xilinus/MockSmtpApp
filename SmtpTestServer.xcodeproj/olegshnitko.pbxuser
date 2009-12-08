@@ -2,7 +2,7 @@
 {
 	089C1660FE840EACC02AAC07 /* English */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {923, 596}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 853}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 104}";
 		};
@@ -4170,6 +4170,7 @@
 	};
 	3ABD016810CD311000213059 /* NSString+Extensions.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = "NSString+Extensions.h";
 		path = "/Volumes/EDMessage 17/EDCommon.framework/Versions/A/Headers/NSString+Extensions.h";
 		sourceTree = "<absolute>";
@@ -8064,7 +8065,7 @@
 	};
 	3ABDFFD610CD27B700213059 /* EDMessageDefines.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 830}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 853}}";
 			sepNavSelRange = "{837, 0}";
 			sepNavVisRange = "{0, 1409}";
 		};
@@ -8862,7 +8863,7 @@
 	};
 	514E9E16081EC6D5009B8CD9 /* Importer Read Me.txt */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {923, 602}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 853}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 2274}";
 			sepNavWindowFrame = "{{61, 216}, {923, 739}}";
