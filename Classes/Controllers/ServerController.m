@@ -95,7 +95,8 @@
         }
         else
         {
-            [self log:[NSString stringWithFormat:@"Error: %@", error]];
+            [mStatusText setStringValue:[NSString stringWithFormat:@"Error while opening port %d", port]];
+            [self log:[NSString stringWithFormat:@"Error while opening port %@", mPort]];
         }
     }
 }
@@ -157,67 +158,10 @@
          inSession:(SmtpSession *)session
      forConnection:(SmtpConnection *)connection
 {
-    [self log:[NSString stringWithFormat:@"Received message from %@ with content:\n%@",
-               sender, [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]]];
-    
-    EDInternetMessage *imsg = [[EDInternetMessage alloc] initWithTransferData:body];
-    EDCompositeContentCoder *coder = [[EDCompositeContentCoder alloc] initWithMessagePart:imsg];
-    NSArray *subparts = [coder subparts];
-    
-    NSLog(@"%@", subparts);
-    
-    NSString *b = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [sender copy], @"sender",
-                          [[receivers objectAtIndex:0] copy], @"receiver",
-                          [b copy], @"body", nil];
-    
-    [self performSelectorOnMainThread:@selector(send:) withObject:dict waitUntilDone:YES];
-}
-
-- (NSString *)getSubject:(NSString *)header
-{
-    NSArray *headerParts = [header componentsSeparatedByString:@"\r\n"];
-    
-    for (NSString *part in headerParts)
-    {
-        if ([part hasPrefix:@"Subject: "])
-        {
-            return [part substringFromIndex:9];
-        }
-    }
-    
-    return nil;
-}
-
-- (void)send:(NSDictionary *)dict
-{
-    NSString *sender = [dict objectForKey:@"sender"];
-    NSString *receiver = [dict objectForKey:@"receiver"];
-    NSString *rawBody = [dict objectForKey:@"body"];
+    //[self log:[NSString stringWithFormat:@"Received message from %@ with content:\n%@",
+    //           sender, [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]]];
     
     sender = [sender stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-    receiver = [receiver stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-    
-    NSRange range = [rawBody rangeOfString:@"\r\n\r\n"];
-    
-    NSString *subject = nil;
-    NSString *body = rawBody;
-    
-    if (range.length > 0 && range.location > 0)
-    {
-        NSString *bodyHeader = [rawBody substringToIndex:range.location];
-        body = [rawBody substringFromIndex:range.location + range.length];
-    
-        subject = [self getSubject:bodyHeader];
-    }
-    
-    if (subject == nil)
-    {
-        subject = @"";
-        body = rawBody;
-    }
     
     NSManagedObjectContext *moc = [self managedObjectContext];
     NSError *fetchError = nil;
@@ -225,7 +169,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
-                         inManagedObjectContext:moc];
+                                              inManagedObjectContext:moc];
     [fetchRequest setEntity:entity];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"address == %@", sender];
     [fetchRequest setPredicate:predicate];
@@ -248,15 +192,12 @@
     }
     
     Message *message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:moc];
-    [message setReceiver:receiver];
-    [message setSubject:subject];
-    [message setBody:body];
-    [message setRawData:rawBody];
+    [message setTransferData:body];
     [message setUser:user];
     [message setFolder:[mServer sentFolder]];
     
     [moc processPendingChanges];
-    [[mMainWindowController document] saveDocument:self];
+    [[mMainWindowController document] saveDocument:self];    
 }
 
 @end

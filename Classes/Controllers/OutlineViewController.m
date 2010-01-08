@@ -11,6 +11,7 @@
 #import "OutlineViewController.h"
 #import "TableViewController.h"
 #import "Server.h"
+#import "Message.h"
 
 @implementation OutlineViewController
 

@@ -20,7 +20,42 @@ typedef enum
     kTcpServerNoSocketsAvailable = 2,
 } TcpServerErrorCode;
 
-@interface TcpServer : NSObject
+@protocol SCTcpServer;
+@protocol SCTcpConnection;
+
+@protocol SCTcpServerDelegate <NSObject>
+
+- (void)tcpServer:(id<SCTcpServer>)server didOpenConnection:(id<SCTcpConnection>)connection;
+- (void)tcpServer:(id<SCTcpServer>)server didCloseConnection:(id<SCTcpConnection>)connection;
+
+@end
+
+@protocol SCTcpServer <NSObject>
+
+@property (nonatomic, assign) id<SCTcpServerDelegate> delegate;
+
+- (BOOL)openPort:(UInt16)port;
+- (void)closePort:(UInt16)port;
+
+- (void)stop;
+
+@end
+
+@protocol SCTcpConnectionDelegate <NSObject>
+
+- (void)tcpConnection:(id<SCTcpConnection>)connection didReceiveData:(NSData *)data;
+
+@end
+
+@protocol SCTcpConnection <NSObject>
+
+@property (nonatomic, assign) id<SCTcpConnectionDelegate> delegate;
+
+- (void)writeData:(NSData *)data;
+
+@end
+
+@interface TcpServer : NSObject <SCTcpServerDelegate>
 {
 @private
     
@@ -31,9 +66,7 @@ typedef enum
     NSString *mType;
     uint16_t mPort;
     
-    CFSocketRef mIPv4socket;
-    NSNetService *mNetService;
-    
+    id<SCTcpServer> mServer;
 }
 
 @property (nonatomic, assign) id delegate;
@@ -46,13 +79,6 @@ typedef enum
 - (BOOL)start:(NSError **)error;
 - (BOOL)stop;
 
-- (void)handleNewConnectionFromAddress:(NSData *)address inputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream;
-
-@end
-
-@interface TcpServer (TcpServerDelegateMethods)
-
-- (void)tcpServer:(TcpServer *)server didReceiveConnectionFromAddress:(NSData *)address 
-      inputStream:(NSInputStream *)inputStream outputStream:(NSOutputStream *)outputStream;
+- (void)handleNewConnection:(id<SCTcpConnection>)connection;
 
 @end

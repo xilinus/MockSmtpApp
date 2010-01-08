@@ -16,12 +16,7 @@
 
 @interface SmtpServer : TcpServer
 {
-@private
-    
-    NSMutableArray *mConnections;
 }
-
-- (void)closeConnection:(SmtpConnection *)connection;
 
 @end
 

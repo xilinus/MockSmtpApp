@@ -11,7 +11,6 @@
 #import <Cocoa/Cocoa.h>
 
 #import "OutlineViewController.h"
-#import "Message.h"
 
 @interface TableViewController : NSArrayController
 {
@@ -23,7 +22,6 @@
 
 @end
 
-
 @protocol TableViewContent
 
 - (NSSet *)tableViewItems;
@@ -34,14 +32,4 @@
 @end
 
 @interface UserProxy (TableViewContent) <TableViewContent>
-@end
-
-@protocol TableViewItem
-
-- (BOOL)isTableViewFontBold;
-- (NSUInteger)tableViewFontSize;
-
-@end
-
-@interface Message (TableViewItem) <TableViewItem>
 @end

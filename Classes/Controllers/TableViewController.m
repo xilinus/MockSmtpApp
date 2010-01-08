@@ -105,22 +105,3 @@
 
 @end
 
-@implementation Message (TableViewItem)
-
-+ (NSSet *)keyPathsForValuesAffectingIsTableViewFontBold
-{
-    return [NSSet setWithObject:@"read"];
-}
-
-- (BOOL)isTableViewFontBold
-{
-    return ![self.read boolValue];
-}
-
-- (NSUInteger)tableViewFontSize
-{
-    return 11;
-}
-
-@end
-

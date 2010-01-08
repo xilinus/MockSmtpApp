@@ -11,9 +11,33 @@
 
 @interface TrialWindowController : NSWindowController
 {
-    NSTextField *mTextField;
+@private
+    
+    NSTextField *mFilePath;
+    NSTextField *mFileInfo;
+    NSTextField *mProduct;
+    NSTextField *mLicenseType;
+    NSTextField *mExpireText;
+    NSTextField *mRegistered;
+    NSTextField *mEmail;
+    
+    NSButton *mActivateBtn;
 }
 
-@property (nonatomic, assign) IBOutlet NSTextField *textField;
++ (BOOL)checkLicense;
++ (BOOL)installDefaultLicenseFile;
+
+- (IBAction)chooseFile:(id)sender;
+- (IBAction)activate:(id)sender;
+
+@property (nonatomic, assign) IBOutlet NSTextField *filePath;
+@property (nonatomic, assign) IBOutlet NSTextField *fileInfo;
+@property (nonatomic, assign) IBOutlet NSTextField *product;
+@property (nonatomic, assign) IBOutlet NSTextField *licenseType;
+@property (nonatomic, assign) IBOutlet NSTextField *expire;
+@property (nonatomic, assign) IBOutlet NSTextField *registered;
+@property (nonatomic, assign) IBOutlet NSTextField *email;
+
+@property (nonatomic, assign) IBOutlet NSButton *activateButton;
 
 @end

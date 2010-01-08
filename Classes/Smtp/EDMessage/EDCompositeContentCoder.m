@@ -147,63 +147,72 @@ static short boundaryId = 0;
 
     if((boundary = [[mpart contentTypeParameters] objectForKey:@"boundary"]) == nil)
         [NSException raise:EDMessageFormatException format:@"no boundary for multipart"];
+    
     btext = [boundary cStringUsingEncoding:NSASCIIStringEncoding];
     blen = (unsigned int)strlen(btext);
+    
     if([[[mpart contentType] secondObject] isEqualToString:@"digest"])
-        {
-        fcoder = [[[EDEntityFieldCoder alloc] initWithValues:[NSArray arrayWithObjects:@"message", @"rfc822", nil] andParameters:[NSDictionary dictionary]] autorelease];
+    {
+        fcoder = [[[EDEntityFieldCoder alloc] initWithValues:[NSArray arrayWithObjects:@"message", @"rfc822", nil]
+                                               andParameters:[NSDictionary dictionary]] autorelease];
+        
         defaultHeadersFields = [NSDictionary dictionaryWithObject:[fcoder fieldBody] forKey:@"content-type"];
-        }
+    }
     else
-        {
+    {
         charset = [NSString MIMEEncodingForStringEncoding:NSASCIIStringEncoding];
-        fcoder = [[[EDEntityFieldCoder alloc] initWithValues:[NSArray arrayWithObjects:@"text", @"plain", nil] andParameters:[NSDictionary dictionaryWithObject:charset forKey:@"charset"]] autorelease];
+        fcoder = [[[EDEntityFieldCoder alloc] initWithValues:[NSArray arrayWithObjects:@"text", @"plain", nil]
+                                               andParameters:[NSDictionary dictionaryWithObject:charset forKey:@"charset"]] autorelease];
         defaultHeadersFields = [NSDictionary dictionaryWithObject:[fcoder fieldBody] forKey:@"content-type"];
-        }
+    }
 
     subparts = [[NSMutableArray allocWithZone:[self zone]] init];
 
     pmin = p = [[mpart contentData] bytes];
     pmax = p + [[mpart contentData] length];
     startPtr = possibleEndPtr = NULL;
+    
     while(done == NO)
-        {  // p == 0 can occur if part was empty, ie. had no body
+    {   
+        // p == 0 can occur if part was empty, ie. had no body
         if((p == 0) || (p > pmax - blen)) // --boundary--\n
-            [NSException raise:EDMessageFormatException format:@"final boundary not found"];
-        if((*p == '-') && (*(p+1) == '-') && (strncmp(p+2, btext, blen) == 0))
-            {
+        {
+            NSLog(@"emty part, break 1");
+            break;//[NSException raise:EDMessageFormatException format:@"final boundary not found"];
+        }
+        
+        // --boundary
+        if((*p == '-') && (*(p + 1) == '-') && (strncmp(p + 2, btext, blen) == 0))
+        {
             q = p + 2 + blen;
+            
+            // --boundary--
             if((*q == '-') && (*(q+1) == '-'))
-                {
+            {
                 done = YES;
                 q += 2;
-                }
-            if((q = skipspace(q, pmax)) == NULL)  // might have been added
-                [NSException raise:EDMessageFormatException format:@"final boundary not found"];
-            if(iscrlf(*q) == NO)
-                {
-                EDLog(EDLogCoder, @"ignoring junk after mime multipart boundary");
-                if((q = skiptonewline(q, pmax)) == NULL)
-                    [NSException raise:EDMessageFormatException format:@"final boundary not found"];
-                }
-
+            }
+            
+            q = skipspace(q, pmax);
+            q = skiptonewline(q, pmax);
+            
             if(startPtr != NULL)
-                {
+            {
                 subpartRange.location = startPtr - (const char *)[[mpart contentData] bytes];
                 subpartRange.length = possibleEndPtr - startPtr;
                 subpart = [[[EDMessagePart allocWithZone:[self zone]] initWithTransferData:[[mpart contentData] subdataWithRange:subpartRange] fallbackHeaderFields:defaultHeadersFields] autorelease];
                 [subparts addObject:subpart];
-                }
-            startPtr = p = skipnewline(q, pmax); // trailing crlf belongs to boundary
             }
+            
+            startPtr = p = skipnewline(q, pmax); // trailing crlf belongs to boundary
+        }
         else
-            {
-            if((p = skiptonewline(p, pmax)) == NULL)
-                [NSException raise:EDMessageFormatException format:@"final boundary not found"];
+        {
+            p = skiptonewline(p, pmax);
             possibleEndPtr = p;
             p = skipnewline(p, pmax);
-            }
-       }
+        }
+    }
 }
 
 

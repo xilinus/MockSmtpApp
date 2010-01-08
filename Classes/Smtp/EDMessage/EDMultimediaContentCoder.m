@@ -38,6 +38,15 @@
 
 + (BOOL)canDecodeMessagePart:(EDMessagePart *)mpart
 {
+    NSString *filename = nil;
+    if((filename = [[mpart contentDispositionParameters] objectForKey:@"filename"]) != nil)
+        filename = [filename lastPathComponent];
+    else if((filename = [[mpart contentTypeParameters] objectForKey:@"name"]) != nil)
+        filename = [filename lastPathComponent];
+    
+    if (filename)
+        return YES;
+    
     NSString *ct = [[mpart contentType] firstObject];
     if([ct isEqualToString:@"image"] || [ct isEqualToString:@"audio"] || [ct isEqualToString:@"video"] || [ct isEqualToString:@"application"])
         return YES;

@@ -77,11 +77,18 @@
 
 - (void)makeWindowControllers
 {
-    NSDate *date = [[NSDate alloc] init];
-    NSCalendar *cal = [NSCalendar currentCalendar];
+    //NSDate *date = [[NSDate alloc] init];
+    //NSCalendar *cal = [NSCalendar currentCalendar];
     
-    NSDateComponents *comp = [cal components:NSYearCalendarUnit fromDate:date];
-    if ([comp year] > 2009)
+    //NSDateComponents *comp = [cal components:NSYearCalendarUnit fromDate:date];
+    //if ([comp year] > 2009)
+    
+    if (![TrialWindowController checkLicense])
+    {
+        [TrialWindowController installDefaultLicenseFile];
+    }
+    
+    if (![TrialWindowController checkLicense])
     {
         TrialWindowController *twc = [[TrialWindowController alloc] init];
         [self addWindowController:twc];

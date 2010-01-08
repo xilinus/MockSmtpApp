@@ -11,12 +11,37 @@
 #import "DocumentController.h"
 #import "Document.h"
 
+#import "MessageTransformer.h"
+#import "MessagePartTransformer.h"
+#import "MessageAttachmentTransformer.h"
+
 @implementation DocumentController
 
 @synthesize defaultsController = mDefaultsController;
 
++ (void)initialize
+{
+    MessageTransformer *messageFontSize = [[MessageTransformer alloc] initForFontSize:[NSNumber numberWithInt:11]];
+    [NSValueTransformer setValueTransformer:messageFontSize forName:@"MessageFontSize"];
+    
+    MessagePartTransformer *messagePartIsHtml = [MessagePartTransformer messagePartIsHtml];
+    [NSValueTransformer setValueTransformer:messagePartIsHtml forName:@"MessagePartIsHtml"];
+    
+    MessageAttachmentTransformer *messageAttachmentsString = [MessageAttachmentTransformer messageAttachmentsString];
+    [NSValueTransformer setValueTransformer:messageAttachmentsString forName:@"MessageAttachmentsString"];
+    
+    MessageAttachmentTransformer *messageAttachmentString = [MessageAttachmentTransformer messageAttachmentString];
+    [NSValueTransformer setValueTransformer:messageAttachmentString forName:@"MessageAttachmentString"];
+}
+
 - (void)awakeFromNib
 {
+    [mDefaultsController setInitialValues:[NSDictionary dictionaryWithObjectsAndKeys:
+                                           @"default.data", @"fileName",
+                                           @"~/Documents/MockSMTP", @"location",
+                                           [NSNumber numberWithInt:1025], @"port",
+                                           [NSNumber numberWithBool:NO], @"autoUpdate", nil]];
+    
     mFileName = [[mDefaultsController values] valueForKey:@"fileName"];
     mLocation = [[mDefaultsController values] valueForKey:@"location"];
     

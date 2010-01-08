@@ -10,10 +10,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "TcpServer.h"
+
 @class SmtpServer;
 @class SmtpSession;
 
-@interface SmtpConnection : NSObject
+@interface SmtpConnection : NSObject <SCTcpConnectionDelegate>
 {
 @private
     
@@ -21,30 +23,18 @@
     
     SmtpServer *mServer;
     SmtpSession *mSession;
-    
-    NSData *mPeerAddress;
-    
-    NSInputStream *mInputStream;
-    NSOutputStream *mOutputStream;
-    
+
     NSMutableData *mInputBuffer;
     NSMutableData *mOutputBuffer;
     
-    BOOL mIsValid;   
+    id<SCTcpConnection> mTcpConnection;
 }
 
-- (id)initWithPeerAddress:(NSData *)address inputStream:(NSInputStream *)inputStream
-             outputStream:(NSOutputStream *)outputStream forServer:(SmtpServer *)server;
+- (id)initWithConnection:(id<SCTcpConnection>)tcpConnection forServer:(SmtpServer *)server;
 
 @property (nonatomic, assign) id delegate;
-
 @property (nonatomic, readonly) SmtpServer *server;
-@property (nonatomic, readonly) NSData *peerAddress;
-@property (nonatomic, readonly) BOOL isValid;
 
 - (void)writeData:(NSData *)data;
-- (void)invalidate;
-
-- (NSString *)getAddress;
 
 @end

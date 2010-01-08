@@ -10,23 +10,50 @@
 
 @class User;
 @class Folder;
+@class MessagePart;
+
+@class EDInternetMessage;
 
 @interface Message :  NSManagedObject  
 {
+@private
+    EDInternetMessage *mEdMessage;
+    
+    NSString *mFrom;
+    NSString *mTo;
+    NSString *mSubject;
+    NSCalendarDate *mDate;
+    
+    BOOL mHeaderParsed;
+    
+    NSMutableSet *mSubparts;
+    MessagePart *mBestPart;
+    
+    NSMutableArray *mAttachments;
+    
+    BOOL mContentParsed;
+    
+    NSString *mTransferText;
 }
 
 @property (nonatomic, retain) NSNumber * read;
-@property (nonatomic, retain) NSDate * dateSent;
-@property (nonatomic, retain) NSString * receiver;
-@property (nonatomic, retain) NSString * subject;
-@property (nonatomic, retain) NSString * body;
-@property (nonatomic, retain) NSString * rawData;
+@property (nonatomic, retain) NSData *transferData;
 @property (nonatomic, retain) User * user;
 @property (nonatomic, retain) Folder * folder;
 
-@property (readonly) NSString *sender;
+@property (nonatomic, readonly) EDInternetMessage *edMessage;
+
+@property (nonatomic, readonly) NSString *from;
+@property (nonatomic, readonly) NSString *to;
+@property (nonatomic, readonly) NSString *subject;
+@property (nonatomic, readonly) NSCalendarDate *date;
+
+@property (nonatomic, readonly) NSSet *subparts;
+@property (nonatomic, readonly) MessagePart *bestPart;
+
+@property (nonatomic, readonly) NSArray *attachments;
+
+@property (nonatomic, readonly) NSString *transferText;
 
 @end
-
-
 

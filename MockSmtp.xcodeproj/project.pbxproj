@@ -15,8 +15,6 @@
 		3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B410B6BEA0001B095C /* SmtpSession.m */; };
 		3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B710B6DE96001B095C /* SmtpSessionState.m */; };
 		3A550C0710BC2F6B001B095C /* SegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550C0610BC2F6B001B095C /* SegmentController.m */; };
-		3A550C6810BC39EF001B095C /* play-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A550C6710BC39EF001B095C /* play-icon-128.png */; };
-		3A550C6C10BC3A3E001B095C /* stop-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A550C6B10BC3A3E001B095C /* stop-icon-128.png */; };
 		3A550CB510BE7496001B095C /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550CB410BE7496001B095C /* DocumentController.m */; };
 		3A550D5210BE9F8D001B095C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550D5110BE9F8D001B095C /* MainWindowController.m */; };
 		3A55F5FD10ADA9F1001B095C /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55F5FC10ADA9F1001B095C /* Message.m */; };
@@ -28,6 +26,36 @@
 		3A55FF0710B570F9001B095C /* TcpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF0610B570F9001B095C /* TcpServer.m */; };
 		3A55FF3D10B582C8001B095C /* SmtpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF3C10B582C8001B095C /* SmtpServer.m */; };
 		3A55FF5310B59DC3001B095C /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF5210B59DC3001B095C /* ServerController.m */; };
+		3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */; };
+		3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */; };
+		3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */; };
+		3A8C8A5310F4DC21007680DF /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4910F4DC21007680DF /* NSString+SBJSON.m */; };
+		3A8C8A5410F4DC21007680DF /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4B10F4DC21007680DF /* SBJSON.m */; };
+		3A8C8A5510F4DC21007680DF /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4D10F4DC21007680DF /* SBJsonBase.m */; };
+		3A8C8A5610F4DC21007680DF /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4F10F4DC21007680DF /* SBJsonParser.m */; };
+		3A8C8A5710F4DC21007680DF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A5110F4DC21007680DF /* SBJsonWriter.m */; };
+		3A8C8AFD10F500DF007680DF /* HandCursorTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8AFC10F500DF007680DF /* HandCursorTextField.m */; };
+		3A8C8B7410F513F6007680DF /* PortNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8B7310F513F6007680DF /* PortNumberFormatter.m */; };
+		3A8C8C7D10F6262C007680DF /* LicenseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8C7C10F6262C007680DF /* LicenseController.m */; };
+		3A8E102A10DFBDE800A0CFBC /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E102910DFBDE800A0CFBC /* lcl.m */; };
+		3A8E106410DFC3C700A0CFBC /* LCLLogFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E106310DFC3C700A0CFBC /* LCLLogFile.m */; };
+		3A8E127B10E117FF00A0CFBC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8E127A10E117FF00A0CFBC /* Security.framework */; };
+		3A8EFADA10D1364900A0CFBC /* MessagePart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFAD910D1364900A0CFBC /* MessagePart.m */; };
+		3A8EFADE10D1365E00A0CFBC /* MessageAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFADD10D1365E00A0CFBC /* MessageAttachment.m */; };
+		3A8EFB3A10D1561000A0CFBC /* MessagePartTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFB3910D1561000A0CFBC /* MessagePartTransformer.m */; };
+		3A8EFC1110D270D000A0CFBC /* clip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFC1010D270D000A0CFBC /* clip.png */; };
+		3A8EFC1D10D2809400A0CFBC /* MessageAttachmentTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */; };
+		3A8EFC8F10D2A03400A0CFBC /* AttachmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */; };
+		3AA8801B10D01E74000F9C5E /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8801A10D01E74000F9C5E /* icon.icns */; };
+		3AA8806010D02198000F9C5E /* log_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805710D02198000F9C5E /* log_off.png */; };
+		3AA8806110D02198000F9C5E /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805810D02198000F9C5E /* log.png */; };
+		3AA8806210D02198000F9C5E /* stop_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805910D02198000F9C5E /* stop_over.png */; };
+		3AA8806310D02198000F9C5E /* stop_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805A10D02198000F9C5E /* stop_off.png */; };
+		3AA8806410D02198000F9C5E /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805B10D02198000F9C5E /* stop.png */; };
+		3AA8806510D02198000F9C5E /* log_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805C10D02198000F9C5E /* log_over.png */; };
+		3AA8806610D02198000F9C5E /* play_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805D10D02198000F9C5E /* play_over.png */; };
+		3AA8806710D02198000F9C5E /* play_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805E10D02198000F9C5E /* play_off.png */; };
+		3AA8806810D02198000F9C5E /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805F10D02198000F9C5E /* play.png */; };
 		3ABD000710CD296D00213059 /* NSData+MIME.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD000610CD296D00213059 /* NSData+MIME.m */; };
 		3ABD000910CD298900213059 /* NSString+MessageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD000810CD298900213059 /* NSString+MessageUtils.m */; };
 		3ABD000D10CD29A600213059 /* NSCharacterSet+MIME.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD000C10CD29A600213059 /* NSCharacterSet+MIME.m */; };
@@ -52,6 +80,7 @@
 		3ABD034810CD724300213059 /* NSString+PlainTextFlowedExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD034710CD724300213059 /* NSString+PlainTextFlowedExtensions.m */; };
 		3ABD035410CD72BE00213059 /* EDStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD035310CD72BE00213059 /* EDStack.m */; };
 		3ABD036F10CD739C00213059 /* NSAttributedString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD036E10CD739C00213059 /* NSAttributedString+Extensions.m */; };
+		3ABD07CB10CFE04500213059 /* MessageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD07CA10CFE04500213059 /* MessageTransformer.m */; };
 		3ABDFFCE10CD271F00213059 /* EDHeaderBearingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDFFCB10CD271F00213059 /* EDHeaderBearingObject.m */; };
 		3ABDFFCF10CD271F00213059 /* EDMessagePart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDFFCC10CD271F00213059 /* EDMessagePart.m */; };
 		3ABDFFD010CD271F00213059 /* EDInternetMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABDFFCD10CD271F00213059 /* EDInternetMessage.m */; };
@@ -76,7 +105,7 @@
 		514EA010081EC7AA009B8CD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */; };
 		514EA011081EC7AB009B8CD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7788DA0506752A1600599AAD /* CoreData.framework */; };
 		514EA015081EC7C3009B8CD9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */; };
-		514EA082081ECB54009B8CD9 /* SmtpTestServer.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 514E9DF9081EBF9C009B8CD9 /* SmtpTestServer.mdimporter */; };
+		514EA082081ECB54009B8CD9 /* MockSmtp.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */; };
 		775BDEF1067A8BF0009058FE /* Document.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 775BDEF0067A8BF0009058FE /* Document.xcdatamodel */; };
 		775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
@@ -86,12 +115,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A8C8DB210F76D42007680DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E /* SCTcpServer */;
+			remoteInfo = SCTcpServer;
+		};
 		514EA066081EC8BF009B8CD9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 514E9DF8081EBF9C009B8CD9;
-			remoteInfo = "SmtpTestServer Spotlight Importer";
+			remoteInfo = "MockSmtp Spotlight Importer";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -100,7 +136,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 6;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +147,7 @@
 			dstPath = ../Library/Spotlight;
 			dstSubfolderSpec = 7;
 			files = (
-				514EA082081ECB54009B8CD9 /* SmtpTestServer.mdimporter in CopyFiles */,
+				514EA082081ECB54009B8CD9 /* MockSmtp.mdimporter in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +164,7 @@
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2F7446C00DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2F7446C20DB6CCE400F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		32DBCF750370BD2300C91783 /* SmtpTestServer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpTestServer_Prefix.pch; sourceTree = "<group>"; };
+		32DBCF750370BD2300C91783 /* MockSmtp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockSmtp_Prefix.pch; sourceTree = "<group>"; };
 		3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrialWindow.xib; sourceTree = "<group>"; };
 		3A17230110CA6F59007E7EE3 /* TrialWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrialWindowController.h; sourceTree = "<group>"; };
 		3A17230210CA6F59007E7EE3 /* TrialWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrialWindowController.m; sourceTree = "<group>"; };
@@ -140,8 +176,6 @@
 		3A5500B710B6DE96001B095C /* SmtpSessionState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpSessionState.m; sourceTree = "<group>"; };
 		3A550C0510BC2F6B001B095C /* SegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentController.h; sourceTree = "<group>"; };
 		3A550C0610BC2F6B001B095C /* SegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentController.m; sourceTree = "<group>"; };
-		3A550C6710BC39EF001B095C /* play-icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play-icon-128.png"; sourceTree = "<group>"; };
-		3A550C6B10BC3A3E001B095C /* stop-icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-icon-128.png"; sourceTree = "<group>"; };
 		3A550CB310BE7496001B095C /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
 		3A550CB410BE7496001B095C /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
 		3A550D5010BE9F8D001B095C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
@@ -164,6 +198,60 @@
 		3A55FF3C10B582C8001B095C /* SmtpServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpServer.m; sourceTree = "<group>"; };
 		3A55FF5110B59DC3001B095C /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
 		3A55FF5210B59DC3001B095C /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
+		3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCTcpServer.xcodeproj; path = SCTcpServer/SCTcpServer.xcodeproj; sourceTree = "<group>"; };
+		3A8C88EC10F22115007680DF /* license.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = license.sh; sourceTree = "<group>"; };
+		3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extensions.h"; sourceTree = "<group>"; };
+		3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extensions.m"; sourceTree = "<group>"; };
+		3A8C89FF10F4C85A007680DF /* SoftwareUpdateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoftwareUpdateController.h; sourceTree = "<group>"; };
+		3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoftwareUpdateController.m; sourceTree = "<group>"; };
+		3A8C8A4510F4DC21007680DF /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		3A8C8A4610F4DC21007680DF /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		3A8C8A4810F4DC21007680DF /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		3A8C8A4910F4DC21007680DF /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		3A8C8A4A10F4DC21007680DF /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		3A8C8A4B10F4DC21007680DF /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		3A8C8A4C10F4DC21007680DF /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		3A8C8A4D10F4DC21007680DF /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		3A8C8A4E10F4DC21007680DF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		3A8C8A4F10F4DC21007680DF /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		3A8C8A5010F4DC21007680DF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		3A8C8A5110F4DC21007680DF /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		3A8C8AFB10F500DE007680DF /* HandCursorTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandCursorTextField.h; sourceTree = "<group>"; };
+		3A8C8AFC10F500DF007680DF /* HandCursorTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandCursorTextField.m; sourceTree = "<group>"; };
+		3A8C8B7210F513F6007680DF /* PortNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortNumberFormatter.h; sourceTree = "<group>"; };
+		3A8C8B7310F513F6007680DF /* PortNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortNumberFormatter.m; sourceTree = "<group>"; };
+		3A8C8C7B10F6262C007680DF /* LicenseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseController.h; sourceTree = "<group>"; };
+		3A8C8C7C10F6262C007680DF /* LicenseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseController.m; sourceTree = "<group>"; };
+		3A8E102610DFBDE800A0CFBC /* lcl_config_components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_components.h; sourceTree = "<group>"; };
+		3A8E102710DFBDE800A0CFBC /* lcl_config_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_logger.h; sourceTree = "<group>"; };
+		3A8E102810DFBDE800A0CFBC /* lcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl.h; sourceTree = "<group>"; };
+		3A8E102910DFBDE800A0CFBC /* lcl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lcl.m; sourceTree = "<group>"; };
+		3A8E106110DFC3C700A0CFBC /* lcl_config_logger_LogFIle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcl_config_logger_LogFIle.h; sourceTree = "<group>"; };
+		3A8E106210DFC3C700A0CFBC /* LCLLogFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLLogFile.h; sourceTree = "<group>"; };
+		3A8E106310DFC3C700A0CFBC /* LCLLogFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLLogFile.m; sourceTree = "<group>"; };
+		3A8E127A10E117FF00A0CFBC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3A8EFAD810D1364900A0CFBC /* MessagePart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePart.h; sourceTree = "<group>"; };
+		3A8EFAD910D1364900A0CFBC /* MessagePart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePart.m; sourceTree = "<group>"; };
+		3A8EFADC10D1365E00A0CFBC /* MessageAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAttachment.h; sourceTree = "<group>"; };
+		3A8EFADD10D1365E00A0CFBC /* MessageAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAttachment.m; sourceTree = "<group>"; };
+		3A8EFB3810D1561000A0CFBC /* MessagePartTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePartTransformer.h; sourceTree = "<group>"; };
+		3A8EFB3910D1561000A0CFBC /* MessagePartTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePartTransformer.m; sourceTree = "<group>"; };
+		3A8EFC1010D270D000A0CFBC /* clip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clip.png; sourceTree = "<group>"; };
+		3A8EFC1B10D2809400A0CFBC /* MessageAttachmentTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAttachmentTransformer.h; sourceTree = "<group>"; };
+		3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAttachmentTransformer.m; sourceTree = "<group>"; };
+		3A8EFC8D10D2A03400A0CFBC /* AttachmentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsController.h; sourceTree = "<group>"; };
+		3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsController.m; sourceTree = "<group>"; };
+		3AA8801A10D01E74000F9C5E /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		3AA8805710D02198000F9C5E /* log_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_off.png; sourceTree = "<group>"; };
+		3AA8805810D02198000F9C5E /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
+		3AA8805910D02198000F9C5E /* stop_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_over.png; sourceTree = "<group>"; };
+		3AA8805A10D02198000F9C5E /* stop_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_off.png; sourceTree = "<group>"; };
+		3AA8805B10D02198000F9C5E /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		3AA8805C10D02198000F9C5E /* log_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_over.png; sourceTree = "<group>"; };
+		3AA8805D10D02198000F9C5E /* play_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_over.png; sourceTree = "<group>"; };
+		3AA8805E10D02198000F9C5E /* play_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_off.png; sourceTree = "<group>"; };
+		3AA8805F10D02198000F9C5E /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		3ABD000310CD293D00213059 /* NSData+MIME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MIME.h"; sourceTree = "<group>"; };
 		3ABD000610CD296D00213059 /* NSData+MIME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MIME.m"; sourceTree = "<group>"; };
 		3ABD000810CD298900213059 /* NSString+MessageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MessageUtils.m"; sourceTree = "<group>"; };
@@ -216,6 +304,8 @@
 		3ABD036D10CD739000213059 /* NSAttributedString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extensions.h"; sourceTree = "<group>"; };
 		3ABD036E10CD739C00213059 /* NSAttributedString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extensions.m"; sourceTree = "<group>"; };
 		3ABD038210CD792B00213059 /* EDMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMessage.h; sourceTree = "<group>"; };
+		3ABD07C910CFE04500213059 /* MessageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTransformer.h; sourceTree = "<group>"; };
+		3ABD07CA10CFE04500213059 /* MessageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTransformer.m; sourceTree = "<group>"; };
 		3ABDFFC710CD26F700213059 /* EDMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMConstants.h; sourceTree = "<group>"; };
 		3ABDFFC810CD26F700213059 /* EDHeaderBearingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDHeaderBearingObject.h; sourceTree = "<group>"; };
 		3ABDFFC910CD26F700213059 /* EDMessagePart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMessagePart.h; sourceTree = "<group>"; };
@@ -251,7 +341,7 @@
 		3ADBD00A10AC7C42006C9DBE /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		3ADBD03710AC814E006C9DBE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		3ADBD03810AC814E006C9DBE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		514E9DF9081EBF9C009B8CD9 /* SmtpTestServer.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmtpTestServer.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockSmtp.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		514E9DFA081EBF9C009B8CD9 /* Importer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Importer-Info.plist"; path = "../Importer/Importer-Info.plist"; sourceTree = "<group>"; };
 		514E9E10081EC6B8009B8CD9 /* GetMetadataForFile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 30; path = GetMetadataForFile.c; sourceTree = "<group>"; };
 		514E9E11081EC6B8009B8CD9 /* main.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -261,7 +351,7 @@
 		775BDEF0067A8BF0009058FE /* Document.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		7788DA0506752A1600599AAD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		8D15AC370486D014006FF6A4 /* SmtpTestServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmtpTestServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D15AC370486D014006FF6A4 /* MockSmtp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSmtp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +372,7 @@
 			files = (
 				775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */,
 				3ADBCFD210AC6C96006C9DBE /* WebKit.framework in Frameworks */,
+				3A8E127B10E117FF00A0CFBC /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +382,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E127A10E117FF00A0CFBC /* Security.framework */,
 				3ADBCFD110AC6C96006C9DBE /* WebKit.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */,
@@ -312,15 +404,16 @@
 		19C28FB0FE9D524F11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D15AC370486D014006FF6A4 /* SmtpTestServer.app */,
-				514E9DF9081EBF9C009B8CD9 /* SmtpTestServer.mdimporter */,
+				8D15AC370486D014006FF6A4 /* MockSmtp.app */,
+				514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A37F4AAFDCFA73011CA2CEA /* SmtpTestServer */ = {
+		2A37F4AAFDCFA73011CA2CEA /* MockSmtp */ = {
 			isa = PBXGroup;
 			children = (
+				3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */,
 				E1B74B1A0667B4A90069E3BA /* Models */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
@@ -329,15 +422,20 @@
 				19C28FB0FE9D524F11CA2CBB /* Products */,
 				514E9E16081EC6D5009B8CD9 /* Importer Read Me.txt */,
 			);
-			name = SmtpTestServer;
+			name = MockSmtp;
 			sourceTree = "<group>";
 		};
 		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3A8C8B7110F513D8007680DF /* Formatters */,
+				3A8C89A610F3A3AA007680DF /* Foundation Extensions */,
+				3A8E101C10DFBD5900A0CFBC /* Logging */,
 				3ADBD00C10AC7C68006C9DBE /* Model */,
+				3ABD07C110CFDF0E00213059 /* Transformers */,
 				3A55FA3010B41B77001B095C /* Controllers */,
 				3A55FA4110B41BBF001B095C /* Views */,
+				3A8C8A4410F4DC21007680DF /* JSON */,
 				3A55FF0410B570D1001B095C /* Smtp */,
 				514E9E0C081EC698009B8CD9 /* Importer */,
 				2A37F4AEFDCFA73011CA2CEA /* Document.h */,
@@ -349,8 +447,9 @@
 		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF750370BD2300C91783 /* SmtpTestServer_Prefix.pch */,
+				32DBCF750370BD2300C91783 /* MockSmtp_Prefix.pch */,
 				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+				3A8C88EC10F22115007680DF /* license.sh */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -358,6 +457,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3AA8801A10D01E74000F9C5E /* icon.icns */,
 				3ABE08DA10C85004007A2C9D /* Images */,
 				2F7446BF0DB6CCE400F9684A /* MainMenu.xib */,
 				2F7446C10DB6CCE400F9684A /* MainWindow.xib */,
@@ -400,6 +500,12 @@
 				3ABE013610C42ECB007A2C9D /* PreferencesController.m */,
 				3A17230110CA6F59007E7EE3 /* TrialWindowController.h */,
 				3A17230210CA6F59007E7EE3 /* TrialWindowController.m */,
+				3A8EFC8D10D2A03400A0CFBC /* AttachmentsController.h */,
+				3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */,
+				3A8C89FF10F4C85A007680DF /* SoftwareUpdateController.h */,
+				3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */,
+				3A8C8C7B10F6262C007680DF /* LicenseController.h */,
+				3A8C8C7C10F6262C007680DF /* LicenseController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -413,6 +519,8 @@
 				3A55FD8210B47491001B095C /* OutlineView.m */,
 				3A55FCBB10B459FC001B095C /* TableView.h */,
 				3A55FCBC10B459FC001B095C /* TableView.m */,
+				3A8C8AFB10F500DE007680DF /* HandCursorTextField.h */,
+				3A8C8AFC10F500DF007680DF /* HandCursorTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +542,82 @@
 				3A5500B710B6DE96001B095C /* SmtpSessionState.m */,
 			);
 			path = Smtp;
+			sourceTree = "<group>";
+		};
+		3A8C89A610F3A3AA007680DF /* Foundation Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */,
+				3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */,
+			);
+			name = "Foundation Extensions";
+			sourceTree = "<group>";
+		};
+		3A8C8A4410F4DC21007680DF /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8A4510F4DC21007680DF /* JSON.h */,
+				3A8C8A4610F4DC21007680DF /* NSObject+SBJSON.h */,
+				3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */,
+				3A8C8A4810F4DC21007680DF /* NSString+SBJSON.h */,
+				3A8C8A4910F4DC21007680DF /* NSString+SBJSON.m */,
+				3A8C8A4A10F4DC21007680DF /* SBJSON.h */,
+				3A8C8A4B10F4DC21007680DF /* SBJSON.m */,
+				3A8C8A4C10F4DC21007680DF /* SBJsonBase.h */,
+				3A8C8A4D10F4DC21007680DF /* SBJsonBase.m */,
+				3A8C8A4E10F4DC21007680DF /* SBJsonParser.h */,
+				3A8C8A4F10F4DC21007680DF /* SBJsonParser.m */,
+				3A8C8A5010F4DC21007680DF /* SBJsonWriter.h */,
+				3A8C8A5110F4DC21007680DF /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		3A8C8B7110F513D8007680DF /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8B7210F513F6007680DF /* PortNumberFormatter.h */,
+				3A8C8B7310F513F6007680DF /* PortNumberFormatter.m */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
+		3A8C8DAF10F76D42007680DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8DB310F76D42007680DF /* SCTcpServer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A8E101C10DFBD5900A0CFBC /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E104210DFC27200A0CFBC /* LCLCore */,
+				3A8E105E10DFC2AE00A0CFBC /* LogFileLogger */,
+				3A8E102610DFBDE800A0CFBC /* lcl_config_components.h */,
+				3A8E102710DFBDE800A0CFBC /* lcl_config_logger.h */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		3A8E104210DFC27200A0CFBC /* LCLCore */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E102810DFBDE800A0CFBC /* lcl.h */,
+				3A8E102910DFBDE800A0CFBC /* lcl.m */,
+			);
+			name = LCLCore;
+			sourceTree = "<group>";
+		};
+		3A8E105E10DFC2AE00A0CFBC /* LogFileLogger */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E106110DFC3C700A0CFBC /* lcl_config_logger_LogFIle.h */,
+				3A8E106210DFC3C700A0CFBC /* LCLLogFile.h */,
+				3A8E106310DFC3C700A0CFBC /* LCLLogFile.m */,
+			);
+			name = LogFileLogger;
 			sourceTree = "<group>";
 		};
 		3ABD000410CD294A00213059 /* Classes */ = {
@@ -620,6 +804,19 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
+		3ABD07C110CFDF0E00213059 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				3ABD07C910CFE04500213059 /* MessageTransformer.h */,
+				3ABD07CA10CFE04500213059 /* MessageTransformer.m */,
+				3A8EFB3810D1561000A0CFBC /* MessagePartTransformer.h */,
+				3A8EFB3910D1561000A0CFBC /* MessagePartTransformer.m */,
+				3A8EFC1B10D2809400A0CFBC /* MessageAttachmentTransformer.h */,
+				3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
 		3ABDFFC410CD253400213059 /* EDMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,8 +934,16 @@
 		3ABE08DA10C85004007A2C9D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3A550C6B10BC3A3E001B095C /* stop-icon-128.png */,
-				3A550C6710BC39EF001B095C /* play-icon-128.png */,
+				3A8EFC1010D270D000A0CFBC /* clip.png */,
+				3AA8805710D02198000F9C5E /* log_off.png */,
+				3AA8805810D02198000F9C5E /* log.png */,
+				3AA8805910D02198000F9C5E /* stop_over.png */,
+				3AA8805A10D02198000F9C5E /* stop_off.png */,
+				3AA8805B10D02198000F9C5E /* stop.png */,
+				3AA8805C10D02198000F9C5E /* log_over.png */,
+				3AA8805D10D02198000F9C5E /* play_over.png */,
+				3AA8805E10D02198000F9C5E /* play_off.png */,
+				3AA8805F10D02198000F9C5E /* play.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -754,6 +959,10 @@
 				3ADBD03810AC814E006C9DBE /* User.m */,
 				3A55F5FB10ADA9F1001B095C /* Message.h */,
 				3A55F5FC10ADA9F1001B095C /* Message.m */,
+				3A8EFAD810D1364900A0CFBC /* MessagePart.h */,
+				3A8EFAD910D1364900A0CFBC /* MessagePart.m */,
+				3A8EFADC10D1365E00A0CFBC /* MessageAttachment.h */,
+				3A8EFADD10D1365E00A0CFBC /* MessageAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -779,9 +988,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		514E9DF8081EBF9C009B8CD9 /* SmtpTestServer Spotlight Importer */ = {
+		514E9DF8081EBF9C009B8CD9 /* MockSmtp Spotlight Importer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26FC0AC60875C91100E6366F /* Build configuration list for PBXNativeTarget "SmtpTestServer Spotlight Importer" */;
+			buildConfigurationList = 26FC0AC60875C91100E6366F /* Build configuration list for PBXNativeTarget "MockSmtp Spotlight Importer" */;
 			buildPhases = (
 				514E9DF5081EBF9C009B8CD9 /* Resources */,
 				514E9DF6081EBF9C009B8CD9 /* Sources */,
@@ -791,14 +1000,14 @@
 			);
 			dependencies = (
 			);
-			name = "SmtpTestServer Spotlight Importer";
-			productName = "SmtpTestServer Spotlight Importer";
-			productReference = 514E9DF9081EBF9C009B8CD9 /* SmtpTestServer.mdimporter */;
+			name = "MockSmtp Spotlight Importer";
+			productName = "MockSmtp Spotlight Importer";
+			productReference = 514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */;
 			productType = "com.apple.product-type.bundle";
 		};
-		8D15AC270486D014006FF6A4 /* SmtpTestServer */ = {
+		8D15AC270486D014006FF6A4 /* MockSmtp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26FC0ACA0875C91100E6366F /* Build configuration list for PBXNativeTarget "SmtpTestServer" */;
+			buildConfigurationList = 26FC0ACA0875C91100E6366F /* Build configuration list for PBXNativeTarget "MockSmtp" */;
 			buildPhases = (
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
@@ -811,10 +1020,10 @@
 			dependencies = (
 				514EA067081EC8BF009B8CD9 /* PBXTargetDependency */,
 			);
-			name = SmtpTestServer;
+			name = MockSmtp;
 			productInstallPath = "$(HOME)/Applications";
-			productName = SmtpTestServer;
-			productReference = 8D15AC370486D014006FF6A4 /* SmtpTestServer.app */;
+			productName = MockSmtp;
+			productReference = 8D15AC370486D014006FF6A4 /* MockSmtp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -825,18 +1034,34 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 			};
-			buildConfigurationList = 26FC0ACE0875C91100E6366F /* Build configuration list for PBXProject "SmtpTestServer" */;
+			buildConfigurationList = 26FC0ACE0875C91100E6366F /* Build configuration list for PBXProject "MockSmtp" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* SmtpTestServer */;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* MockSmtp */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3A8C8DAF10F76D42007680DF /* Products */;
+					ProjectRef = 3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				8D15AC270486D014006FF6A4 /* SmtpTestServer */,
-				514E9DF8081EBF9C009B8CD9 /* SmtpTestServer Spotlight Importer */,
+				8D15AC270486D014006FF6A4 /* MockSmtp */,
+				514E9DF8081EBF9C009B8CD9 /* MockSmtp Spotlight Importer */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3A8C8DB310F76D42007680DF /* SCTcpServer */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SCTcpServer;
+			remoteRef = 3A8C8DB210F76D42007680DF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		514E9DF5081EBF9C009B8CD9 /* Resources */ = {
@@ -854,10 +1079,19 @@
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				2F7446C30DB6CCE400F9684A /* MainMenu.xib in Resources */,
 				2F7446C40DB6CCE400F9684A /* MainWindow.xib in Resources */,
-				3A550C6810BC39EF001B095C /* play-icon-128.png in Resources */,
-				3A550C6C10BC3A3E001B095C /* stop-icon-128.png in Resources */,
 				3ABE08CD10C84F9B007A2C9D /* Info.plist in Resources */,
 				3A1722EF10C97DF8007E7EE3 /* TrialWindow.xib in Resources */,
+				3AA8801B10D01E74000F9C5E /* icon.icns in Resources */,
+				3AA8806010D02198000F9C5E /* log_off.png in Resources */,
+				3AA8806110D02198000F9C5E /* log.png in Resources */,
+				3AA8806210D02198000F9C5E /* stop_over.png in Resources */,
+				3AA8806310D02198000F9C5E /* stop_off.png in Resources */,
+				3AA8806410D02198000F9C5E /* stop.png in Resources */,
+				3AA8806510D02198000F9C5E /* log_over.png in Resources */,
+				3AA8806610D02198000F9C5E /* play_over.png in Resources */,
+				3AA8806710D02198000F9C5E /* play_off.png in Resources */,
+				3AA8806810D02198000F9C5E /* play.png in Resources */,
+				3A8EFC1110D270D000A0CFBC /* clip.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +1170,25 @@
 				3ABD034010CD718600213059 /* EDTextContentCoder.m in Sources */,
 				3ABD035410CD72BE00213059 /* EDStack.m in Sources */,
 				3ABD036F10CD739C00213059 /* NSAttributedString+Extensions.m in Sources */,
+				3ABD07CB10CFE04500213059 /* MessageTransformer.m in Sources */,
+				3A8EFADA10D1364900A0CFBC /* MessagePart.m in Sources */,
+				3A8EFADE10D1365E00A0CFBC /* MessageAttachment.m in Sources */,
+				3A8EFB3A10D1561000A0CFBC /* MessagePartTransformer.m in Sources */,
+				3A8EFC1D10D2809400A0CFBC /* MessageAttachmentTransformer.m in Sources */,
+				3A8EFC8F10D2A03400A0CFBC /* AttachmentsController.m in Sources */,
+				3A8E102A10DFBDE800A0CFBC /* lcl.m in Sources */,
+				3A8E106410DFC3C700A0CFBC /* LCLLogFile.m in Sources */,
+				3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */,
+				3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */,
+				3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */,
+				3A8C8A5310F4DC21007680DF /* NSString+SBJSON.m in Sources */,
+				3A8C8A5410F4DC21007680DF /* SBJSON.m in Sources */,
+				3A8C8A5510F4DC21007680DF /* SBJsonBase.m in Sources */,
+				3A8C8A5610F4DC21007680DF /* SBJsonParser.m in Sources */,
+				3A8C8A5710F4DC21007680DF /* SBJsonWriter.m in Sources */,
+				3A8C8AFD10F500DF007680DF /* HandCursorTextField.m in Sources */,
+				3A8C8B7410F513F6007680DF /* PortNumberFormatter.m in Sources */,
+				3A8C8C7D10F6262C007680DF /* LicenseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +1197,7 @@
 /* Begin PBXTargetDependency section */
 		514EA067081EC8BF009B8CD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 514E9DF8081EBF9C009B8CD9 /* SmtpTestServer Spotlight Importer */;
+			target = 514E9DF8081EBF9C009B8CD9 /* MockSmtp Spotlight Importer */;
 			targetProxy = 514EA066081EC8BF009B8CD9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -997,7 +1250,7 @@
 				INFOPLIST_FILE = "Importer/Importer-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = SmtpTestServer;
+				PRODUCT_NAME = MockSmtp;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -1012,7 +1265,7 @@
 				INFOPLIST_FILE = "Importer/Importer-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = SmtpTestServer;
+				PRODUCT_NAME = MockSmtp;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -1021,6 +1274,7 @@
 		26FC0ACB0875C91100E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1037,10 +1291,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = SmtpTestServer_Prefix.pch;
+				GCC_PREFIX_HEADER = MockSmtp_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = SmtpTestServer;
+				PRODUCT_NAME = MockSmtp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1048,6 +1302,7 @@
 		26FC0ACC0875C91100E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1061,10 +1316,10 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = SmtpTestServer_Prefix.pch;
+				GCC_PREFIX_HEADER = MockSmtp_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = SmtpTestServer;
+				PRODUCT_NAME = MockSmtp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1072,12 +1327,12 @@
 		26FC0ACF0875C91100E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -1086,11 +1341,12 @@
 		26FC0AD00875C91100E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -1099,7 +1355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26FC0AC60875C91100E6366F /* Build configuration list for PBXNativeTarget "SmtpTestServer Spotlight Importer" */ = {
+		26FC0AC60875C91100E6366F /* Build configuration list for PBXNativeTarget "MockSmtp Spotlight Importer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26FC0AC70875C91100E6366F /* Debug */,
@@ -1108,7 +1364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26FC0ACA0875C91100E6366F /* Build configuration list for PBXNativeTarget "SmtpTestServer" */ = {
+		26FC0ACA0875C91100E6366F /* Build configuration list for PBXNativeTarget "MockSmtp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26FC0ACB0875C91100E6366F /* Debug */,
@@ -1117,7 +1373,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26FC0ACE0875C91100E6366F /* Build configuration list for PBXProject "SmtpTestServer" */ = {
+		26FC0ACE0875C91100E6366F /* Build configuration list for PBXProject "MockSmtp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26FC0ACF0875C91100E6366F /* Debug */,

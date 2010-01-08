@@ -58,6 +58,9 @@ static __inline__ BOOL iswhitespace(char c)
 
 static __inline__ const char *skipnewline(const char *ptr, const char *limit)
 {
+    if(!ptr)
+        return NULL;
+    
     if(*ptr == CR)
         ptr += 1;
     if((ptr < limit) && (*ptr == LF))
@@ -68,23 +71,29 @@ static __inline__ const char *skipnewline(const char *ptr, const char *limit)
 
 static __inline__ const char *skiptonewline(const char *ptr, const char *limit)
 {
+    if(!ptr || ptr == limit)
+        return NULL;
+    
     while(iscrlf(*ptr) == NO)
-        {
+    {
         ptr += 1;
         if(ptr == limit)
             return NULL;
-        }
+    }
     return ptr;
 }
 
 
 static __inline__ const char *skipspace(const char *ptr, const char *limit)
 {
+    if(!ptr || ptr == limit)
+        return NULL;
+    
     while(iswhitespace(*ptr) == YES)
-        {
+    {
         ptr += 1;
         if(ptr == limit)
             return NULL;
-        }
+    }
     return ptr;
 }

@@ -34,95 +34,110 @@ NSString * const TcpServerErrorDomain = @"TcpServerErrorDomain";
     return self;
 }
 
-static void TcpServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info);
+- (BOOL)startPrivilegedServer
+{
+    NSBundle *mb = [NSBundle mainBundle];
+    NSString *srvPath = [mb pathForAuxiliaryExecutable:@"SCTcpServer"];
+    OSStatus myStatus;
+    
+    AuthorizationRef myAuthorizationRef;
+    myStatus = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment, kAuthorizationFlagDefaults, &myAuthorizationRef);
+    if (myStatus)
+    {
+        return NO;
+    }
+    
+    myStatus = AuthorizationExecuteWithPrivileges(myAuthorizationRef, [srvPath UTF8String], kAuthorizationFlagDefaults, NULL, NULL);
+    if (myStatus)
+    {
+        return NO;
+    }
+    
+    AuthorizationFree(myAuthorizationRef, kAuthorizationFlagDefaults);
+    return YES;
+}
+
+- (BOOL)startNonPrivilegedServer
+{
+    NSBundle *mb = [NSBundle mainBundle];
+    NSString *srvPath = [mb pathForAuxiliaryExecutable:@"SCTcpServer"];
+    
+    NSTask *task = [[NSTask alloc] init];
+    [task setLaunchPath:srvPath];
+    [task launch];
+    
+    return YES;
+}
+
+- (BOOL)startServer
+{
+    if (mPort < 1024)
+    {
+        return [self startPrivilegedServer];
+    }
+    else
+    {
+        return [self startNonPrivilegedServer];
+    }
+}
 
 - (BOOL)start:(NSError **)error
-{
-    CFSocketContext socketCtxt = {0, self, NULL, NULL, NULL};
+{    
+    id serverProxy = [[NSConnection rootProxyForConnectionWithRegisteredName:@"com.screencustoms.tcp.server" host:nil] retain];
+    [serverProxy setProtocolForProxy:@protocol(SCTcpServer)];
+    mServer = (id<SCTcpServer>) serverProxy;
     
-    mIPv4socket = CFSocketCreate(kCFAllocatorDefault,
-                                 PF_INET,
-                                 SOCK_STREAM,
-                                 IPPROTO_TCP,
-                                 kCFSocketAcceptCallBack,
-                                 (CFSocketCallBack)&TcpServerAcceptCallBack,
-                                 &socketCtxt);
-    
-    if (mIPv4socket == NULL)
+    if (mServer)
     {
-        if (error)
+        @try
         {
-            *error = [[NSError alloc] initWithDomain:TcpServerErrorDomain code:kTcpServerNoSocketsAvailable userInfo:nil];
+            [mServer stop];
+            while ([NSConnection rootProxyForConnectionWithRegisteredName:@"com.screencustoms.tcp.server" host:nil])
+            {
+                NSLog(@"wait");
+            }        
         }
-        
-        if (mIPv4socket)
-        {
-            CFRelease(mIPv4socket);
-            mIPv4socket = NULL;
-        }
-        
+        @catch (NSException * e) {}
+    }
+    
+    if (![self startServer])
+    {
         return NO;
     }
     
-    int yes = 1;
-    setsockopt(CFSocketGetNative(mIPv4socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
-    
-    struct sockaddr_in addr4;
-    memset(&addr4, 0, sizeof(addr4));
-    addr4.sin_len = sizeof(addr4);
-    addr4.sin_family = AF_INET;
-    addr4.sin_port = htons(mPort);
-    addr4.sin_addr.s_addr = htonl(INADDR_ANY);
-    NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
-    
-    if (CFSocketSetAddress(mIPv4socket, (CFDataRef)address4) != kCFSocketSuccess)
+    serverProxy = [[NSConnection rootProxyForConnectionWithRegisteredName:@"com.screencustoms.tcp.server" host:nil] retain];
+
+#warning * It's sucks. Need to think about something more clever.
+    while (!serverProxy)
     {
-        if (error)
-        {
-            *error = [[NSError alloc] initWithDomain:TcpServerErrorDomain code:kTcpServerCouldNotBindToIPv4Address userInfo:nil];
-        }
-        
-        if (mIPv4socket)
-        {
-            CFRelease(mIPv4socket);
-            mIPv4socket = NULL;
-        }
-        
-        return NO;
+        NSLog(@"wait");
+        serverProxy = [[NSConnection rootProxyForConnectionWithRegisteredName:@"com.screencustoms.tcp.server" host:nil] retain];
     }
     
-    if (mPort == 0)
-    {
-        NSData *addr = [(NSData *)CFSocketCopyAddress(mIPv4socket) autorelease];
-        memcpy(&addr4, [addr bytes], [addr length]);
-        mPort = ntohs(addr4.sin_port);
-    }
+    [serverProxy setProtocolForProxy:@protocol(SCTcpServer)];
+    mServer = (id<SCTcpServer>) serverProxy;
     
-    CFRunLoopRef cfRunLoop = CFRunLoopGetCurrent();
-    CFRunLoopSourceRef source4 = CFSocketCreateRunLoopSource(kCFAllocatorDefault, mIPv4socket, 0);
-    CFRunLoopAddSource(cfRunLoop, source4, kCFRunLoopDefaultMode);
-    CFRelease(source4);
-    
-    if (mType != nil)
+    if (mServer)
     {
-        NSString *publishingDomain = mDomain ? mDomain : @"";
-        NSString *publishingName = nil;
-        
-        if (mName != nil)
+        [mServer setDelegate:self];
+        if([mServer openPort:mPort])
         {
-            publishingName = mName;
+            return YES;
         }
         else
         {
-            NSString *thisHostName = [[NSProcessInfo processInfo] hostName];
-            if ([thisHostName hasSuffix:@".local"])
+            if (error)
             {
-                publishingName = [thisHostName substringToIndex:([thisHostName length] - 6)];
+                *error = [NSError errorWithDomain:TcpServerErrorDomain code:kTcpServerCouldNotBindToIPv4Address userInfo:nil];
             }
+            return NO;
         }
-        
-        mNetService = [[NSNetService alloc] initWithDomain:publishingDomain type:mType name:publishingName port:mPort];
-        [mNetService publish];
+
+    }
+    else
+    {
+        NSLog(@"server is null");
+        return NO;
     }
     
     return YES;
@@ -130,25 +145,31 @@ static void TcpServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 
 - (BOOL)stop
 {
-    [mNetService stop];
-    [mNetService release];
-    mNetService = nil;
-
-    CFSocketInvalidate(mIPv4socket);
-    CFRelease(mIPv4socket);
-    mIPv4socket = NULL;
+    @try
+    {
+        [mServer stop];
+        while ([NSConnection rootProxyForConnectionWithRegisteredName:@"com.screencustoms.tcp.server" host:nil])
+        {
+            NSLog(@"wait");
+        }        
+    }
+    @catch (NSException * e) {}
     
     return YES;
 }
 
-- (void)handleNewConnectionFromAddress:(NSData *)address
-                           inputStream:(NSInputStream *)inputStream
-                          outputStream:(NSOutputStream *)outputStream
+- (void)handleNewConnection:(id<SCTcpConnection>)connection
 {
-    if (mDelegate && [mDelegate respondsToSelector:@selector(tcpServer:didReceiveConnectionFrom:inputStream:outputStream:)])
-    { 
-        [mDelegate tcpServer:self didReceiveConnectionFromAddress:address inputStream:inputStream outputStream:outputStream];
-    }
+
+}
+
+- (void)tcpServer:(id<SCTcpServer>)server didOpenConnection:(id<SCTcpConnection>)connection
+{
+    [self handleNewConnection:connection];
+}
+
+- (void)tcpServer:(id<SCTcpServer>)server didCloseConnection:(id<SCTcpConnection>)connection
+{
 }
 
 - (void)dealloc {
@@ -162,40 +183,5 @@ static void TcpServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     [super dealloc];
 }
 
-static void TcpServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info)
-{
-    TcpServer *server = (TcpServer *)info;
-    if (kCFSocketAcceptCallBack == type)
-    { 
-        CFSocketNativeHandle nativeSocketHandle = *(CFSocketNativeHandle *)data;
-        
-        uint8_t name[SOCK_MAXADDRLEN];
-        socklen_t namelen = sizeof(name);
-        
-        NSData *peer = nil;
-        if (getpeername(nativeSocketHandle, (struct sockaddr *)name, &namelen) == 0)
-        {
-            peer = [NSData dataWithBytes:name length:namelen];
-        }
-        
-        CFReadStreamRef readStream = NULL;
-        CFWriteStreamRef writeStream = NULL;
-        CFStreamCreatePairWithSocket(kCFAllocatorDefault, nativeSocketHandle, &readStream, &writeStream);
-        
-        if (readStream && writeStream)
-        {
-            CFReadStreamSetProperty(readStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
-            CFWriteStreamSetProperty(writeStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
-            [server handleNewConnectionFromAddress:peer inputStream:(NSInputStream *)readStream outputStream:(NSOutputStream *)writeStream];
-        }
-        else
-        {
-            close(nativeSocketHandle);
-        }
-        
-        if (readStream) CFRelease(readStream);
-        if (writeStream) CFRelease(writeStream);
-    }
-}
 
 @end

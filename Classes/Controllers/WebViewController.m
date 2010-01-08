@@ -9,7 +9,7 @@
 //
 
 #import "WebViewController.h"
-
+#import "Message.h"
 
 @implementation WebViewController
 
@@ -18,10 +18,12 @@
 - (void)setContent:(id)content
 {
     [super setContent:content];
-    NSString *body = [content valueForKey:@"body"];
-    [content setValue:[NSNumber numberWithBool:YES] forKey:@"read"];
+    
+    Message *msg = (Message *)content;
+    [msg setRead:[NSNumber numberWithBool:YES]];
     [[self managedObjectContext] processPendingChanges];
-    [[_webView mainFrame] loadHTMLString:body baseURL:nil];
+    
+    [[_webView mainFrame] loadHTMLString:[msg.bestPart content] baseURL:nil];
 }
 
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation
