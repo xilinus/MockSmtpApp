@@ -23,6 +23,8 @@
 
 - (IBAction)buy:(id)sender;
 
+- (void)updateInfo;
+
 @property (nonatomic, retain) NSString *product;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSDate *expiration;

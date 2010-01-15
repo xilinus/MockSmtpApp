@@ -1,15 +1,14 @@
 //
-//  TrialWindowController.m
-//  SmtpTestServer
+//  LicenseInstallController.m
+//  MockSmtp
 //
-//  Created by Oleg Shnitko on 05/12/2009.
-//  Copyright 2009 Natural Devices, Inc.. All rights reserved.
+//  Created by Oleg Shnitko on 15/01/2010.
+//  Copyright 2010 Natural Devices, Inc.. All rights reserved.
 //
 
+#import "LicenseInstallController.h"
+#import "LicenseController.h"
 #import "NSFileManager+Extensions.h"
-
-#import "TrialWindowController.h"
-#import "MainWindowController.h"
 
 #define LICENSE_DIR @"~/.mocksmtp"
 #define LICENSE_TMP_DIR @"~/.mocksmtp/tmp"
@@ -32,7 +31,7 @@ fgLUcQU8RKsVl3s85HVxC7LLX1VCFhF1IIsQqdmX0pj+x5VFklTmIXsHatlUKJl5\n\
 Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
 -----END PUBLIC KEY-----\n"
 
-@implementation TrialWindowController
+@implementation LicenseInstallController
 
 @synthesize filePath = mFilePath;
 @synthesize fileInfo = mFileInfo;
@@ -43,6 +42,8 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
 @synthesize email = mEmail;
 
 @synthesize activateButton = mActivateBtn;
+@synthesize panel = mPanel;
+@synthesize licenseController = mLicenseController;
 
 + (BOOL)checkLicenseFileExists
 {
@@ -110,22 +111,13 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     return NO;
 }
 
-+ (BOOL)checkSignature
-{
-    NSString *licensePath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
-    NSString *sigPath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_SIG] stringByStandardizingPath];
-    
-    return [TrialWindowController checkSignature:sigPath ofFile:licensePath];
-}
-
 + (BOOL)checkTmpSignature
 {
     NSString *licensePath = [[LICENSE_TMP_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
     NSString *sigPath = [[LICENSE_TMP_DIR stringByAppendingPathComponent:LICENSE_SIG] stringByStandardizingPath];
     
-    return [TrialWindowController checkSignature:sigPath ofFile:licensePath];
+    return [LicenseInstallController checkSignature:sigPath ofFile:licensePath];
 }
-
 
 + (BOOL)checkProduct:(NSString *)product
 {
@@ -163,7 +155,7 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     {
         return YES;
     }
-        
+    
     return NO;
 }
 
@@ -180,99 +172,6 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     }
     
     return YES;
-}
-
-+ (BOOL)checkAttributes
-{
-    NSString *licensePath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
-    NSDictionary *licenseDict = [NSDictionary dictionaryWithContentsOfFile:licensePath];
-    
-    NSString *product = [licenseDict objectForKey:@"Product"];
-    NSString *type = [licenseDict objectForKey:@"LicenseType"];
-    NSDate *expire = [licenseDict objectForKey:@"ExpirationDate"];
-    
-    if (![TrialWindowController checkProduct:product])
-    {
-        return NO;
-    }
-    
-    if ([type isEqualToString:@"Trial"])
-    {
-        if (!expire)
-        {
-            return NO;
-        }
-        
-        if ([expire compare:[NSDate date]] == NSOrderedAscending)
-        {
-            return NO;
-        }
-        
-        return YES;
-    }
-    
-    if ([type isEqualToString:@"Unlimited"])
-    {
-        return YES;
-    }
-    
-    return NO;
-}
-
-+ (BOOL)checkLicense
-{
-    if (![TrialWindowController checkLicenseFileExists])
-    {
-        return NO;
-    }
-    
-    if (![TrialWindowController checkSignature])
-    {
-        return NO;
-    }
-    
-    if (![TrialWindowController checkAttributes])
-    {
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (id)init
-{
-    if (self = [super initWithWindowNibName:@"TrialWindow"])
-    {
-        
-    }
-    
-    return self;
-}
-
-+ (BOOL)unpackFile:(NSString *)file
-{
-    NSString *licenseDir = [LICENSE_DIR stringByStandardizingPath];
-    
-    if (![NSFileManager createDirectoryAtPathIfNotExists:licenseDir error:NULL])
-    {
-        return NO;
-    }
-    
-    //tar -xzf license.key license.plist license.plist.sha1 -C dir
-    NSTask *task = [[NSTask alloc] init];
-    [task setLaunchPath:@"/usr/bin/tar"];
-    [task setArguments:[NSArray arrayWithObjects:@"-xvzf", file, @"-C", licenseDir, @"license.plist", @"license.plist.sha1", nil]];
-    
-    [task launch];
-    [task waitUntilExit];
-    int status = [task terminationStatus];
-    
-    if (status == 0)
-    {
-        return YES;
-    }
-    
-    return NO;
 }
 
 + (BOOL)unpackTmpFile:(NSString *)file
@@ -299,19 +198,6 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     }
     
     return NO;
-}
-
-+ (BOOL)installDefaultLicenseFile
-{
-    if ([TrialWindowController checkLicenseFileExists])
-    {
-        return YES;
-    }
-    
-    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-    NSString *resPath = [[bundlePath stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"Resources"];
-    NSString *licensePath = [resPath stringByAppendingPathComponent:@"default.key"];
-    return [TrialWindowController unpackFile:licensePath];
 }
 
 - (IBAction)chooseFile:(id)sender
@@ -341,19 +227,19 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
         NSString *filename = [[openDlg filenames] objectAtIndex:0];
         [mFilePath setStringValue:filename];
         
-        if (![TrialWindowController unpackTmpFile:filename])
+        if (![LicenseInstallController unpackTmpFile:filename])
         {
             [mFileInfo setStringValue:@"This file has invalid format. Please, choose another one."];
             return;
         }
         
-        if (![TrialWindowController checkLicenseTmpFileExists])
+        if (![LicenseInstallController checkLicenseTmpFileExists])
         {
             [mFileInfo setStringValue:@"This file has invalid format. Please, choose another one."];
             return;
         }
         
-        if (![TrialWindowController checkTmpSignature])
+        if (![LicenseInstallController checkTmpSignature])
         {
             [mFileInfo setStringValue:@"This file has invalid signature. Please, choose another one."];
             return;
@@ -380,7 +266,7 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
         
         BOOL valid = YES;
         
-        if (![TrialWindowController checkProduct:product])
+        if (![LicenseInstallController checkProduct:product])
         {
             [mProduct setStringValue:@"Invalid"];
             [mProduct setTextColor:[NSColor redColor]];
@@ -392,7 +278,7 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
             [mProduct setTextColor:[NSColor blackColor]];
         }
         
-        if (![TrialWindowController checkLicenseType:type])
+        if (![LicenseInstallController checkLicenseType:type])
         {
             [mLicenseType setStringValue:@"Invalid"];
             [mLicenseType setTextColor:[NSColor redColor]];
@@ -404,11 +290,11 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
             [mLicenseType setTextColor:[NSColor blackColor]];
         }
         
-        if ([TrialWindowController isNeedToCheckDate:type])
+        if ([LicenseInstallController isNeedToCheckDate:type])
         {
             [mExpireText setStringValue:[NSString stringWithFormat:@"%@", expireDate]];
             
-            if (![TrialWindowController checkDate:expireDate])
+            if (![LicenseInstallController checkDate:expireDate])
             {
                 [mExpireText setTextColor:[NSColor redColor]];
                 valid = NO;
@@ -457,22 +343,8 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     [manager removeItemAtPath:sigFile error:&error];
     [manager moveItemAtPath:sigTmpFile toPath:sigFile error:&error];
     
-    NSDocument *doc = [self document];
-    MainWindowController *mc = [[MainWindowController alloc] init];
-    [doc addWindowController:mc];
-    [mc showWindow:self];
-    [doc removeWindowController:self];
-    [self close];
-}
-
-- (IBAction)buy:(id)sender
-{
-    NSWorkspace* ws = [NSWorkspace sharedWorkspace];
-    NSString* myurl = @"http://mocksmtpapp.com/buy";
-    
-    NSURL* url = [NSURL URLWithString:myurl];
-    
-    [ws openURL:url];
+    [mLicenseController updateInfo];
+    [mPanel performClose:self];
 }
 
 @end
