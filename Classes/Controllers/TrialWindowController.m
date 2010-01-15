@@ -462,4 +462,14 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     [self close];
 }
 
+- (IBAction)buy:(id)sender
+{
+    NSWorkspace* ws = [NSWorkspace sharedWorkspace];
+    NSString* myurl = @"http://mocksmtpapp.com/buy";
+    
+    NSURL* url = [NSURL URLWithString:myurl];
+    
+    [ws openURL:url];
+}
+
 @end

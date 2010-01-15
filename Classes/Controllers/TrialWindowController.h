@@ -29,6 +29,7 @@
 
 - (IBAction)chooseFile:(id)sender;
 - (IBAction)activate:(id)sender;
+- (IBAction)buy:(id)sender;
 
 @property (nonatomic, assign) IBOutlet NSTextField *filePath;
 @property (nonatomic, assign) IBOutlet NSTextField *fileInfo;

@@ -426,15 +426,15 @@
 	3A17230110CA6F59007E7EE3 /* TrialWindowController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {883, 692}}";
-			sepNavSelRange = "{550, 0}";
-			sepNavVisRange = "{0, 1126}";
+			sepNavSelRange = "{648, 0}";
+			sepNavVisRange = "{0, 1154}";
 		};
 	};
 	3A17230210CA6F59007E7EE3 /* TrialWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {883, 6524}}";
-			sepNavSelRange = "{5092, 398}";
-			sepNavVisRange = "{0, 1751}";
+			sepNavIntBoundsRect = "{{0, 0}, {883, 6398}}";
+			sepNavSelRange = "{12219, 0}";
+			sepNavVisRange = "{2657, 1599}";
 		};
 	};
 	3A250C301100955F00A8B674 /* PBXTextBookmark */ = {
@@ -646,7 +646,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {883, 826}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{185, 1232}";
+			sepNavVisRange = "{182, 1235}";
 		};
 	};
 	3A55FF5210B59DC3001B095C /* ServerController.m */ = {
@@ -1033,13 +1033,13 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {883, 728}}";
 			sepNavSelRange = "{513, 0}";
-			sepNavVisRange = "{3, 1191}";
+			sepNavVisRange = "{0, 1189}";
 		};
 	};
 	3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {883, 2856}}";
-			sepNavSelRange = "{5390, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {883, 2898}}";
+			sepNavSelRange = "{182, 0}";
 			sepNavVisRange = "{5008, 1560}";
 			sepNavWindowFrame = "{{38, 237}, {923, 739}}";
 		};
@@ -1478,15 +1478,15 @@
 	3A8C8C7B10F6262C007680DF /* LicenseController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {883, 692}}";
-			sepNavSelRange = "{279, 0}";
-			sepNavVisRange = "{0, 608}";
+			sepNavSelRange = "{387, 0}";
+			sepNavVisRange = "{0, 637}";
 		};
 	};
 	3A8C8C7C10F6262C007680DF /* LicenseController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {883, 692}}";
-			sepNavSelRange = "{151, 0}";
-			sepNavVisRange = "{0, 1075}";
+			sepNavIntBoundsRect = "{{0, 0}, {883, 700}}";
+			sepNavSelRange = "{1284, 0}";
+			sepNavVisRange = "{0, 1291}";
 		};
 	};
 	3A8C8CA110F63B6C007680DF /* PBXTextBookmark */ = {

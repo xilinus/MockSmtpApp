@@ -12,6 +12,7 @@
 		3A1722EF10C97DF8007E7EE3 /* TrialWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */; };
 		3A17230310CA6F59007E7EE3 /* TrialWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17230210CA6F59007E7EE3 /* TrialWindowController.m */; };
 		3A250CAA11009B2200A8B674 /* SCTcpServer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A8C8DB310F76D42007680DF /* SCTcpServer */; };
+		3A250CBC1100B17800A8B674 /* LicenseInstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A250CBB1100B17800A8B674 /* LicenseInstallController.m */; };
 		3A5500B210B6B67E001B095C /* SmtpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B110B6B67E001B095C /* SmtpConnection.m */; };
 		3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B410B6BEA0001B095C /* SmtpSession.m */; };
 		3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B710B6DE96001B095C /* SmtpSessionState.m */; };
@@ -177,6 +178,8 @@
 		3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrialWindow.xib; sourceTree = "<group>"; };
 		3A17230110CA6F59007E7EE3 /* TrialWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrialWindowController.h; sourceTree = "<group>"; };
 		3A17230210CA6F59007E7EE3 /* TrialWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrialWindowController.m; sourceTree = "<group>"; };
+		3A250CBA1100B17800A8B674 /* LicenseInstallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseInstallController.h; sourceTree = "<group>"; };
+		3A250CBB1100B17800A8B674 /* LicenseInstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseInstallController.m; sourceTree = "<group>"; };
 		3A5500B010B6B67E001B095C /* SmtpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpConnection.h; sourceTree = "<group>"; };
 		3A5500B110B6B67E001B095C /* SmtpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpConnection.m; sourceTree = "<group>"; };
 		3A5500B310B6BEA0001B095C /* SmtpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpSession.h; sourceTree = "<group>"; };
@@ -515,6 +518,8 @@
 				3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */,
 				3A8C8C7B10F6262C007680DF /* LicenseController.h */,
 				3A8C8C7C10F6262C007680DF /* LicenseController.m */,
+				3A250CBA1100B17800A8B674 /* LicenseInstallController.h */,
+				3A250CBB1100B17800A8B674 /* LicenseInstallController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1199,6 +1204,7 @@
 				3A8C8AFD10F500DF007680DF /* HandCursorTextField.m in Sources */,
 				3A8C8B7410F513F6007680DF /* PortNumberFormatter.m in Sources */,
 				3A8C8C7D10F6262C007680DF /* LicenseController.m in Sources */,
+				3A250CBC1100B17800A8B674 /* LicenseInstallController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
