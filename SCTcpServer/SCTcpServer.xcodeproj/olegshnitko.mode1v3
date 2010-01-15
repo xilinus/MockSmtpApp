@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -309,6 +307,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -326,7 +326,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3A8C8DB910F76D82007680DF</string>
+										<string>3A250C741100991500A8B674</string>
 										<key>history</key>
 										<array>
 											<string>3A6F7C5710E2556D00FCCF2F</string>
@@ -336,7 +336,7 @@
 											<string>3A8C8D2410F666CC007680DF</string>
 											<string>3A8C8D2510F666CC007680DF</string>
 											<string>3A8C8D2610F666CC007680DF</string>
-											<string>3A8C8D3010F666CC007680DF</string>
+											<string>3A8C8DB910F76D82007680DF</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -404,9 +404,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3A8C8DBA10F76D82007680DF</string>
+				<string>3A250C751100991500A8B674</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3A8C8DBB10F76D82007680DF</string>
+				<string>3A250C761100991500A8B674</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -541,6 +541,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>3A6F7BD110E23E4600FCCF2F</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/olegshnitko/Dev/MockSmtp/SCTcpServer/SCTcpServer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -621,7 +622,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3A6F7BD110E23E4600FCCF2F</string>
-				<string>3A8C8DBC10F76D82007680DF</string>
+				<string>3A250C771100991500A8B674</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -663,8 +664,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 194}}</string>
-											<string>{{316, 0}, {378, 194}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -679,8 +680,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 194}}</string>
-											<string>{{0, 194}, {694, 187}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -713,7 +714,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 194}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>21 557 694 422 0 0 1280 1002 </string>
 								</dict>
@@ -741,13 +742,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3A8C8D3410F666CC007680DF</string>
+				<string>3A250C781100991500A8B674</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3A8C8D3510F666CC007680DF</string>
-				<string>3A8C8D3610F666CC007680DF</string>
-				<string>3A8C8D3710F666CC007680DF</string>
-				<string>3A8C8D3810F666CC007680DF</string>
-				<string>3A8C8D3910F666CC007680DF</string>
+				<string>3A250C791100991500A8B674</string>
+				<string>3A250C7A1100991500A8B674</string>
+				<string>3A250C7B1100991500A8B674</string>
+				<string>3A250C7C1100991500A8B674</string>
+				<string>3A250C7D1100991500A8B674</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

@@ -11,6 +11,7 @@
 		2F7446C40DB6CCE400F9684A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446C10DB6CCE400F9684A /* MainWindow.xib */; };
 		3A1722EF10C97DF8007E7EE3 /* TrialWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1722EE10C97DF8007E7EE3 /* TrialWindow.xib */; };
 		3A17230310CA6F59007E7EE3 /* TrialWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A17230210CA6F59007E7EE3 /* TrialWindowController.m */; };
+		3A250CAA11009B2200A8B674 /* SCTcpServer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A8C8DB310F76D42007680DF /* SCTcpServer */; };
 		3A5500B210B6B67E001B095C /* SmtpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B110B6B67E001B095C /* SmtpConnection.m */; };
 		3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B410B6BEA0001B095C /* SmtpSession.m */; };
 		3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B710B6DE96001B095C /* SmtpSessionState.m */; };
@@ -115,11 +116,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A250C99110099E100A8B674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E /* SCTcpServer */;
+			remoteInfo = SCTcpServer;
+		};
 		3A8C8DB210F76D42007680DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E /* SCTcpServer */;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
 			remoteInfo = SCTcpServer;
 		};
 		514EA066081EC8BF009B8CD9 /* PBXContainerItemProxy */ = {
@@ -138,6 +146,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
+				3A250CAA11009B2200A8B674 /* SCTcpServer in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,6 +1027,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3A250C9A110099E100A8B674 /* PBXTargetDependency */,
 				514EA067081EC8BF009B8CD9 /* PBXTargetDependency */,
 			);
 			name = MockSmtp;
@@ -1195,6 +1205,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3A250C9A110099E100A8B674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCTcpServer;
+			targetProxy = 3A250C99110099E100A8B674 /* PBXContainerItemProxy */;
+		};
 		514EA067081EC8BF009B8CD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 514E9DF8081EBF9C009B8CD9 /* MockSmtp Spotlight Importer */;
