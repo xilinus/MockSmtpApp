@@ -18,6 +18,7 @@
 @synthesize expiration = mExpiration;
 @synthesize username = mUsername;
 @synthesize email = mEmail;
+@synthesize affiliate = mAffiliate;
 
 - (void)updateInfo
 {
@@ -29,6 +30,7 @@
     self.expiration = [licenseDict objectForKey:@"ExpirationDate"];
     self.username = [licenseDict objectForKey:@"Username"];
     self.email = [licenseDict objectForKey:@"Email"];
+    self.affiliate = [licenseDict objectForKey:@"Affiliate"];
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
@@ -40,7 +42,12 @@
 {
     NSWorkspace* ws = [NSWorkspace sharedWorkspace];
     NSString* myurl = @"http://mocksmtpapp.com/buy";
-    
+    if (self.affiliate)
+	{
+		myurl = [myurl stringByAppendingString:@"?affiliate_id="];
+		myurl = [myurl stringByAppendingString:self.affiliate];
+	}
+		
     NSURL* url = [NSURL URLWithString:myurl];
     
     [ws openURL:url];
