@@ -121,7 +121,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DD76F960486AA7600D96B5E /* SCTcpServer */;
+			remoteGlobalIDString = 8DD76F960486AA7600D96B5E;
 			remoteInfo = SCTcpServer;
 		};
 		3A8C8DB210F76D42007680DF /* PBXContainerItemProxy */ = {

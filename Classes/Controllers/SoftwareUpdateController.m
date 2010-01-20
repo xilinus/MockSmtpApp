@@ -160,8 +160,7 @@
     NSString *description = [latestRelease objectForKey:@"description"];
     NSString *url = [latestRelease objectForKey:@"url"];
     
-    NSString *releaseVersionString = [[version componentsSeparatedByString:@"."] lastObject];
-    NSInteger releaseVersion = [releaseVersionString intValue];
+    NSInteger releaseVersion = [version intValue];
     NSString *bundleVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSInteger bundleVersion = [bundleVersionString intValue];
     
