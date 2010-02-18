@@ -83,6 +83,9 @@
     //NSDateComponents *comp = [cal components:NSYearCalendarUnit fromDate:date];
     //if ([comp year] > 2009)
     
+    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+    [tile setBadgeLabel:@"Lots"];
+    
     if (![TrialWindowController checkLicense])
     {
         [TrialWindowController installDefaultLicenseFile];

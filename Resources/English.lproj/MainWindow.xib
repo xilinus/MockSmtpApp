@@ -1015,14 +1015,12 @@
 																									<bool key="EncodedWithXMLCoder">YES</bool>
 																									<string>WebKitDefaultFixedFontSize</string>
 																									<string>WebKitDefaultFontSize</string>
-																									<string>WebKitJavaScriptCanOpenWindowsAutomatically</string>
 																									<string>WebKitMinimumFontSize</string>
 																								</object>
 																								<object class="NSMutableArray" key="dict.values">
 																									<bool key="EncodedWithXMLCoder">YES</bool>
 																									<integer value="12" id="922321128"/>
 																									<reference ref="922321128"/>
-																									<boolean value="NO" id="6"/>
 																									<integer value="1" id="9"/>
 																								</object>
 																							</object>
@@ -2921,7 +2919,7 @@
 							<string key="NSKeyPath">selection.transferText</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSConditionallySetsEditable</string>
-								<reference key="NS.object.0" ref="6"/>
+								<boolean value="NO" key="NS.object.0" id="6"/>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
