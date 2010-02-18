@@ -60,7 +60,11 @@
     
     [mWebView setHidden:YES];
     
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mocksmtpapp.com/update"]
+	NSString *urlString = @"http://mocksmtpapp.com/update?from=";
+	NSString *bundleVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+	NSString *urlWithVersionString = [urlString stringByAppendingString:bundleVersionString];
+	
+	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:urlWithVersionString]
                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                           timeoutInterval:60.0];
     
@@ -156,8 +160,7 @@
     NSString *description = [latestRelease objectForKey:@"description"];
     NSString *url = [latestRelease objectForKey:@"url"];
     
-    NSString *releaseVersionString = [[version componentsSeparatedByString:@"."] lastObject];
-    NSInteger releaseVersion = [releaseVersionString intValue];
+    NSInteger releaseVersion = [version intValue];
     NSString *bundleVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     NSInteger bundleVersion = [bundleVersionString intValue];
     

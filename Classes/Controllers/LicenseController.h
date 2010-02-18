@@ -18,6 +18,7 @@
     NSDate *mExpiration;
     NSString *mUsername;
     NSString *mEmail;
+    NSString *mAffiliate;
     
 }
 
@@ -30,5 +31,6 @@
 @property (nonatomic, retain) NSDate *expiration;
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *affiliate;
 
 @end
