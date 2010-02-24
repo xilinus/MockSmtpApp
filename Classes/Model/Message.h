@@ -36,10 +36,10 @@
     NSString *mTransferText;
 }
 
-@property (nonatomic, retain) NSNumber * read;
+@property (nonatomic, retain) NSNumber *read;
 @property (nonatomic, retain) NSData *transferData;
-@property (nonatomic, retain) User * user;
-@property (nonatomic, retain) Folder * folder;
+@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) Folder *folder;
 
 @property (nonatomic, readonly) EDInternetMessage *edMessage;
 

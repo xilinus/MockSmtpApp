@@ -28,6 +28,8 @@
 		3A55FF0710B570F9001B095C /* TcpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF0610B570F9001B095C /* TcpServer.m */; };
 		3A55FF3D10B582C8001B095C /* SmtpServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF3C10B582C8001B095C /* SmtpServer.m */; };
 		3A55FF5310B59DC3001B095C /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF5210B59DC3001B095C /* ServerController.m */; };
+		3A8774401135BB4F00E2D371 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A87743F1135BB4F00E2D371 /* Document.xcdatamodeld */; };
+		3A8774471135BEB400E2D371 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8774461135BEB400E2D371 /* BadgeController.m */; };
 		3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */; };
 		3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */; };
 		3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */; };
@@ -108,7 +110,6 @@
 		514EA011081EC7AB009B8CD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7788DA0506752A1600599AAD /* CoreData.framework */; };
 		514EA015081EC7C3009B8CD9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */; };
 		514EA082081ECB54009B8CD9 /* MockSmtp.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */; };
-		775BDEF1067A8BF0009058FE /* Document.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 775BDEF0067A8BF0009058FE /* Document.xcdatamodel */; };
 		775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
@@ -211,6 +212,8 @@
 		3A55FF5110B59DC3001B095C /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
 		3A55FF5210B59DC3001B095C /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
 		3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCTcpServer.xcodeproj; path = SCTcpServer/SCTcpServer.xcodeproj; sourceTree = "<group>"; };
+		3A8774451135BEB400E2D371 /* BadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeController.h; sourceTree = "<group>"; };
+		3A8774461135BEB400E2D371 /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
 		3A8C88EC10F22115007680DF /* license.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = license.sh; sourceTree = "<group>"; };
 		3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extensions.h"; sourceTree = "<group>"; };
 		3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extensions.m"; sourceTree = "<group>"; };
@@ -520,6 +523,8 @@
 				3A8C8C7C10F6262C007680DF /* LicenseController.m */,
 				3A250CBA1100B17800A8B674 /* LicenseInstallController.h */,
 				3A250CBB1100B17800A8B674 /* LicenseInstallController.m */,
+				3A8774451135BEB400E2D371 /* BadgeController.h */,
+				3A8774461135BEB400E2D371 /* BadgeController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -994,7 +999,7 @@
 		E1B74B1A0667B4A90069E3BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				775BDEF0067A8BF0009058FE /* Document.xcdatamodel */,
+				3A87743F1135BB4F00E2D371 /* Document.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1128,7 +1133,7 @@
 			files = (
 				8D15AC310486D014006FF6A4 /* Document.m in Sources */,
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
-				775BDEF1067A8BF0009058FE /* Document.xcdatamodel in Sources */,
+				3A8774401135BB4F00E2D371 /* Document.xcdatamodeld in Sources */,
 				3ADBCF8610AB168B006C9DBE /* Folder.m in Sources */,
 				3ADBCFCF10AC6C63006C9DBE /* CenteredTextFieldCell.m in Sources */,
 				3ADBD00B10AC7C42006C9DBE /* Server.m in Sources */,
@@ -1205,6 +1210,7 @@
 				3A8C8B7410F513F6007680DF /* PortNumberFormatter.m in Sources */,
 				3A8C8C7D10F6262C007680DF /* LicenseController.m in Sources */,
 				3A250CBC1100B17800A8B674 /* LicenseInstallController.m in Sources */,
+				3A8774471135BEB400E2D371 /* BadgeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,6 +1410,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A87743F1135BB4F00E2D371 /* Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				775BDEF0067A8BF0009058FE /* Document.xcdatamodel */,
+			);
+			currentVersion = 775BDEF0067A8BF0009058FE /* Document.xcdatamodel */;
+			path = Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
 }

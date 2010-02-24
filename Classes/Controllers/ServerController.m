@@ -197,6 +197,7 @@
     [message setFolder:[mServer sentFolder]];
     
     [moc processPendingChanges];
+    
     [[mMainWindowController document] saveDocument:self];    
 }
 

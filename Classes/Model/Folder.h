@@ -13,6 +13,10 @@
 
 @interface Folder :  NSManagedObject  
 {
+@private
+    
+    NSNumber *mReadMessagesCount;
+    NSNumber *mUnreadMessagesCount;
 }
 
 @property (nonatomic, retain) NSNumber *folderId;
@@ -22,6 +26,11 @@
 @property (nonatomic, retain) Server *server;
 
 @property (readonly) NSSet *users;
+
+@property (nonatomic, readonly) NSNumber *readMessagesCount;
+@property (nonatomic, readonly) NSNumber *unreadMessagesCount;
+
+- (void)updateReadMessagesCount;
 
 @end
 
