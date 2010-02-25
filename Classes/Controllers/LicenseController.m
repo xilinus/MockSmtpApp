@@ -20,6 +20,8 @@
 @synthesize email = mEmail;
 @synthesize affiliate = mAffiliate;
 
+@synthesize infoView = mInfoView;
+
 - (void)updateInfo
 {
     NSString *licensePath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
@@ -31,6 +33,18 @@
     self.username = [licenseDict objectForKey:@"Username"];
     self.email = [licenseDict objectForKey:@"Email"];
     self.affiliate = [licenseDict objectForKey:@"Affiliate"];
+    
+    NSRect frame = [mInfoView frame];
+    if (self.expiration)
+    {
+        frame.origin.y = 55;
+    }
+    else
+    {
+        frame.origin.y = 75;
+    }
+    
+    [mInfoView setFrame:frame];
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification

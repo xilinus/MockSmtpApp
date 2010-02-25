@@ -20,6 +20,7 @@
     NSString *mEmail;
     NSString *mAffiliate;
     
+    NSView *mInfoView;
 }
 
 - (IBAction)buy:(id)sender;
@@ -32,5 +33,7 @@
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *affiliate;
+
+@property (nonatomic, retain) IBOutlet NSView *infoView;
 
 @end
