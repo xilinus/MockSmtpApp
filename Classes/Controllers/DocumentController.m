@@ -18,6 +18,7 @@
 @implementation DocumentController
 
 @synthesize defaultsController = mDefaultsController;
+@synthesize document = mDocument;
 
 + (void)initialize
 {
@@ -71,7 +72,7 @@
     NSURL *fileUrl = [NSURL fileURLWithPath:path];
     
     NSError *error = nil;
-    Document *doc = [self openDocumentWithContentsOfURL:fileUrl display:YES error:&error];
+    self.document = [self openDocumentWithContentsOfURL:fileUrl display:YES error:&error];
     
     if (error)
     {
@@ -79,7 +80,7 @@
         return;
     }
     
-    [doc save];
+    [self.document save];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -120,7 +121,7 @@
         NSURL *fileUrl = [NSURL fileURLWithPath:path];
         
         NSError *error = nil;
-        Document *doc = [self openDocumentWithContentsOfURL:fileUrl display:YES error:&error];
+        self.document = [self openDocumentWithContentsOfURL:fileUrl display:YES error:&error];
         
         if (error)
         {
@@ -128,7 +129,7 @@
             return;
         }
         
-        [doc save];
+        [self.document save];
         
         for (Document *document in docs)
         {
@@ -137,6 +138,26 @@
         }
         
     }
+}
+
+- (void)showViewWithIndex:(NSUInteger)index
+{
+    [self.document setValue:[NSNumber numberWithInt:index] forKey:@"selectedView"];
+}
+
+- (IBAction)showHtml:(id)sender
+{
+    [self showViewWithIndex:0];
+}
+
+- (IBAction)showBody:(id)sender
+{
+    [self showViewWithIndex:1];
+}
+
+- (IBAction)showRaw:(id)sender
+{
+    [self showViewWithIndex:2];
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender

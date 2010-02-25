@@ -10,6 +10,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Document;
+
 @interface DocumentController : NSDocumentController
 {
 @private
@@ -18,10 +20,18 @@
     
     NSString *mFileName;
     NSString *mLocation;
+    
+    Document *mDocument;
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender;
 
 @property (nonatomic, assign) IBOutlet NSUserDefaultsController *defaultsController;
+
+@property (nonatomic, retain) Document *document;
+
+- (IBAction)showHtml:(id)sender;
+- (IBAction)showBody:(id)sender;
+- (IBAction)showRaw:(id)sender;
 
 @end

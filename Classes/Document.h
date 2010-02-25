@@ -18,10 +18,18 @@
     MainWindowController *mMainWindowController;
     
     BOOL mIsNewFile;
+    
+    NSUInteger mSelectedView;
 }
 
 - (void)save;
 
 @property (nonatomic, assign) NSManagedObject *server;
+
+@property (nonatomic, assign) NSUInteger selectedView;
+
+@property (nonatomic, readonly) BOOL htmlViewHidden;
+@property (nonatomic, readonly) BOOL bodyViewHidden;
+@property (nonatomic, readonly) BOOL rawViewHidden;
 
 @end

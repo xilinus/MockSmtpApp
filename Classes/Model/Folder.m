@@ -40,10 +40,10 @@
 
 - (void)managedObjectContextChanged:(NSNotification *)notification
 {
-    //if ([[notification name] isEqualToString:NSManagedObjectContextObjectsDidChangeNotification])
-    //{
-        [self performSelectorOnMainThread:@selector(updateReadMessagesCount) withObject:nil waitUntilDone:NO];
-    //}
+    if ([[notification name] isEqualToString:NSManagedObjectContextObjectsDidChangeNotification])
+    {
+        [self updateReadMessagesCount];
+    }
 }
 
 + (NSSet *)keyPathsForValuesAffectingUsers
@@ -58,17 +58,23 @@
 
 - (void)updateReadMessagesCount
 {
-    NSNumber *newCount = [self valueForKeyPath:@"messages.@sum.read"];
-    NSNumber *allMessagesCount = [self valueForKeyPath:@"messages.@count"];
+    NSUInteger readCount = [[self valueForKeyPath:@"messages.@sum.read"] intValue];
+    NSUInteger allCount = [[self valueForKeyPath:@"messages.@count"] intValue];
+    NSUInteger unreadCount = allCount - readCount;
     
-    [self willChangeValueForKey:@"readMessagesCount"];
-    [self willChangeValueForKey:@"unreadMessagesCount"];
-    mReadMessagesCount = newCount;
-    mUnreadMessagesCount = [NSNumber numberWithInt:([allMessagesCount intValue] - [mReadMessagesCount intValue])];
-    [self didChangeValueForKey:@"readMessagesCount"];
-    [self didChangeValueForKey:@"unreadMessagesCount"];
+    if (readCount != [mReadMessagesCount intValue])
+    {
+        [self willChangeValueForKey:@"readMessagesCount"];
+        mReadMessagesCount = [NSNumber numberWithInt:readCount];
+        [self didChangeValueForKey:@"readMessagesCount"];
+    }
     
-    NSLog(@"count updated: %@", mReadMessagesCount);
+    if (unreadCount != [mUnreadMessagesCount intValue])
+    {
+        [self willChangeValueForKey:@"unreadMessagesCount"];
+        mUnreadMessagesCount = [NSNumber numberWithInt:unreadCount];
+        [self didChangeValueForKey:@"unreadMessagesCount"];
+    }
 }
 
 - (NSNumber *)readMessagesCount

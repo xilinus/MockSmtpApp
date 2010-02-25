@@ -16,7 +16,6 @@
 		3A5500B210B6B67E001B095C /* SmtpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B110B6B67E001B095C /* SmtpConnection.m */; };
 		3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B410B6BEA0001B095C /* SmtpSession.m */; };
 		3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5500B710B6DE96001B095C /* SmtpSessionState.m */; };
-		3A550C0710BC2F6B001B095C /* SegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550C0610BC2F6B001B095C /* SegmentController.m */; };
 		3A550CB510BE7496001B095C /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550CB410BE7496001B095C /* DocumentController.m */; };
 		3A550D5210BE9F8D001B095C /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A550D5110BE9F8D001B095C /* MainWindowController.m */; };
 		3A55F5FD10ADA9F1001B095C /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55F5FC10ADA9F1001B095C /* Message.m */; };
@@ -187,8 +186,6 @@
 		3A5500B410B6BEA0001B095C /* SmtpSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpSession.m; sourceTree = "<group>"; };
 		3A5500B610B6DE96001B095C /* SmtpSessionState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpSessionState.h; sourceTree = "<group>"; };
 		3A5500B710B6DE96001B095C /* SmtpSessionState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpSessionState.m; sourceTree = "<group>"; };
-		3A550C0510BC2F6B001B095C /* SegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentController.h; sourceTree = "<group>"; };
-		3A550C0610BC2F6B001B095C /* SegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentController.m; sourceTree = "<group>"; };
 		3A550CB310BE7496001B095C /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
 		3A550CB410BE7496001B095C /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
 		3A550D5010BE9F8D001B095C /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
@@ -507,8 +504,6 @@
 				3A55F84210B30ECE001B095C /* WebViewController.m */,
 				3A55FF5110B59DC3001B095C /* ServerController.h */,
 				3A55FF5210B59DC3001B095C /* ServerController.m */,
-				3A550C0510BC2F6B001B095C /* SegmentController.h */,
-				3A550C0610BC2F6B001B095C /* SegmentController.m */,
 				3A550D5010BE9F8D001B095C /* MainWindowController.h */,
 				3A550D5110BE9F8D001B095C /* MainWindowController.m */,
 				3ABE013510C42ECB007A2C9D /* PreferencesController.h */,
@@ -1150,7 +1145,6 @@
 				3A5500B210B6B67E001B095C /* SmtpConnection.m in Sources */,
 				3A5500B510B6BEA0001B095C /* SmtpSession.m in Sources */,
 				3A5500B810B6DE96001B095C /* SmtpSessionState.m in Sources */,
-				3A550C0710BC2F6B001B095C /* SegmentController.m in Sources */,
 				3A550CB510BE7496001B095C /* DocumentController.m in Sources */,
 				3A550D5210BE9F8D001B095C /* MainWindowController.m in Sources */,
 				3ABE013710C42ECB007A2C9D /* PreferencesController.m in Sources */,

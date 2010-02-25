@@ -13,6 +13,7 @@
 @implementation Document
 
 @synthesize server = _server;
+@synthesize selectedView = mSelectedView;
 
 - (id)init 
 {
@@ -122,6 +123,46 @@
     {
         [[NSApplication sharedApplication] terminate:self];
     }
+}
+
+- (BOOL)isViewWithIndexHidden:(NSUInteger)index
+{
+    return mSelectedView != index;
+}
+
+- (BOOL)htmlViewHidden
+{
+    return [self isViewWithIndexHidden:0];
+}
+
+- (BOOL)bodyViewHidden
+{
+    return [self isViewWithIndexHidden:1];
+}
+
+- (BOOL)rawViewHidden
+{
+    return [self isViewWithIndexHidden:2];
+}
+
+- (void)setSelectedView:(NSUInteger)index
+{
+    if (mSelectedView == index)
+    {
+        return;
+    }
+    
+    [self willChangeValueForKey:@"selectedView"];
+    [self willChangeValueForKey:@"htmlViewHidden"];
+    [self willChangeValueForKey:@"bodyViewHidden"];
+    [self willChangeValueForKey:@"rawViewHidden"];
+    mSelectedView = index;
+    [self didChangeValueForKey:@"selectedView"];
+    [self didChangeValueForKey:@"htmlViewHidden"];
+    [self didChangeValueForKey:@"bodyViewHidden"];
+    [self didChangeValueForKey:@"rawViewHidden"];
+    
+    NSLog(@"index change: %d", mSelectedView);
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
