@@ -170,4 +170,9 @@
     [super newDocument:sender];
 }
 
+- (IBAction)delete:(id)sender
+{
+    [self.document delete:sender];
+}
+
 @end

@@ -165,6 +165,11 @@
     NSLog(@"index change: %d", mSelectedView);
 }
 
+- (IBAction)delete:(id)sender
+{
+    [mMainWindowController delete:sender];
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
 {
     [super windowControllerDidLoadNib:windowController];

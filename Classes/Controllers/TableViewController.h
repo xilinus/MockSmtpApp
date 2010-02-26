@@ -16,9 +16,10 @@
 {
 }
 
-- (IBAction)moveSelectionToTrash:(id) sender;
-- (IBAction)deleteSelectionFromTrash:(id) sender;
-- (IBAction)restoreSelectionFromTrash:(id) sender;
+- (IBAction)delete:(id)sender;
+- (IBAction)moveSelectionToTrash:(id)sender;
+- (IBAction)deleteSelectionFromTrash:(id)sender;
+- (IBAction)restoreSelectionFromTrash:(id)sender;
 
 @end
 

@@ -17,6 +17,7 @@
 {
 }
 
+- (IBAction)delete:(id)sender;
 - (IBAction)moveSelectionToTrash:(id) sender;
 - (IBAction)deleteSelectionFromTrash:(id) sender;
 - (IBAction)restoreSelectionFromTrash:(id) sender;
@@ -43,20 +44,6 @@
 @end
 
 @interface Folder (OutlineViewItem) <OutlineViewItem>
-@end
-
-@interface UserProxy : NSObject
-{
-@private
-    User *mUser;
-    Folder *mFolder;
-}
-
-@property (readonly) User *user;
-@property (readonly) Folder *folder;
-
-- (id)initWithUser:(User *)user folder:(Folder *)folder;
-
 @end
 
 @interface UserProxy (OutlineViewItem) <OutlineViewItem>

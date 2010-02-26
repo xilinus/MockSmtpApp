@@ -10,6 +10,7 @@
 
 @interface Folder (Private)
 
+- (void)updateUsers;
 - (void)updateReadMessagesCount;
 
 @end
@@ -17,13 +18,14 @@
 
 @implementation Folder 
 
+@synthesize users = mUsers;
+@synthesize usersFolders = mUsersFolders;
+
 @dynamic folderId;
 @dynamic name;
 
 @dynamic messages;
 @dynamic server;
-
-@dynamic users;
 
 @dynamic readMessagesCount;
 @dynamic unreadMessagesCount;
@@ -33,6 +35,7 @@
     [super awakeFromFetch];
     
     [self updateReadMessagesCount];
+    [self updateUsers];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(managedObjectContextChanged:) name:nil object:[self managedObjectContext]];
@@ -43,17 +46,43 @@
     if ([[notification name] isEqualToString:NSManagedObjectContextObjectsDidChangeNotification])
     {
         [self updateReadMessagesCount];
+        [self updateUsers];
     }
 }
 
-+ (NSSet *)keyPathsForValuesAffectingUsers
+- (void)updateUsers
 {
-    return [NSSet setWithObject:@"messages"];
+    if (!mUsers)
+    {
+        mUsers = [[NSMutableSet alloc] init];
+        mUsersFolders = [[NSMutableSet alloc] init];
+    }
+    
+    NSSet *users = [self valueForKeyPath:@"messages.@distinctUnionOfObjects.user"];
+    
+    if ([users count] == 0)
+    {
+        [mUsers removeAllObjects];
+        [mUsersFolders removeAllObjects];
+    }
+    
+    [mUsers unionSet:users];
+    [mUsers intersectSet:users];
+    
+    NSMutableSet *proxys = [[NSMutableSet alloc] initWithCapacity:[users count]];
+    for (User *user in users)
+    {
+        UserProxy *proxy = [[UserProxy alloc] initWithUser:user folder:self];
+        [proxys addObject:proxy];
+    }
+    [mUsersFolders unionSet:proxys];
+    [mUsersFolders intersectSet:proxys];
 }
 
-- (NSSet *)users
+- (NSMutableSet *)usersFolders
 {
-    return [self valueForKeyPath:@"messages.@distinctUnionOfObjects.user"];
+    [self updateUsers];
+    return mUsersFolders;
 }
 
 - (void)updateReadMessagesCount
@@ -89,5 +118,33 @@
 
 @end
 
+@implementation UserProxy
+
+@synthesize user = mUser;
+@synthesize folder = mFolder;
+
+- (id)initWithUser:(User *)user folder:(Folder *)folder
+{
+    if (self = [super init])
+    {
+        mUser = user;
+        mFolder = folder;
+    }
+    
+    return self;
+}
+
+- (NSUInteger)hash
+{
+    return [mUser hash];
+}
+
+- (BOOL)isEqual:(id)anObject
+{
+    UserProxy *p = (UserProxy *)anObject;
+    return [mUser isEqual:p.user];
+}
+
+@end
 
 

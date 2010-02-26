@@ -15,6 +15,30 @@
 
 @implementation OutlineViewController
 
+- (IBAction)delete:(id)sender
+{
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+ 
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        Folder *sentFolder = [server sentFolder];
+        
+        if (folder == trashFolder)
+        {
+            [self deleteSelectionFromTrash:sender];
+        }
+        else if (folder == sentFolder)
+        {
+            [self moveSelectionToTrash:sender];
+        }
+    }
+}
+
 - (IBAction)moveSelectionToTrash:(id) sender
 {
     id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
@@ -275,17 +299,7 @@
 
 - (NSSet *)outlineViewItems
 {
-    NSArray *users = [self.users allObjects];
-    NSMutableSet *proxys = [[NSMutableSet alloc] initWithCapacity:[users count]];
-    
-    for (NSUInteger i = 0; i < [users count]; i++)
-    {
-        User *user = [users objectAtIndex:i];
-        UserProxy *proxy = [[UserProxy alloc] initWithUser:user folder:self];
-        [proxys addObject:proxy];
-    }
-    
-    return proxys;
+    return [self usersFolders];
 }
 
 + (NSSet *)keyPathsForValuesAffectingOutlineViewTitle
@@ -336,24 +350,6 @@
 - (NSString *)restoreFromTrashMenuTitle
 {
     return @"Restore all";
-}
-
-@end
-
-@implementation UserProxy
-
-@synthesize user = mUser;
-@synthesize folder = mFolder;
-
-- (id)initWithUser:(User *)user folder:(Folder *)folder
-{
-    if (self = [super init])
-    {
-        mUser = user;
-        mFolder = folder;
-    }
-    
-    return self;
 }
 
 @end

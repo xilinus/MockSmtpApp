@@ -15,6 +15,33 @@
 
 @implementation TableViewController
 
+- (IBAction)delete:(id)sender
+{
+    NSArray *messages = [self selectedObjects];
+    if (![messages count])
+    {
+        return;
+    }
+    
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        Folder *sentFolder = [server sentFolder];
+        
+        if (folder == trashFolder)
+        {
+            [self deleteSelectionFromTrash:sender];
+        }
+        else if (folder == sentFolder)
+        {
+            [self moveSelectionToTrash:sender];
+        }
+    }
+}
+
 - (IBAction)moveSelectionToTrash:(id) sender
 {
     NSArray *messages = [self selectedObjects];

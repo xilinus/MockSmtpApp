@@ -34,4 +34,6 @@
 - (IBAction)showBody:(id)sender;
 - (IBAction)showRaw:(id)sender;
 
+- (IBAction)delete:(id)sender;
+
 @end

@@ -8,11 +8,16 @@
 //
 
 #import "MainWindowController.h"
-
+#import "TableViewController.h"
+#import "OutlineViewController.h"
+#import "TableView.h"
+#import "OutlineView.h"
 
 @implementation MainWindowController
 
 @synthesize serverController = mServerController;
+@synthesize tableViewController = mTableViewController;
+@synthesize outlineViewController = mOutlineViewController;
 
 - (id)init
 {
@@ -22,6 +27,21 @@
     }
     
     return self;
+}
+
+- (IBAction)delete:(id)sender
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        [mTableViewController delete:sender];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        [mOutlineViewController delete:sender];
+    }
 }
 
 - (void)windowWillClose:(NSNotification *)notification

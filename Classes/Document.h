@@ -20,9 +20,13 @@
     BOOL mIsNewFile;
     
     NSUInteger mSelectedView;
+    
+    BOOL mCanSelectAll;
 }
 
 - (void)save;
+
+- (IBAction)delete:(id)sender;
 
 @property (nonatomic, assign) NSManagedObject *server;
 
