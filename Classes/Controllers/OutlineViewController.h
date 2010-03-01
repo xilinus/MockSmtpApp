@@ -22,6 +22,8 @@
 - (IBAction)deleteSelectionFromTrash:(id) sender;
 - (IBAction)restoreSelectionFromTrash:(id) sender;
 
+@property (nonatomic, readonly) BOOL canDelete;
+
 @end
 
 

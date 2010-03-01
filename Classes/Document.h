@@ -20,8 +20,6 @@
     BOOL mIsNewFile;
     
     NSUInteger mSelectedView;
-    
-    BOOL mCanSelectAll;
 }
 
 - (void)save;
@@ -32,8 +30,12 @@
 
 @property (nonatomic, assign) NSUInteger selectedView;
 
+@property (nonatomic, readonly) MainWindowController *mainWindowController;
+
 @property (nonatomic, readonly) BOOL htmlViewHidden;
 @property (nonatomic, readonly) BOOL bodyViewHidden;
 @property (nonatomic, readonly) BOOL rawViewHidden;
+
+@property (nonatomic, readonly) BOOL canDelete;
 
 @end

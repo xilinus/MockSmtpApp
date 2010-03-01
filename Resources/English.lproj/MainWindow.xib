@@ -506,7 +506,7 @@
 																	<reference key="NSBackgroundColor" ref="280897427"/>
 																	<reference key="NSGridColor" ref="38650577"/>
 																	<double key="NSRowHeight">1.700000e+01</double>
-																	<int key="NSTvFlags">1245741056</int>
+																	<int key="NSTvFlags">1262518272</int>
 																	<int key="NSColumnAutoresizingStyle">1</int>
 																	<int key="NSDraggingSourceMaskForLocal">15</int>
 																	<int key="NSDraggingSourceMaskForNonLocal">0</int>

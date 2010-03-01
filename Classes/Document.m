@@ -14,6 +14,7 @@
 
 @synthesize server = _server;
 @synthesize selectedView = mSelectedView;
+@synthesize mainWindowController = mMainWindowController;
 
 - (id)init 
 {
@@ -168,6 +169,16 @@
 - (IBAction)delete:(id)sender
 {
     [mMainWindowController delete:sender];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanDelete
+{
+    return [NSSet setWithObjects:@"mainWindowController.canDelete", nil];
+}
+
+- (BOOL)canDelete
+{
+    return [[self.mainWindowController valueForKey:@"canDelete"] boolValue];
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 

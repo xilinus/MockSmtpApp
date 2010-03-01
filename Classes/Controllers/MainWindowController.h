@@ -27,6 +27,8 @@
 
 - (IBAction)delete:(id)sender;
 
+@property (nonatomic, readonly) BOOL canDelete;
+
 @property (nonatomic, assign) IBOutlet ServerController *serverController;
 
 @property (nonatomic, assign) IBOutlet TableViewController *tableViewController;

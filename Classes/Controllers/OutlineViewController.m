@@ -15,6 +15,20 @@
 
 @implementation OutlineViewController
 
+- (BOOL)canDelete
+{
+    if ([[self selectedObjects] count] == 0)
+    {
+        return NO;
+    }
+    
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
+}
+
 - (IBAction)delete:(id)sender
 {
     id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];

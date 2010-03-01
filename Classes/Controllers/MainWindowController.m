@@ -44,6 +44,28 @@
     }
 }
 
++ (NSSet *)keyPathsForValuesAffectingCanDelete
+{
+    return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
+}
+
+- (BOOL)canDelete
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        return [mTableViewController canDelete];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        return [mOutlineViewController canDelete];
+    }
+    
+    return NO;
+}
+
 - (void)windowWillClose:(NSNotification *)notification
 {
     [mServerController stop:self];

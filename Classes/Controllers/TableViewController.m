@@ -15,6 +15,14 @@
 
 @implementation TableViewController
 
+- (BOOL)canDelete
+{
+    NSArray *messages = [self selectedObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
+}
+
 - (IBAction)delete:(id)sender
 {
     NSArray *messages = [self selectedObjects];
