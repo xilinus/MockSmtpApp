@@ -28,10 +28,16 @@
         return nil;
     }
     
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *templatePath = [mainBundle pathForResource:@"syntax" ofType:@"html"];
+    NSString *templateString = [NSString stringWithContentsOfFile:templatePath];
+    
     NSString *string = (NSString *)value;
-    return [[NSAttributedString alloc] initWithString:string
-                                           attributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Monaco" size:12.0f]
-                                                                                  forKey:NSFontAttributeName]];
+    return [NSString stringWithFormat:templateString, string];
+    
+    //return [[NSAttributedString alloc] initWithString:string
+    //                                       attributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Monaco" size:12.0f]
+    //                                                                              forKey:NSFontAttributeName]];
 }
 
 - (id)reverseTransformedValue:(id)value

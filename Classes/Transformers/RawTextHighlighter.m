@@ -13,7 +13,7 @@
 
 + (Class)transformedValueClass
 {
-    return [NSString class];
+    return [NSAttributedString class];
 }
 
 + (BOOL)allowsReverseTransformation

@@ -19,11 +19,12 @@
 {
     [super setContent:content];
     
-    Message *msg = (Message *)content;
-    [msg setRead:[NSNumber numberWithBool:YES]];
-    [[self managedObjectContext] processPendingChanges];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *resourcesPath = [mainBundle resourcePath];
+    NSURL *resourcesUrl = [NSURL fileURLWithPath:resourcesPath];
     
-    [[_webView mainFrame] loadHTMLString:[msg.bestPart content] baseURL:nil];
+    NSString *html = (NSString *)content;
+    [[_webView mainFrame] loadHTMLString:html baseURL:resourcesUrl];
 }
 
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation

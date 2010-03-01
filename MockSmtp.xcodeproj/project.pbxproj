@@ -31,6 +31,12 @@
 		3A8774471135BEB400E2D371 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8774461135BEB400E2D371 /* BadgeController.m */; };
 		3A877CEB113C03D100E2D371 /* RawTextHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877CEA113C03D100E2D371 /* RawTextHighlighter.m */; };
 		3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877D24113C074100E2D371 /* BodyTextHighlighter.m */; };
+		3A877EA1113C2C9900E2D371 /* MessageReadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877EA0113C2C9900E2D371 /* MessageReadController.m */; };
+		3A877EBC113C307600E2D371 /* shCore.css in Resources */ = {isa = PBXBuildFile; fileRef = 3A877EBB113C307600E2D371 /* shCore.css */; };
+		3A877EC0113C30E600E2D371 /* shThemeDefault.css in Resources */ = {isa = PBXBuildFile; fileRef = 3A877EBF113C30E600E2D371 /* shThemeDefault.css */; };
+		3A877ECE113C31E600E2D371 /* shCore.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A877ECB113C319500E2D371 /* shCore.js */; };
+		3A877ECF113C31EB00E2D371 /* shBrushXml.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A877EBD113C309D00E2D371 /* shBrushXml.js */; };
+		3A877F14113C36B500E2D371 /* syntax.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A877F13113C36B500E2D371 /* syntax.html */; };
 		3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */; };
 		3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */; };
 		3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */; };
@@ -217,6 +223,13 @@
 		3A877CEA113C03D100E2D371 /* RawTextHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawTextHighlighter.m; sourceTree = "<group>"; };
 		3A877D23113C074100E2D371 /* BodyTextHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyTextHighlighter.h; sourceTree = "<group>"; };
 		3A877D24113C074100E2D371 /* BodyTextHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyTextHighlighter.m; sourceTree = "<group>"; };
+		3A877E9F113C2C9900E2D371 /* MessageReadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageReadController.h; sourceTree = "<group>"; };
+		3A877EA0113C2C9900E2D371 /* MessageReadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageReadController.m; sourceTree = "<group>"; };
+		3A877EBB113C307600E2D371 /* shCore.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = shCore.css; sourceTree = "<group>"; };
+		3A877EBD113C309D00E2D371 /* shBrushXml.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = shBrushXml.js; sourceTree = "<group>"; };
+		3A877EBF113C30E600E2D371 /* shThemeDefault.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = shThemeDefault.css; sourceTree = "<group>"; };
+		3A877ECB113C319500E2D371 /* shCore.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = shCore.js; sourceTree = "<group>"; };
+		3A877F13113C36B500E2D371 /* syntax.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = syntax.html; sourceTree = "<group>"; };
 		3A8C88EC10F22115007680DF /* license.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = license.sh; sourceTree = "<group>"; };
 		3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extensions.h"; sourceTree = "<group>"; };
 		3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extensions.m"; sourceTree = "<group>"; };
@@ -475,6 +488,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A877EBA113C300500E2D371 /* Syntax */,
 				3AA8801A10D01E74000F9C5E /* icon.icns */,
 				3ABE08DA10C85004007A2C9D /* Images */,
 				2F7446BF0DB6CCE400F9684A /* MainMenu.xib */,
@@ -526,6 +540,8 @@
 				3A250CBB1100B17800A8B674 /* LicenseInstallController.m */,
 				3A8774451135BEB400E2D371 /* BadgeController.h */,
 				3A8774461135BEB400E2D371 /* BadgeController.m */,
+				3A877E9F113C2C9900E2D371 /* MessageReadController.h */,
+				3A877EA0113C2C9900E2D371 /* MessageReadController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -562,6 +578,18 @@
 				3A5500B710B6DE96001B095C /* SmtpSessionState.m */,
 			);
 			path = Smtp;
+			sourceTree = "<group>";
+		};
+		3A877EBA113C300500E2D371 /* Syntax */ = {
+			isa = PBXGroup;
+			children = (
+				3A877ECB113C319500E2D371 /* shCore.js */,
+				3A877EBF113C30E600E2D371 /* shThemeDefault.css */,
+				3A877EBD113C309D00E2D371 /* shBrushXml.js */,
+				3A877EBB113C307600E2D371 /* shCore.css */,
+				3A877F13113C36B500E2D371 /* syntax.html */,
+			);
+			path = Syntax;
 			sourceTree = "<group>";
 		};
 		3A8C89A610F3A3AA007680DF /* Foundation Extensions */ = {
@@ -1117,6 +1145,11 @@
 				3AA8806710D02198000F9C5E /* play_off.png in Resources */,
 				3AA8806810D02198000F9C5E /* play.png in Resources */,
 				3A8EFC1110D270D000A0CFBC /* clip.png in Resources */,
+				3A877ECE113C31E600E2D371 /* shCore.js in Resources */,
+				3A877ECF113C31EB00E2D371 /* shBrushXml.js in Resources */,
+				3A877EBC113C307600E2D371 /* shCore.css in Resources */,
+				3A877EC0113C30E600E2D371 /* shThemeDefault.css in Resources */,
+				3A877F14113C36B500E2D371 /* syntax.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,6 +1250,7 @@
 				3A8774471135BEB400E2D371 /* BadgeController.m in Sources */,
 				3A877CEB113C03D100E2D371 /* RawTextHighlighter.m in Sources */,
 				3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */,
+				3A877EA1113C2C9900E2D371 /* MessageReadController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
