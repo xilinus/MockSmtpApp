@@ -14,6 +14,8 @@
 #import "MessageTransformer.h"
 #import "MessagePartTransformer.h"
 #import "MessageAttachmentTransformer.h"
+#import "RawTextHighlighter.h"
+#import "BodyTextHighlighter.h"
 
 @implementation DocumentController
 
@@ -33,6 +35,12 @@
     
     MessageAttachmentTransformer *messageAttachmentString = [MessageAttachmentTransformer messageAttachmentString];
     [NSValueTransformer setValueTransformer:messageAttachmentString forName:@"MessageAttachmentString"];
+    
+    RawTextHighlighter *rawTextHighlighter = [[RawTextHighlighter alloc] init];
+    [NSValueTransformer setValueTransformer:rawTextHighlighter forName:@"RawTextHighlighter"];
+    
+    BodyTextHighlighter *bodyTextHighlighter = [[BodyTextHighlighter alloc] init];
+    [NSValueTransformer setValueTransformer:bodyTextHighlighter forName:@"BodyTextHighlighter"];
 }
 
 - (void)awakeFromNib

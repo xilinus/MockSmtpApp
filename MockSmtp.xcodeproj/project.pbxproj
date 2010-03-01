@@ -29,6 +29,8 @@
 		3A55FF5310B59DC3001B095C /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A55FF5210B59DC3001B095C /* ServerController.m */; };
 		3A8774401135BB4F00E2D371 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A87743F1135BB4F00E2D371 /* Document.xcdatamodeld */; };
 		3A8774471135BEB400E2D371 /* BadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8774461135BEB400E2D371 /* BadgeController.m */; };
+		3A877CEB113C03D100E2D371 /* RawTextHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877CEA113C03D100E2D371 /* RawTextHighlighter.m */; };
+		3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877D24113C074100E2D371 /* BodyTextHighlighter.m */; };
 		3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */; };
 		3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */; };
 		3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */; };
@@ -211,6 +213,10 @@
 		3A6F7DE610E274F400FCCF2F /* SCTcpServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCTcpServer.xcodeproj; path = SCTcpServer/SCTcpServer.xcodeproj; sourceTree = "<group>"; };
 		3A8774451135BEB400E2D371 /* BadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeController.h; sourceTree = "<group>"; };
 		3A8774461135BEB400E2D371 /* BadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeController.m; sourceTree = "<group>"; };
+		3A877CE9113C03D100E2D371 /* RawTextHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawTextHighlighter.h; sourceTree = "<group>"; };
+		3A877CEA113C03D100E2D371 /* RawTextHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawTextHighlighter.m; sourceTree = "<group>"; };
+		3A877D23113C074100E2D371 /* BodyTextHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyTextHighlighter.h; sourceTree = "<group>"; };
+		3A877D24113C074100E2D371 /* BodyTextHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyTextHighlighter.m; sourceTree = "<group>"; };
 		3A8C88EC10F22115007680DF /* license.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = license.sh; sourceTree = "<group>"; };
 		3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extensions.h"; sourceTree = "<group>"; };
 		3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extensions.m"; sourceTree = "<group>"; };
@@ -827,6 +833,10 @@
 				3A8EFB3910D1561000A0CFBC /* MessagePartTransformer.m */,
 				3A8EFC1B10D2809400A0CFBC /* MessageAttachmentTransformer.h */,
 				3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */,
+				3A877CE9113C03D100E2D371 /* RawTextHighlighter.h */,
+				3A877CEA113C03D100E2D371 /* RawTextHighlighter.m */,
+				3A877D23113C074100E2D371 /* BodyTextHighlighter.h */,
+				3A877D24113C074100E2D371 /* BodyTextHighlighter.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -1205,6 +1215,8 @@
 				3A8C8C7D10F6262C007680DF /* LicenseController.m in Sources */,
 				3A250CBC1100B17800A8B674 /* LicenseInstallController.m in Sources */,
 				3A8774471135BEB400E2D371 /* BadgeController.m in Sources */,
+				3A877CEB113C03D100E2D371 /* RawTextHighlighter.m in Sources */,
+				3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
