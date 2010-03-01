@@ -15,6 +15,14 @@
 
 @implementation TableViewController
 
+- (void)setSortDescriptors:(NSArray *)descriptors
+{
+    [super setSortDescriptors:descriptors];
+    
+    NSUserDefaultsController *c = [NSUserDefaultsController sharedUserDefaultsController];
+    [c save:self];
+}
+
 - (BOOL)canDelete
 {
     NSArray *messages = [self selectedObjects];

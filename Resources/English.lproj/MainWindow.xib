@@ -311,7 +311,6 @@
 											</object>
 											<string key="NSFrameSize">{120, 562}</string>
 											<reference key="NSSuperview" ref="169353371"/>
-											<reference key="NSNextKeyView" ref="376476605"/>
 											<reference key="NSDocView" ref="376476605"/>
 											<object class="NSColor" key="NSBGColor" id="609055707">
 												<int key="NSColorSpace">1</int>
@@ -341,7 +340,6 @@
 									</object>
 									<string key="NSFrameSize">{120, 562}</string>
 									<reference key="NSSuperview" ref="589258561"/>
-									<reference key="NSNextKeyView" ref="366693261"/>
 									<int key="NSsFlags">560</int>
 									<reference key="NSVScroller" ref="521589479"/>
 									<reference key="NSHScroller" ref="288904340"/>
@@ -390,6 +388,7 @@
 																	<object class="NSMutableArray" key="NSTableColumns">
 																		<bool key="EncodedWithXMLCoder">YES</bool>
 																		<object class="NSTableColumn" id="977688879">
+																			<string key="NSIdentifier">from</string>
 																			<double key="NSWidth">1.190000e+02</double>
 																			<double key="NSMinWidth">5.000000e+01</double>
 																			<double key="NSMaxWidth">1.000000e+04</double>
@@ -416,8 +415,14 @@
 																			<int key="NSResizingMask">3</int>
 																			<bool key="NSIsResizeable">YES</bool>
 																			<reference key="NSTableView" ref="159716356"/>
+																			<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+																				<string key="NSKey">from</string>
+																				<bool key="NSAscending">YES</bool>
+																				<string key="NSSelector">compare:</string>
+																			</object>
 																		</object>
 																		<object class="NSTableColumn" id="919412175">
+																			<string key="NSIdentifier">to</string>
 																			<double key="NSWidth">1.270000e+02</double>
 																			<double key="NSMinWidth">5.000000e+01</double>
 																			<double key="NSMaxWidth">3.402823e+38</double>
@@ -449,8 +454,14 @@
 																			<int key="NSResizingMask">3</int>
 																			<bool key="NSIsResizeable">YES</bool>
 																			<reference key="NSTableView" ref="159716356"/>
+																			<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+																				<string key="NSKey">to</string>
+																				<bool key="NSAscending">YES</bool>
+																				<string key="NSSelector">compare:</string>
+																			</object>
 																		</object>
 																		<object class="NSTableColumn" id="745110450">
+																			<string key="NSIdentifier">subject</string>
 																			<double key="NSWidth">1.170000e+02</double>
 																			<double key="NSMinWidth">5.000000e+01</double>
 																			<double key="NSMaxWidth">3.402823e+38</double>
@@ -474,8 +485,14 @@
 																			<int key="NSResizingMask">3</int>
 																			<bool key="NSIsResizeable">YES</bool>
 																			<reference key="NSTableView" ref="159716356"/>
+																			<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+																				<string key="NSKey">subject</string>
+																				<bool key="NSAscending">YES</bool>
+																				<string key="NSSelector">compare:</string>
+																			</object>
 																		</object>
 																		<object class="NSTableColumn" id="884961657">
+																			<string key="NSIdentifier">date_sent</string>
 																			<double key="NSWidth">1.300000e+02</double>
 																			<double key="NSMinWidth">5.000000e+01</double>
 																			<double key="NSMaxWidth">3.402823e+38</double>
@@ -499,6 +516,11 @@
 																			<int key="NSResizingMask">3</int>
 																			<bool key="NSIsResizeable">YES</bool>
 																			<reference key="NSTableView" ref="159716356"/>
+																			<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+																				<string key="NSKey">date</string>
+																				<bool key="NSAscending">YES</bool>
+																				<string key="NSSelector">compare:</string>
+																			</object>
 																		</object>
 																	</object>
 																	<double key="NSIntercellSpacingWidth">3.000000e+00</double>
@@ -506,7 +528,8 @@
 																	<reference key="NSBackgroundColor" ref="280897427"/>
 																	<reference key="NSGridColor" ref="38650577"/>
 																	<double key="NSRowHeight">1.700000e+01</double>
-																	<int key="NSTvFlags">1262518272</int>
+																	<int key="NSTvFlags">1245741056</int>
+																	<string key="NSAutosaveName">tableViewAutosave</string>
 																	<int key="NSColumnAutoresizingStyle">1</int>
 																	<int key="NSDraggingSourceMaskForLocal">15</int>
 																	<int key="NSDraggingSourceMaskForNonLocal">0</int>
@@ -515,7 +538,6 @@
 															</object>
 															<string key="NSFrame">{{0, 17}, {505, 121}}</string>
 															<reference key="NSSuperview" ref="599122740"/>
-															<reference key="NSNextKeyView" ref="159716356"/>
 															<reference key="NSDocView" ref="159716356"/>
 															<reference key="NSBGColor" ref="280897427"/>
 															<int key="NScvFlags">4</int>
@@ -547,7 +569,6 @@
 															</object>
 															<string key="NSFrameSize">{505, 17}</string>
 															<reference key="NSSuperview" ref="599122740"/>
-															<reference key="NSNextKeyView" ref="521612805"/>
 															<reference key="NSDocView" ref="521612805"/>
 															<reference key="NSBGColor" ref="280897427"/>
 															<int key="NScvFlags">4</int>
@@ -556,7 +577,6 @@
 													</object>
 													<string key="NSFrame">{{0, 1}, {520, 138}}</string>
 													<reference key="NSSuperview" ref="739084936"/>
-													<reference key="NSNextKeyView" ref="147372101"/>
 													<int key="NSsFlags">16</int>
 													<reference key="NSVScroller" ref="505376058"/>
 													<reference key="NSHScroller" ref="239562249"/>
@@ -1004,7 +1024,6 @@
 																						</object>
 																						<string key="NSFrame">{{16, 16}, {488, 284}}</string>
 																						<reference key="NSSuperview" ref="991420850"/>
-																						<reference key="NSNextKeyView"/>
 																						<string key="FrameName"/>
 																						<string key="GroupName"/>
 																						<object class="WebPreferences" key="Preferences">
@@ -1317,7 +1336,6 @@
 																								</object>
 																								<string key="NSFrameSize">{488, 284}</string>
 																								<reference key="NSSuperview" ref="20646202"/>
-																								<reference key="NSNextKeyView" ref="935467418"/>
 																								<reference key="NSDocView" ref="935467418"/>
 																								<reference key="NSBGColor" ref="609055707"/>
 																								<object class="NSCursor" key="NSCursor" id="1061472207">
@@ -1349,7 +1367,6 @@
 																						</object>
 																						<string key="NSFrame">{{16, 16}, {488, 284}}</string>
 																						<reference key="NSSuperview" ref="991420850"/>
-																						<reference key="NSNextKeyView" ref="712525596"/>
 																						<int key="NSsFlags">528</int>
 																						<reference key="NSVScroller" ref="849113767"/>
 																						<reference key="NSHScroller" ref="826874407"/>
@@ -2126,6 +2143,7 @@
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
+				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
 			</object>
 			<object class="NSArrayController" id="417983891">
 				<object class="NSMutableArray" key="NSDeclaredKeys">
@@ -2151,6 +2169,11 @@
 				<string key="NSClassName">NSWindowController</string>
 			</object>
 			<object class="NSUserDefaultsController" id="259654653">
+				<object class="NSMutableArray" key="NSDeclaredKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>sortDescriptors</string>
+					<string>tableSortDescriptors</string>
+				</object>
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSArrayController" id="540181685">
@@ -2545,22 +2568,6 @@
 						<reference key="destination" ref="328931983"/>
 					</object>
 					<int key="connectionID">100684</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">sortDescriptors: selection.sortDescriptors</string>
-						<reference key="source" ref="754695897"/>
-						<reference key="destination" ref="702841816"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="754695897"/>
-							<reference key="NSDestination" ref="702841816"/>
-							<string key="NSLabel">sortDescriptors: selection.sortDescriptors</string>
-							<string key="NSBinding">sortDescriptors</string>
-							<string key="NSKeyPath">selection.sortDescriptors</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">100700</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2976,26 +2983,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arrangedObjects.date</string>
-						<reference key="source" ref="884961657"/>
-						<reference key="destination" ref="247278639"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="884961657"/>
-							<reference key="NSDestination" ref="247278639"/>
-							<string key="NSLabel">value: arrangedObjects.date</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arrangedObjects.date</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSConditionallySetsEditable</string>
-								<reference key="NS.object.0" ref="6"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">100960</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.from</string>
 						<reference key="source" ref="585523522"/>
 						<reference key="destination" ref="247278639"/>
@@ -3383,6 +3370,62 @@
 						<reference key="destination" ref="754695897"/>
 					</object>
 					<int key="connectionID">101132</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">sortDescriptors: selection.sortDescriptors</string>
+						<reference key="source" ref="754695897"/>
+						<reference key="destination" ref="702841816"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="754695897"/>
+							<reference key="NSDestination" ref="702841816"/>
+							<string key="NSLabel">sortDescriptors: selection.sortDescriptors</string>
+							<string key="NSBinding">sortDescriptors</string>
+							<string key="NSKeyPath">selection.sortDescriptors</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">101138</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: arrangedObjects.date</string>
+						<reference key="source" ref="884961657"/>
+						<reference key="destination" ref="247278639"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="884961657"/>
+							<reference key="NSDestination" ref="247278639"/>
+							<string key="NSLabel">value: arrangedObjects.date</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">arrangedObjects.date</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSConditionallySetsEditable</string>
+								<reference key="NS.object.0" ref="5"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">101144</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">sortDescriptors: values.tableSortDescriptors</string>
+						<reference key="source" ref="247278639"/>
+						<reference key="destination" ref="259654653"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="247278639"/>
+							<reference key="NSDestination" ref="259654653"/>
+							<string key="NSLabel">sortDescriptors: values.tableSortDescriptors</string>
+							<string key="NSBinding">sortDescriptors</string>
+							<string key="NSKeyPath">values.tableSortDescriptors</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSUnarchiveFromData</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">101171</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4367,10 +4410,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{372, 269}, {641, 562}}</string>
+					<string>{{326, 269}, {641, 562}}</string>
 					<reference ref="6"/>
 					<reference ref="6"/>
-					<string>{{372, 269}, {641, 562}}</string>
+					<string>{{326, 269}, {641, 562}}</string>
 					<reference ref="6"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<reference ref="5"/>
@@ -4537,7 +4580,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">101132</int>
+			<int key="maxID">101171</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
