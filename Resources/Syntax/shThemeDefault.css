@@ -78,7 +78,7 @@
 /* Second line */
 .syntaxhighlighter .line.alt2
 {
-	background-color: #F8F8F8 !important;
+	background-color: #fff !important;
 }
 
 .syntaxhighlighter .toolbar
@@ -115,13 +115,12 @@
 .syntaxhighlighter .string,
 .syntaxhighlighter .string a
 {
-	color: blue !important; 
+	color: #228811 !important; 
 }
 
 .syntaxhighlighter .keyword
 { 
-	color: #069 !important; 
-	font-weight: bold !important; 
+	color: #AA00BB !important; 
 }
 
 .syntaxhighlighter .preprocessor 
@@ -157,7 +156,7 @@
 .syntaxhighlighter .color1,
 .syntaxhighlighter .color1 a
 { 
-	color: #808080 !important; 
+	color: #0000FF !important; 
 }
 
 .syntaxhighlighter .color2,
