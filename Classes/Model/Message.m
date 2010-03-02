@@ -57,6 +57,7 @@
     
     mFrom = [self valueForHeaderField:@"from"];
     mTo = [self valueForHeaderField:@"to"];
+    mCC = [self valueForHeaderField:@"cc"];
     mSubject = [[self.edMessage subject] copy];
     mDate = [[self.edMessage date] copy];    
 }
@@ -193,6 +194,17 @@
     
     [self parseHeader];
     return mDate;
+}
+
+- (NSString *)cc
+{
+    if (mCC)
+    {
+        return mCC;
+    }
+    
+    [self parseHeader];
+    return mCC;
 }
 
 - (NSSet *)subparts

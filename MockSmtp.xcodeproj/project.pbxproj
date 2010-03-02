@@ -37,6 +37,7 @@
 		3A877ECE113C31E600E2D371 /* shCore.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A877ECB113C319500E2D371 /* shCore.js */; };
 		3A877ECF113C31EB00E2D371 /* shBrushXml.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A877EBD113C309D00E2D371 /* shBrushXml.js */; };
 		3A877F14113C36B500E2D371 /* syntax.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A877F13113C36B500E2D371 /* syntax.html */; };
+		3A877F9A113D2EEA00E2D371 /* MessageContentLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A877F99113D2EEA00E2D371 /* MessageContentLayoutController.m */; };
 		3A8C89A910F3A3F1007680DF /* NSFileManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */; };
 		3A8C8A0110F4C85A007680DF /* SoftwareUpdateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A0010F4C85A007680DF /* SoftwareUpdateController.m */; };
 		3A8C8A5210F4DC21007680DF /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C8A4710F4DC21007680DF /* NSObject+SBJSON.m */; };
@@ -230,6 +231,8 @@
 		3A877EBF113C30E600E2D371 /* shThemeDefault.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = shThemeDefault.css; sourceTree = "<group>"; };
 		3A877ECB113C319500E2D371 /* shCore.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = shCore.js; sourceTree = "<group>"; };
 		3A877F13113C36B500E2D371 /* syntax.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = syntax.html; sourceTree = "<group>"; };
+		3A877F98113D2EEA00E2D371 /* MessageContentLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageContentLayoutController.h; sourceTree = "<group>"; };
+		3A877F99113D2EEA00E2D371 /* MessageContentLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageContentLayoutController.m; sourceTree = "<group>"; };
 		3A8C88EC10F22115007680DF /* license.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = license.sh; sourceTree = "<group>"; };
 		3A8C89A710F3A3F1007680DF /* NSFileManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extensions.h"; sourceTree = "<group>"; };
 		3A8C89A810F3A3F1007680DF /* NSFileManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extensions.m"; sourceTree = "<group>"; };
@@ -542,6 +545,8 @@
 				3A8774461135BEB400E2D371 /* BadgeController.m */,
 				3A877E9F113C2C9900E2D371 /* MessageReadController.h */,
 				3A877EA0113C2C9900E2D371 /* MessageReadController.m */,
+				3A877F98113D2EEA00E2D371 /* MessageContentLayoutController.h */,
+				3A877F99113D2EEA00E2D371 /* MessageContentLayoutController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1251,6 +1256,7 @@
 				3A877CEB113C03D100E2D371 /* RawTextHighlighter.m in Sources */,
 				3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */,
 				3A877EA1113C2C9900E2D371 /* MessageReadController.m in Sources */,
+				3A877F9A113D2EEA00E2D371 /* MessageContentLayoutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

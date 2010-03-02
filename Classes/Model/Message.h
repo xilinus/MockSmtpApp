@@ -23,6 +23,7 @@
     NSString *mTo;
     NSString *mSubject;
     NSCalendarDate *mDate;
+    NSString *mCC;
     
     BOOL mHeaderParsed;
     
@@ -47,6 +48,7 @@
 @property (nonatomic, readonly) NSString *to;
 @property (nonatomic, readonly) NSString *subject;
 @property (nonatomic, readonly) NSCalendarDate *date;
+@property (nonatomic, readonly) NSString *cc;
 
 @property (nonatomic, readonly) NSSet *subparts;
 @property (nonatomic, readonly) MessagePart *bestPart;
