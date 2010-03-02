@@ -44,6 +44,21 @@
     }
 }
 
+- (IBAction)restore:(id)sender
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        [mTableViewController restore:sender];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        [mOutlineViewController restore:sender];
+    }
+}
+
 + (NSSet *)keyPathsForValuesAffectingCanDelete
 {
     return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
@@ -61,6 +76,28 @@
     if ([responder isKindOfClass:[OutlineView class]])
     {
         return [mOutlineViewController canDelete];
+    }
+    
+    return NO;
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanRestore
+{
+    return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
+}
+
+- (BOOL)canRestore
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        return [mTableViewController canRestore];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        return [mOutlineViewController canRestore];
     }
     
     return NO;

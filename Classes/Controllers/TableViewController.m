@@ -31,6 +31,32 @@
     return count > 0;
 }
 
+- (BOOL)canRestore
+{
+    NSArray *messages = [self selectedObjects];
+    NSUInteger count = [messages count];
+    
+    if (!count)
+    {
+        return NO;
+    }
+    
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        
+        if (folder == trashFolder)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (IBAction)delete:(id)sender
 {
     NSArray *messages = [self selectedObjects];
@@ -54,6 +80,28 @@
         else if (folder == sentFolder)
         {
             [self moveSelectionToTrash:sender];
+        }
+    }
+}
+
+- (IBAction)restore:(id)sender
+{
+    NSArray *messages = [self selectedObjects];
+    if (![messages count])
+    {
+        return;
+    }
+    
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        
+        if (folder == trashFolder)
+        {
+            [self restoreSelectionFromTrash:sender];
         }
     }
 }

@@ -183,4 +183,9 @@
     [self.document delete:sender];
 }
 
+- (IBAction)restore:(id)sender
+{
+    [self.document restore:sender];
+}
+
 @end

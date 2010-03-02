@@ -35,5 +35,6 @@
 - (IBAction)showRaw:(id)sender;
 
 - (IBAction)delete:(id)sender;
+- (IBAction)restore:(id)sender;
 
 @end

@@ -181,6 +181,21 @@
     return [[self.mainWindowController valueForKey:@"canDelete"] boolValue];
 }
 
+- (IBAction)restore:(id)sender
+{
+    [mMainWindowController restore:sender];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanRestore
+{
+    return [NSSet setWithObjects:@"mainWindowController.canRestore", nil];
+}
+
+- (BOOL)canRestore
+{
+    return [[self.mainWindowController valueForKey:@"canRestore"] boolValue];
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
 {
     [super windowControllerDidLoadNib:windowController];

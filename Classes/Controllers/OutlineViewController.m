@@ -29,6 +29,38 @@
     return count > 0;
 }
 
+- (BOOL)canRestore
+{
+    if ([[self selectedObjects] count] == 0)
+    {
+        return NO;
+    }
+    
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    NSUInteger count = [messages count];
+    
+    if (!count)
+    {
+        return NO;
+    }
+    
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        
+        if (folder == trashFolder)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (IBAction)delete:(id)sender
 {
     id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
@@ -49,6 +81,25 @@
         else if (folder == sentFolder)
         {
             [self moveSelectionToTrash:sender];
+        }
+    }
+}
+
+- (IBAction)restore:(id)sender
+{
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    
+    Message *message = [messages objectAtIndex:0];
+    if (message)
+    {
+        Folder *folder = [message folder];
+        Server *server = [folder server];
+        Folder *trashFolder = [server trashFolder];
+        
+        if (folder == trashFolder)
+        {
+            [self restoreSelectionFromTrash:sender];
         }
     }
 }

@@ -18,11 +18,13 @@
 }
 
 - (IBAction)delete:(id)sender;
+- (IBAction)restore:(id)sender;
 - (IBAction)moveSelectionToTrash:(id) sender;
 - (IBAction)deleteSelectionFromTrash:(id) sender;
 - (IBAction)restoreSelectionFromTrash:(id) sender;
 
 @property (nonatomic, readonly) BOOL canDelete;
+@property (nonatomic, readonly) BOOL canRestore;
 
 @end
 

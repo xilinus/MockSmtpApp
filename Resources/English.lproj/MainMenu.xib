@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="748"/>
+			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -193,6 +193,15 @@
 									<reference key="NSMenu" ref="795219973"/>
 									<string key="NSTitle">Delete</string>
 									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="788572926"/>
+									<reference key="NSMixedImage" ref="954517155"/>
+								</object>
+								<object class="NSMenuItem" id="503822977">
+									<reference key="NSMenu" ref="795219973"/>
+									<string key="NSTitle">Restore</string>
+									<string key="NSKeyEquiv">r</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="788572926"/>
 									<reference key="NSMixedImage" ref="954517155"/>
@@ -2498,6 +2507,30 @@
 					</object>
 					<int key="connectionID">780</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">restore:</string>
+						<reference key="source" ref="22375761"/>
+						<reference key="destination" ref="503822977"/>
+					</object>
+					<int key="connectionID">783</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: document.canRestore</string>
+						<reference key="source" ref="503822977"/>
+						<reference key="destination" ref="22375761"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="503822977"/>
+							<reference key="NSDestination" ref="22375761"/>
+							<string key="NSLabel">enabled: document.canRestore</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">document.canRestore</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">786</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3690,6 +3723,7 @@
 							<reference ref="128905276"/>
 							<reference ref="159551688"/>
 							<reference ref="565444584"/>
+							<reference ref="503822977"/>
 						</object>
 						<reference key="parent" ref="805614947"/>
 					</object>
@@ -3784,6 +3818,11 @@
 						<int key="objectID">777</int>
 						<reference key="object" ref="825679615"/>
 						<reference key="parent" ref="404379763"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">782</int>
+						<reference key="object" ref="503822977"/>
+						<reference key="parent" ref="795219973"/>
 					</object>
 				</object>
 			</object>
@@ -4015,6 +4054,7 @@
 					<string>775.IBPluginDependency</string>
 					<string>776.IBPluginDependency</string>
 					<string>777.IBPluginDependency</string>
+					<string>782.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4242,6 +4282,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -4264,7 +4305,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">781</int>
+			<int key="maxID">786</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4277,12 +4318,14 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>delete:</string>
+							<string>restore:</string>
 							<string>showBody:</string>
 							<string>showHtml:</string>
 							<string>showRaw:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>

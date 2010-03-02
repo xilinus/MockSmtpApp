@@ -37,5 +37,8 @@
 @property (nonatomic, readonly) BOOL rawViewHidden;
 
 @property (nonatomic, readonly) BOOL canDelete;
+@property (nonatomic, readonly) BOOL canRestore;
+
+- (IBAction)restore:(id)sender;
 
 @end
