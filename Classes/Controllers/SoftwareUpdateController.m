@@ -156,6 +156,7 @@
     
     
     NSString *version = [latestRelease objectForKey:@"version"];
+    NSString *versionString = [latestRelease objectForKey:@"version_string"];
     NSString *title = [latestRelease objectForKey:@"title"];
     NSString *description = [latestRelease objectForKey:@"description"];
     NSString *url = [latestRelease objectForKey:@"url"];
@@ -168,9 +169,9 @@
     {
         self.isNewVersion = YES;
         self.shortStatusString = @"New Version Available";
-        self.statusString = [NSString stringWithFormat:@"MockSmtp %@ \"%@\" available for download.", version, title];
+        self.statusString = [NSString stringWithFormat:@"MockSmtp %@ \"%@\" available for download.", versionString, title];
         NSURL *theUrl = [NSURL URLWithString:url];
-        self.url = [NSAttributedString hyperlinkFromString:[NSString stringWithFormat:@"MockSmtp %@", version] withURL:theUrl];
+        self.url = [NSAttributedString hyperlinkFromString:[NSString stringWithFormat:@"MockSmtp %@", versionString] withURL:theUrl];
         
         [mWebView setHidden:NO];
         [[mWebView mainFrame] loadHTMLString:description baseURL:nil];
