@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="103"/>
+			<integer value="748"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -192,7 +192,7 @@
 								<object class="NSMenuItem" id="159551688">
 									<reference key="NSMenu" ref="795219973"/>
 									<string key="NSTitle">Delete</string>
-									<string type="base64-UTF8" key="NSKeyEquiv">fw</string>
+									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="788572926"/>
 									<reference key="NSMixedImage" ref="954517155"/>
@@ -909,8 +909,8 @@
 													</object>
 													<object class="NSMutableArray" key="dict.values">
 														<bool key="EncodedWithXMLCoder">YES</bool>
-														<integer value="12" id="839240969"/>
-														<reference ref="839240969"/>
+														<integer value="14"/>
+														<integer value="14"/>
 														<integer value="1" id="9"/>
 													</object>
 												</object>
@@ -4264,7 +4264,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">780</int>
+			<int key="maxID">781</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
