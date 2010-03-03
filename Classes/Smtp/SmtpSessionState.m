@@ -27,7 +27,7 @@
         mSession = session;
         mTerminator = [terminator copy];
         mNextState = self;
-        mKnownCommands = [[NSSet alloc] initWithObjects:@"HELO", @"helo", @"MAIL", @"mail", @"RCPT", @"rcpt", @"DATA", @"data", @"RSET", @"rset", @"QUIT", @"quit", @"NOOP", @"noop", nil];
+        mKnownCommands = [[NSSet alloc] initWithObjects:@"HELO", @"helo", @"EHLO", @"ehlo", @"MAIL", @"mail", @"RCPT", @"rcpt", @"DATA", @"data", @"RSET", @"rset", @"QUIT", @"quit", @"NOOP", @"noop", nil];
     }
     
     return self;
@@ -202,31 +202,8 @@
 {
     if (self = [super initWithSession:session])
     {
-        mValidCommands = [[NSSet alloc] initWithObjects:@"HELO", @"helo", nil];
+        mValidCommands = [[NSSet alloc] initWithObjects:@"HELO", @"helo", @"EHLO", @"ehlo", nil];
         [self setStringResponse:@"220 Xilinus Simple Mail Transfer Testing Service Ready\r\n"];
-    }
-    
-    return self;
-}
-
-- (void)processCommand:(NSString *)command withArgs:(NSArray *)array
-{
-    [self setOkResponse];
-    
-    SmtpSessionState *state = [[SmtpHelloState alloc] initWithSession:mSession];
-    [self setNextState:state];
-    [state release];
-}
-
-@end
-
-@implementation SmtpInvalidState
-
-- (id)initWithSession:(SmtpSession *)session
-{
-    if (self = [super initWithSession:session])
-    {
-        mValidCommands = [[NSSet alloc] initWithObjects:@"RSET", @"rset", @"HELO", @"helo", nil];
     }
     
     return self;
@@ -237,6 +214,56 @@
     if ([command isEqualTo:@"HELO"] || [command isEqualTo:@"helo"])
     {
         [self setOkResponse];
+        
+        SmtpSessionState *state = [[SmtpHelloState alloc] initWithSession:mSession];
+        [self setNextState:state];
+        [state release];
+        
+        return;
+    }
+    
+    if ([command isEqualTo:@"EHLO"] || [command isEqualTo:@"ehlo"])
+    {
+        [self setStringResponse:@"250-[127.0.0.1]\r\n250 EHLO\r\n"];
+        
+        SmtpSessionState *state = [[SmtpHelloState alloc] initWithSession:mSession];
+        [self setNextState:state];
+        [state release];
+        
+        return;
+    }
+}
+
+@end
+
+@implementation SmtpInvalidState
+
+- (id)initWithSession:(SmtpSession *)session
+{
+    if (self = [super initWithSession:session])
+    {
+        mValidCommands = [[NSSet alloc] initWithObjects:@"RSET", @"rset", @"HELO", @"helo", @"EHLO", @"ehlo", nil];
+    }
+    
+    return self;
+}
+
+- (void)processCommand:(NSString *)command withArgs:(NSArray *)array
+{
+    if ([command isEqualTo:@"HELO"] || [command isEqualTo:@"helo"])
+    {
+        [self setOkResponse];
+        
+        SmtpSessionState *state = [[SmtpHelloState alloc] initWithSession:mSession];
+        [self setNextState:state];
+        [state release];
+        
+        return;
+    }
+    
+    if ([command isEqualTo:@"EHLO"] || [command isEqualTo:@"ehlo"])
+    {
+        [self setStringResponse:@"250-[127.0.0.1]\r\n250 EHLO\r\n"];
         
         SmtpSessionState *state = [[SmtpHelloState alloc] initWithSession:mSession];
         [self setNextState:state];
