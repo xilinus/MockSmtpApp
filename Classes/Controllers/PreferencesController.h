@@ -9,7 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PreferencesController : NSObject {
+@interface PreferencesController : NSObject
+{
 
 @private
     
@@ -19,6 +20,11 @@
     NSTextField *mLocationField;
     
     NSUserDefaultsController *mDefaultsController;
+    
+    NSToolbar *mToolbar;
+    NSToolbarItem *mGeneralItem;
+    
+    NSTabView *mTabView;
 }
 
 @property (nonatomic, assign) IBOutlet NSPanel *panel;
@@ -28,9 +34,15 @@
 
 @property (nonatomic, assign) IBOutlet NSUserDefaultsController *defaultsController;
 
+@property (nonatomic, assign) IBOutlet NSToolbar *toolbar;
+@property (nonatomic, assign) IBOutlet NSToolbarItem *generalItem;
+@property (nonatomic, assign) IBOutlet NSTabView *tabView;
+
 - (IBAction)chooseLocation:(id)sender;
 - (IBAction)apply:(id)sender;
 - (IBAction)cancel:(id)sender;
 - (IBAction)ok:(id)sender;
+
+- (IBAction)selectTab:(id)sender;
 
 @end

@@ -59,6 +59,7 @@
 		3A8EFC1D10D2809400A0CFBC /* MessageAttachmentTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */; };
 		3A8EFC8F10D2A03400A0CFBC /* AttachmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */; };
 		3AA2D4F3113D9D8B004C9284 /* MessagePartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */; };
+		3AA2D698113EF936004C9284 /* software-update-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2D697113EF936004C9284 /* software-update-icon.png */; };
 		3AA8801B10D01E74000F9C5E /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8801A10D01E74000F9C5E /* icon.icns */; };
 		3AA8806010D02198000F9C5E /* log_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805710D02198000F9C5E /* log_off.png */; };
 		3AA8806110D02198000F9C5E /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805810D02198000F9C5E /* log.png */; };
@@ -279,6 +280,7 @@
 		3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsController.m; sourceTree = "<group>"; };
 		3AA2D4F1113D9D8B004C9284 /* MessagePartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePartController.h; sourceTree = "<group>"; };
 		3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePartController.m; sourceTree = "<group>"; };
+		3AA2D697113EF936004C9284 /* software-update-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "software-update-icon.png"; sourceTree = "<group>"; };
 		3AA8801A10D01E74000F9C5E /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		3AA8805710D02198000F9C5E /* log_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_off.png; sourceTree = "<group>"; };
 		3AA8805810D02198000F9C5E /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
@@ -996,6 +998,7 @@
 		3ABE08DA10C85004007A2C9D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2D697113EF936004C9284 /* software-update-icon.png */,
 				3A8EFC1010D270D000A0CFBC /* clip.png */,
 				3AA8805710D02198000F9C5E /* log_off.png */,
 				3AA8805810D02198000F9C5E /* log.png */,
@@ -1160,6 +1163,7 @@
 				3A877EBC113C307600E2D371 /* shCore.css in Resources */,
 				3A877EC0113C30E600E2D371 /* shThemeDefault.css in Resources */,
 				3A877F14113C36B500E2D371 /* syntax.html in Resources */,
+				3AA2D698113EF936004C9284 /* software-update-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
