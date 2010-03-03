@@ -51,10 +51,11 @@
 	height: auto !important;
 	width: auto !important;
 	line-height: 1.1em !important;
-	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	font-family: "menlo regular", "monospace", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
 	font-weight: normal !important;
 	font-style: normal !important;
-	font-size: 1em !important;
+	font-size: 12px !important;
+	line-height: 16px !important;
 	min-height: inherit !important; /* For IE8, FF & WebKit */
 	min-height: auto !important; /* For IE7 */
 }
