@@ -58,6 +58,7 @@
 		3A8EFC1110D270D000A0CFBC /* clip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8EFC1010D270D000A0CFBC /* clip.png */; };
 		3A8EFC1D10D2809400A0CFBC /* MessageAttachmentTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */; };
 		3A8EFC8F10D2A03400A0CFBC /* AttachmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */; };
+		3AA2D4F3113D9D8B004C9284 /* MessagePartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */; };
 		3AA8801B10D01E74000F9C5E /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8801A10D01E74000F9C5E /* icon.icns */; };
 		3AA8806010D02198000F9C5E /* log_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805710D02198000F9C5E /* log_off.png */; };
 		3AA8806110D02198000F9C5E /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805810D02198000F9C5E /* log.png */; };
@@ -276,6 +277,8 @@
 		3A8EFC1C10D2809400A0CFBC /* MessageAttachmentTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAttachmentTransformer.m; sourceTree = "<group>"; };
 		3A8EFC8D10D2A03400A0CFBC /* AttachmentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentsController.h; sourceTree = "<group>"; };
 		3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentsController.m; sourceTree = "<group>"; };
+		3AA2D4F1113D9D8B004C9284 /* MessagePartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePartController.h; sourceTree = "<group>"; };
+		3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePartController.m; sourceTree = "<group>"; };
 		3AA8801A10D01E74000F9C5E /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		3AA8805710D02198000F9C5E /* log_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_off.png; sourceTree = "<group>"; };
 		3AA8805810D02198000F9C5E /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 				3A877EA0113C2C9900E2D371 /* MessageReadController.m */,
 				3A877F98113D2EEA00E2D371 /* MessageContentLayoutController.h */,
 				3A877F99113D2EEA00E2D371 /* MessageContentLayoutController.m */,
+				3AA2D4F1113D9D8B004C9284 /* MessagePartController.h */,
+				3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1257,6 +1262,7 @@
 				3A877D25113C074100E2D371 /* BodyTextHighlighter.m in Sources */,
 				3A877EA1113C2C9900E2D371 /* MessageReadController.m in Sources */,
 				3A877F9A113D2EEA00E2D371 /* MessageContentLayoutController.m in Sources */,
+				3AA2D4F3113D9D8B004C9284 /* MessagePartController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

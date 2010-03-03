@@ -41,4 +41,12 @@
 
 - (IBAction)restore:(id)sender;
 
+- (IBAction)showNextAlternative:(id)sender;
+- (IBAction)showPrevAlternative:(id)sender;
+- (IBAction)showBestAlternative:(id)sender;
+
+@property (nonatomic, readonly) BOOL canShowNextAlternative;
+@property (nonatomic, readonly) BOOL canShowPrevAlternative;
+@property (nonatomic, readonly) BOOL canShowBestAlternative;
+
 @end

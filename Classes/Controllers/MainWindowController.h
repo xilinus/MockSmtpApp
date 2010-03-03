@@ -12,6 +12,7 @@
 @class ServerController;
 @class TableViewController;
 @class OutlineViewController;
+@class MessagePartController;
 
 @interface MainWindowController : NSWindowController
 {
@@ -21,6 +22,7 @@
     
     TableViewController *mTableViewController;
     OutlineViewController *mOutlineViewController;
+    MessagePartController *mMessagePartController;
 }
 
 - (id)init;
@@ -35,5 +37,6 @@
 
 @property (nonatomic, assign) IBOutlet TableViewController *tableViewController;
 @property (nonatomic, assign) IBOutlet OutlineViewController *outlineViewController;
+@property (nonatomic, assign) IBOutlet MessagePartController *messagePartController;
 
 @end

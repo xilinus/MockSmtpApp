@@ -173,6 +173,21 @@
     return NO;
 }
 
+- (IBAction)showNextAlternative:(id)sender
+{
+    [self.document showNextAlternative:sender];
+}
+
+- (IBAction)showPrevAlternative:(id)sender
+{
+    [self.document showPrevAlternative:sender];
+}
+
+- (IBAction)showBestAlternative:(id)sender
+{
+    [self.document showBestAlternative:sender];
+}
+
 - (IBAction)newDocument:(id)sender
 {
     [super newDocument:sender];

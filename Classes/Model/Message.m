@@ -71,10 +71,16 @@
     
     mContentParsed = YES;
     
+    if (!mSubparts)
+    {
+        mSubparts = [[NSMutableArray alloc] init];
+    }    
+    
     if ([EDHTMLTextContentCoder canDecodeMessagePart:[self edMessage]])
     {
         EDHTMLTextContentCoder *htmlCoder = [[EDHTMLTextContentCoder alloc] initWithMessagePart:[self edMessage]];
         mBestPart = [MessagePart messagePartWithHtml:[[htmlCoder text] copy]];
+        [mSubparts addObject:mBestPart];
         return;
     }
     
@@ -82,6 +88,7 @@
     {
         EDPlainTextContentCoder *textCoder = [[EDPlainTextContentCoder alloc] initWithMessagePart:[self edMessage]];
         mBestPart = [MessagePart messagePartWithText:[[textCoder text] copy]];
+        [mSubparts addObject:mBestPart];
         return;
     }
     
@@ -118,11 +125,6 @@
                     mBestPart = part;
                 }
                 
-                if (!mSubparts)
-                {
-                    mSubparts = [[NSMutableSet alloc] init];
-                }
-                
                 [mSubparts addObject:part];
                 continue;
             }
@@ -131,11 +133,6 @@
             {
                 EDPlainTextContentCoder *textCoder = [[EDPlainTextContentCoder alloc] initWithMessagePart:edPart];
                 MessagePart *part = [MessagePart messagePartWithText:[[textCoder text] copy]];
-                
-                if (!mSubparts)
-                {
-                    mSubparts = [[NSMutableSet alloc] init];
-                }
                 
                 [mSubparts addObject:part];
                 continue;
@@ -146,7 +143,7 @@
         {
             if (mSubparts)
             {
-                mBestPart = [mSubparts anyObject];
+                mBestPart = [mSubparts objectAtIndex:0];
             }
         }
     }
@@ -207,7 +204,7 @@
     return mCC;
 }
 
-- (NSSet *)subparts
+- (NSArray *)subparts
 {
     if (mSubparts)
     {

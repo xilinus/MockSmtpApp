@@ -9,6 +9,14 @@
 #import "Document.h"
 #import "MainWindowController.h"
 #import "TrialWindowController.h"
+#import "MessagePartController.h"
+
+@interface Document(Private)
+
+@property (nonatomic, readonly) MessagePartController *messagePartController;
+
+@end
+
 
 @implementation Document
 
@@ -79,12 +87,6 @@
 
 - (void)makeWindowControllers
 {
-    //NSDate *date = [[NSDate alloc] init];
-    //NSCalendar *cal = [NSCalendar currentCalendar];
-    
-    //NSDateComponents *comp = [cal components:NSYearCalendarUnit fromDate:date];
-    //if ([comp year] > 2009)
-    
     if (![TrialWindowController checkLicense])
     {
         [TrialWindowController installDefaultLicenseFile];
@@ -196,10 +198,64 @@
     return [[self.mainWindowController valueForKey:@"canRestore"] boolValue];
 }
 
+- (IBAction)showNextAlternative:(id)sender
+{
+    [self.messagePartController showNextAlternative:sender];
+}
+
+- (IBAction)showPrevAlternative:(id)sender
+{
+    [self.messagePartController showPrevAlternative:sender];
+}
+
+- (IBAction)showBestAlternative:(id)sender
+{
+    [self.messagePartController showBestAlternative:sender];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanShowNextAlternative
+{
+    return [NSSet setWithObject:@"messagePartController.canShowNextAlternative"];
+}
+
+- (BOOL)canShowNextAlternative
+{
+    return self.messagePartController.canShowNextAlternative;
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanShowPrevAlternative
+{
+    return [NSSet setWithObject:@"messagePartController.canShowPrevAlternative"];
+}
+
+- (BOOL)canShowPrevAlternative
+{
+    return self.messagePartController.canShowPrevAlternative;
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanShowBestAlternative
+{
+    return [NSSet setWithObject:@"messagePartController.canShowBestAlternative"];
+}
+
+- (BOOL)canShowBestAlternative
+{
+    return self.messagePartController.canShowBestAlternative;
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController 
 {
     [super windowControllerDidLoadNib:windowController];
-    // user interface preparation code
 }
 
 @end
+
+@implementation Document(Private)
+
+- (MessagePartController *)messagePartController
+{
+    return self.mainWindowController.messagePartController;
+}
+
+@end
+

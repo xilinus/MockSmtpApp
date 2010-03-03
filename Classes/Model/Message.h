@@ -27,7 +27,7 @@
     
     BOOL mHeaderParsed;
     
-    NSMutableSet *mSubparts;
+    NSMutableArray *mSubparts;
     MessagePart *mBestPart;
     
     NSMutableArray *mAttachments;
@@ -50,7 +50,7 @@
 @property (nonatomic, readonly) NSCalendarDate *date;
 @property (nonatomic, readonly) NSString *cc;
 
-@property (nonatomic, readonly) NSSet *subparts;
+@property (nonatomic, readonly) NSArray *subparts;
 @property (nonatomic, readonly) MessagePart *bestPart;
 
 @property (nonatomic, readonly) NSArray *attachments;

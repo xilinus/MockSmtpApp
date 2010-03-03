@@ -18,6 +18,7 @@
 @synthesize serverController = mServerController;
 @synthesize tableViewController = mTableViewController;
 @synthesize outlineViewController = mOutlineViewController;
+@synthesize messagePartController = mMessagePartController;
 
 - (id)init
 {
