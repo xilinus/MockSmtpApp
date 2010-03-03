@@ -157,7 +157,6 @@
 - (NSUInteger)processData:(NSData *)data
 {
     NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@", stringData);
     NSUInteger processed = 0;
     
     if ([stringData hasSuffix:mTerminator])

@@ -203,4 +203,9 @@
     [self.document restore:sender];
 }
 
+- (IBAction)copy:(id)sender
+{
+    [self.document copy:sender];
+}
+
 @end

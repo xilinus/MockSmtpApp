@@ -25,21 +25,20 @@
 - (void)save;
 
 - (IBAction)delete:(id)sender;
+- (IBAction)restore:(id)sender;
+- (IBAction)copy:(id)sender;
+
+@property (nonatomic, readonly) BOOL canDelete;
+@property (nonatomic, readonly) BOOL canRestore;
+@property (nonatomic, readonly) BOOL canCopy;
 
 @property (nonatomic, assign) NSManagedObject *server;
-
 @property (nonatomic, assign) NSUInteger selectedView;
-
 @property (nonatomic, readonly) MainWindowController *mainWindowController;
 
 @property (nonatomic, readonly) BOOL htmlViewHidden;
 @property (nonatomic, readonly) BOOL bodyViewHidden;
 @property (nonatomic, readonly) BOOL rawViewHidden;
-
-@property (nonatomic, readonly) BOOL canDelete;
-@property (nonatomic, readonly) BOOL canRestore;
-
-- (IBAction)restore:(id)sender;
 
 - (IBAction)showNextAlternative:(id)sender;
 - (IBAction)showPrevAlternative:(id)sender;

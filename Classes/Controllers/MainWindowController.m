@@ -45,21 +45,6 @@
     }
 }
 
-- (IBAction)restore:(id)sender
-{
-    NSResponder *responder = [[self window] firstResponder];
-    
-    if ([responder isKindOfClass:[TableView class]])
-    {
-        [mTableViewController restore:sender];
-    }
-    
-    if ([responder isKindOfClass:[OutlineView class]])
-    {
-        [mOutlineViewController restore:sender];
-    }
-}
-
 + (NSSet *)keyPathsForValuesAffectingCanDelete
 {
     return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
@@ -82,6 +67,21 @@
     return NO;
 }
 
+- (IBAction)restore:(id)sender
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        [mTableViewController restore:sender];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        [mOutlineViewController restore:sender];
+    }
+}
+
 + (NSSet *)keyPathsForValuesAffectingCanRestore
 {
     return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
@@ -102,6 +102,45 @@
     }
     
     return NO;
+}
+
+- (IBAction)copy:(id)sender
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        [mTableViewController copy:sender];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        [mOutlineViewController copy:sender];
+    }
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanCopy
+{
+    return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
+}
+
+- (BOOL)canCopy
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        return [mTableViewController canCopy];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        return [mOutlineViewController canCopy];
+    }
+    
+    NSMenuItem *item = [[NSMenuItem alloc] init];
+    [item setAction:@selector(copy:)];
+    return [responder validateMenuItem:item];
 }
 
 - (void)windowWillClose:(NSNotification *)notification

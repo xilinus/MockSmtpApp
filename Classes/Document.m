@@ -168,6 +168,21 @@
     NSLog(@"index change: %d", mSelectedView);
 }
 
+- (IBAction)copy:(id)sender
+{
+    [mMainWindowController copy:sender];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanCopy
+{
+    return [NSSet setWithObjects:@"mainWindowController.canCopy", nil];
+}
+
+- (BOOL)canCopy
+{
+    return [[self.mainWindowController valueForKey:@"canCopy"] boolValue];
+}
+
 - (IBAction)delete:(id)sender
 {
     [mMainWindowController delete:sender];

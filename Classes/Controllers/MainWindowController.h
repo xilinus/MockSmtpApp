@@ -29,9 +29,11 @@
 
 - (IBAction)delete:(id)sender;
 - (IBAction)restore:(id)sender;
+- (IBAction)copy:(id)sender;
 
 @property (nonatomic, readonly) BOOL canDelete;
 @property (nonatomic, readonly) BOOL canRestore;
+@property (nonatomic, readonly) BOOL canCopy;
 
 @property (nonatomic, assign) IBOutlet ServerController *serverController;
 

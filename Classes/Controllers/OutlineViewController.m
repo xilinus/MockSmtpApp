@@ -12,6 +12,7 @@
 #import "TableViewController.h"
 #import "Server.h"
 #import "Message.h"
+#import "MessagePart.h"
 
 @implementation OutlineViewController
 
@@ -59,6 +60,20 @@
     }
     
     return NO;
+}
+
+- (BOOL)canCopy
+{
+    if ([[self selectedObjects] count] == 0)
+    {
+        return NO;
+    }
+    
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
 }
 
 - (IBAction)delete:(id)sender
@@ -145,6 +160,36 @@
     }
     
     [[self managedObjectContext] processPendingChanges];
+}
+
+- (IBAction)copy:(id)sender
+{
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    
+    NSMutableString *string = [[NSMutableString alloc] init];
+    
+    for(NSUInteger i = 0; i < [messages count]; i++)
+    {
+        Message *message = [messages objectAtIndex:i];
+        [string appendFormat:@"Subject: %@\n", message.subject];
+        [string appendFormat:@"From: %@\n", message.from];
+        [string appendFormat:@"To: %@\n", message.to];
+        NSString *cc = message.cc;
+        if (cc)
+        {
+            [string appendFormat:@"Cc: %@\n", message.cc];
+        }
+        [string appendFormat:@"Date: %@\n", message.date];
+        
+        [string appendString:@"\n"];
+        [string appendFormat:@"%@\n", message.bestPart.content];
+    }
+    
+    NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+    NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+    [pb declareTypes:types owner:self];
+    [pb setString:string forType:NSStringPboardType];
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView

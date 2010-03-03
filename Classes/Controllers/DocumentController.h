@@ -36,6 +36,7 @@
 
 - (IBAction)delete:(id)sender;
 - (IBAction)restore:(id)sender;
+- (IBAction)copy:(id)sender;
 
 - (IBAction)showNextAlternative:(id)sender;
 - (IBAction)showPrevAlternative:(id)sender;

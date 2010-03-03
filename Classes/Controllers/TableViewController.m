@@ -12,6 +12,7 @@
 #import "Server.h"
 #import "Folder.h"
 #import "Message.h"
+#import "MessagePart.h"
 
 @implementation TableViewController
 
@@ -55,6 +56,14 @@
     }
     
     return NO;
+}
+
+- (BOOL)canCopy
+{
+    NSArray *messages = [self selectedObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
 }
 
 - (IBAction)delete:(id)sender
@@ -104,6 +113,39 @@
             [self restoreSelectionFromTrash:sender];
         }
     }
+}
+
+- (IBAction)copy:(id)sender
+{
+    NSArray *messages = [self selectedObjects];
+    if (![messages count])
+    {
+        return;
+    }
+    
+    NSMutableString *string = [[NSMutableString alloc] init];
+    
+    for(NSUInteger i = 0; i < [messages count]; i++)
+    {
+        Message *message = [messages objectAtIndex:i];
+        [string appendFormat:@"Subject: %@\n", message.subject];
+        [string appendFormat:@"From: %@\n", message.from];
+        [string appendFormat:@"To: %@\n", message.to];
+        NSString *cc = message.cc;
+        if (cc)
+        {
+            [string appendFormat:@"Cc: %@\n", message.cc];
+        }
+        [string appendFormat:@"Date: %@\n", message.date];
+        
+        [string appendString:@"\n"];
+        [string appendFormat:@"%@\n", message.bestPart.content];
+    }
+    
+    NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+    NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+    [pb declareTypes:types owner:self];
+    [pb setString:string forType:NSStringPboardType];
 }
 
 - (IBAction)moveSelectionToTrash:(id) sender
