@@ -14,13 +14,20 @@
 @private
     
     BOOL mIsChecking;
+    BOOL mIsInstalling;
+    BOOL mIsProcessing;
     BOOL mIsChecked;
+    BOOL mIsInstalled;
     BOOL mIsNewVersion;
     
     BOOL mWindowShowing;
     
+    NSInteger mInstalledVersion;
+    
     NSString *mShortStatusString;
     NSString *mStatusString;
+    
+    NSURL *mDownloadUrl;
     NSAttributedString *mUrl;
     
     WebView *mWebView;
@@ -33,10 +40,18 @@
     NSNumber *mAutoUpdate;
     
     NSTimer *mTimer;
+    
+    NSURLConnection *mUpdateConnection;
+    NSURLConnection *mDownloadConnection;
 }
 
++ (void)completeUpdateIfNeeded;
+
 @property (nonatomic, assign) BOOL isChecking;
+@property (nonatomic, assign) BOOL isInstalling;
+@property (nonatomic, assign) BOOL isProcessing;
 @property (nonatomic, assign) BOOL isChecked;
+@property (nonatomic, assign) BOOL isInstalled;
 @property (nonatomic, assign) BOOL isNewVersion;
 
 @property (nonatomic, retain) NSString *shortStatusString;
@@ -47,5 +62,8 @@
 
 @property (nonatomic, assign) IBOutlet WebView *webView;
 @property (nonatomic, assign) IBOutlet NSWindow *window;
+
+- (IBAction)install:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

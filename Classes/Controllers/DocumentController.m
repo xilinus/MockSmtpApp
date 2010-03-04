@@ -10,6 +10,7 @@
 
 #import "DocumentController.h"
 #import "Document.h"
+#import "SoftwareUpdateController.h"
 
 #import "MessageTransformer.h"
 #import "MessagePartTransformer.h"
@@ -206,6 +207,11 @@
 - (IBAction)copy:(id)sender
 {
     [self.document copy:sender];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+    [SoftwareUpdateController completeUpdateIfNeeded];
 }
 
 @end
