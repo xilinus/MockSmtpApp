@@ -271,6 +271,18 @@ RFC822/RFC2047 parser for structured fields such as mail address lists, etc.
                                   digit
  */
 
+- (NSString *)domainFromAddressString
+{
+    NSArray *components = [self componentsSeparatedByString:@"@"];
+    
+    if ([components count] != 2)
+    {
+        return nil;
+    }
+    
+    NSString *domain = [components lastObject];
+    return domain;
+}
 
 //---------------------------------------------------------------------------------------
 //	CONVERSIONS

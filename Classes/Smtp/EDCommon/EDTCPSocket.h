@@ -1,8 +1,8 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  EDTCPSocket.h created by erik
+//  @(#)$Id: EDTCPSocket.h,v 2.1 2003-04-08 16:51:35 znek Exp $
 //
-//  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
+//  Copyright (c) 1997-2001 by Erik Doernenburg. All rights reserved.
 //
 //  Permission to use, copy, modify and distribute this software and its documentation
 //  is hereby granted, provided that both the copyright notice and this permission
@@ -18,35 +18,18 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+#import "EDIPSocket.h"
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
+@interface EDTCPSocket : EDIPSocket
+{
+}
 
-- (NSString *)stringByRemovingBracketComments;
+/*" Setting socket options "*/
+- (void)setSendsDataImmediately:(BOOL)flag;
 
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
-
-- (NSString *)domainFromAddressString;
-
-- (NSString *)stringByRemovingReplyPrefix;
-
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
-
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
-
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
-
-
-@interface NSMutableString(EDMessageUtilities)
-
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
+/*" Server sockets "*/
+- (void)startListening;
+- (void)startListeningOnLocalPort:(unsigned short)aPort;
+- (void)startListeningOnLocalPort:(unsigned short)aPort andAddress:(NSString *)addressString;
 
 @end

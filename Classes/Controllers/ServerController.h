@@ -13,6 +13,7 @@
 @class Server;
 @class SmtpServer;
 @class MainWindowController;
+@class LogController;
 
 @interface ServerController : NSObjectController
 {
@@ -20,6 +21,8 @@
     
     SmtpServer *mSmtpServer;
     Server *mServer;
+    
+    LogController *mLogController;
     
     NSToolbarItem *mStartToolbarItem;
     NSToolbarItem *mStopToolbarItem;
@@ -30,9 +33,6 @@
     
     BOOL mIsStarted;
     
-    NSMutableString *mLog;
-    NSString *mLogString;
-    
     NSUserDefaultsController *mDefaultsController;
     NSNumber *mPort;
 }
@@ -40,9 +40,8 @@
 - (IBAction)start:(id)sender;
 - (IBAction)stop:(id)sender;
 
-- (IBAction)clearLog:(id)sender;
-
 @property (nonatomic, assign) IBOutlet SmtpServer *smtpServer;
+@property (nonatomic, assign) IBOutlet LogController *logController;
 
 @property (nonatomic, assign) IBOutlet NSToolbarItem *startToolbarItem;
 @property (nonatomic, assign) IBOutlet NSToolbarItem *stopToolbarItem;
@@ -52,7 +51,5 @@
 
 @property (nonatomic, assign) IBOutlet MainWindowController *mainWindowController;
 @property (nonatomic, assign) IBOutlet NSUserDefaultsController *defaultsController;
-
-@property (nonatomic, retain) NSString *logString;
 
 @end

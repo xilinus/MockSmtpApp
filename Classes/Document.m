@@ -213,6 +213,21 @@
     return [[self.mainWindowController valueForKey:@"canRestore"] boolValue];
 }
 
+- (IBAction)deliver:(id)sender
+{
+    [mMainWindowController deliver:sender];
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanDeliver
+{
+    return [NSSet setWithObjects:@"mainWindowController.canDeliver", nil];
+}
+
+- (BOOL)canDeliver
+{
+    return [[self.mainWindowController valueForKey:@"canDeliver"] boolValue];
+}
+
 - (IBAction)showNextAlternative:(id)sender
 {
     [self.messagePartController showNextAlternative:sender];

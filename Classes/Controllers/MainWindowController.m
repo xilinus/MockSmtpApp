@@ -143,6 +143,43 @@
     return [responder validateMenuItem:item];
 }
 
+- (IBAction)deliver:(id)sender
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        [mTableViewController deliver:sender];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        [mOutlineViewController deliver:sender];
+    }
+}
+
++ (NSSet *)keyPathsForValuesAffectingCanDeliver
+{
+    return [NSSet setWithObjects:@"outlineViewController.selection", @"tableViewController.selection", nil];
+}
+
+- (BOOL)canDeliver
+{
+    NSResponder *responder = [[self window] firstResponder];
+    
+    if ([responder isKindOfClass:[TableView class]])
+    {
+        return [mTableViewController canDeliver];
+    }
+    
+    if ([responder isKindOfClass:[OutlineView class]])
+    {
+        return [mOutlineViewController canDeliver];
+    }
+    
+    return NO;
+}
+
 - (void)windowWillClose:(NSNotification *)notification
 {
     [mServerController stop:self];

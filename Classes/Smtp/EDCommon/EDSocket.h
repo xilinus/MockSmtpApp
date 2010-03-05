@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  EDSocket.h created by erik
+//  @(#)$Id: EDSocket.h,v 2.0 2002-08-16 18:12:48 erik Exp $
 //
 //  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
 //
@@ -18,35 +18,27 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+#import <Foundation/Foundation.h>
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
-
-- (NSString *)stringByRemovingBracketComments;
-
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
-
-- (NSString *)domainFromAddressString;
-
-- (NSString *)stringByRemovingReplyPrefix;
-
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
-
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
-
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
+@interface EDSocket : NSFileHandle
+{
+    NSFileHandle *realHandle; /*" All instance variables are private. "*/
+}
 
 
-@interface NSMutableString(EDMessageUtilities)
+/*" Describing socket classes "*/
++ (int)protocolFamily;
++ (int)socketType;
++ (int)socketProtocol;
 
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
+/*" Creating new sockets "*/
++ (id)socket;
+
+- (id)init;
+- (id)initWithFileHandle:(NSFileHandle *)aFileHandle;
+
+/*" Setting socket options "*/
+- (void)setSocketOption:(int)anOption level:(int)aLevel value:(int)value;
+- (void)setSocketOption:(int)anOption level:(int)aLevel timeValue:(NSTimeInterval)timeout;
 
 @end

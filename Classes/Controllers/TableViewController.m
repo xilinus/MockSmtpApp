@@ -16,6 +16,8 @@
 
 @implementation TableViewController
 
+@synthesize smtpClient = mSmtpClient;
+
 - (void)setSortDescriptors:(NSArray *)descriptors
 {
     [super setSortDescriptors:descriptors];
@@ -59,6 +61,14 @@
 }
 
 - (BOOL)canCopy
+{
+    NSArray *messages = [self selectedObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
+}
+
+- (BOOL)canDeliver
 {
     NSArray *messages = [self selectedObjects];
     NSUInteger count = [messages count];
@@ -146,6 +156,15 @@
     NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
     [pb declareTypes:types owner:self];
     [pb setString:string forType:NSStringPboardType];
+}
+
+- (IBAction)deliver:(id)sender
+{
+    NSArray *messages = [self selectedObjects];
+    if ([messages count])
+    {
+        [mSmtpClient deliverMessages:messages];
+    }
 }
 
 - (IBAction)moveSelectionToTrash:(id) sender

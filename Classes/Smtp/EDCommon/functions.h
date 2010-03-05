@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  functions.h created by erik
+//  @(#)$Id: functions.h,v 2.1 2003-04-08 16:51:35 znek Exp $
 //
 //  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
 //
@@ -18,35 +18,10 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+#import "osdep.h"
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
+/*" Takes an IP address in the POSIX structure and returns an #NSString with the address in the typical dotted number representation. "*/
+NSString *EDStringFromInAddr(struct in_addr address);
 
-- (NSString *)stringByRemovingBracketComments;
-
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
-
-- (NSString *)domainFromAddressString;
-
-- (NSString *)stringByRemovingReplyPrefix;
-
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
-
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
-
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
-
-
-@interface NSMutableString(EDMessageUtilities)
-
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
-
-@end
+/*" Takes an #NSString with an IP address in the typical dotted number representation and returns the address in the POSIX structure. "*/
+struct in_addr EDInAddrFromString(NSString *string);

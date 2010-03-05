@@ -1,8 +1,8 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  NSFileHandle+NetExt.h created by erik
+//  @(#)$Id: NSFileHandle+Extensions.h,v 2.0 2002-08-16 18:12:48 erik Exp $
 //
-//  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
+//  Copyright (c) 1997 by Erik Doernenburg. All rights reserved.
 //
 //  Permission to use, copy, modify and distribute this software and its documentation
 //  is hereby granted, provided that both the copyright notice and this permission
@@ -18,35 +18,29 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+#import <Foundation/Foundation.h>
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
+@interface NSFileHandle(EDExtensions)
 
-- (NSString *)stringByRemovingBracketComments;
+/*" Endpoints for socket handles "*/
 
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
+- (unsigned short)localPort;
+- (NSString *)localAddress;
 
-- (NSString *)domainFromAddressString;
+- (unsigned short)remotePort;
+- (NSString *)remoteAddress;
+- (NSHost *)remoteHost;
 
-- (NSString *)stringByRemovingReplyPrefix;
+/*" Shutdown "*/
 
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
+- (void)shutdown;
+- (void)shutdownInput;
+- (void)shutdownOutput;
 
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
+/*" Non-blocking reads on sockets "*/
 
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
-
-
-@interface NSMutableString(EDMessageUtilities)
-
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
+- (NSData *)availableDataNonBlocking;
+- (NSData *)readDataToEndOfFileNonBlocking;
+- (NSData *)readDataOfLengthNonBlocking:(unsigned int)length;
 
 @end

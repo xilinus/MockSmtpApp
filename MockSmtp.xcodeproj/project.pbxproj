@@ -60,6 +60,22 @@
 		3A8EFC8F10D2A03400A0CFBC /* AttachmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EFC8E10D2A03400A0CFBC /* AttachmentsController.m */; };
 		3AA2D4F3113D9D8B004C9284 /* MessagePartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */; };
 		3AA2D698113EF936004C9284 /* software-update-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2D697113EF936004C9284 /* software-update-icon.png */; };
+		3AA2D85C1140161F004C9284 /* SmtpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D85B1140161F004C9284 /* SmtpClient.m */; };
+		3AA2D8D0114029D4004C9284 /* DnsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D8CF114029D4004C9284 /* DnsClient.m */; };
+		3AA2D94311404413004C9284 /* EDSMTPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D94011404413004C9284 /* EDSMTPStream.m */; };
+		3AA2D94411404413004C9284 /* EDMailAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D94211404413004C9284 /* EDMailAgent.m */; };
+		3AA2D978114044DE004C9284 /* EDIPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D974114044DE004C9284 /* EDIPSocket.m */; };
+		3AA2D979114044DE004C9284 /* EDSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D975114044DE004C9284 /* EDSocket.m */; };
+		3AA2D97C11404529004C9284 /* EDTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D97A11404529004C9284 /* EDTCPSocket.m */; };
+		3AA2D97F11404557004C9284 /* EDStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D97D11404557004C9284 /* EDStream.m */; };
+		3AA2D98311404591004C9284 /* functions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D98211404591004C9284 /* functions.m */; };
+		3AA2D987114045AD004C9284 /* NSFileHandle+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D985114045AD004C9284 /* NSFileHandle+Extensions.m */; };
+		3AA2D9B01140463B004C9284 /* EDSecureSMTPStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D9AE1140463B004C9284 /* EDSecureSMTPStream.m */; };
+		3AA2D9B711404658004C9284 /* NSString+OPOSErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D9B511404658004C9284 /* NSString+OPOSErrors.m */; };
+		3AA2D9B811404658004C9284 /* OPSSLSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D9B611404658004C9284 /* OPSSLSocket.m */; };
+		3AA2D9C7114046B3004C9284 /* NSHost+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2D9C5114046B3004C9284 /* NSHost+Extensions.m */; };
+		3AA2D9F311412488004C9284 /* libresolv.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA2D9F211412488004C9284 /* libresolv.9.dylib */; };
+		3AA2DB5711417A27004C9284 /* LogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2DB5611417A27004C9284 /* LogController.m */; };
 		3AA8801B10D01E74000F9C5E /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8801A10D01E74000F9C5E /* icon.icns */; };
 		3AA8806010D02198000F9C5E /* log_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805710D02198000F9C5E /* log_off.png */; };
 		3AA8806110D02198000F9C5E /* log.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA8805810D02198000F9C5E /* log.png */; };
@@ -281,6 +297,38 @@
 		3AA2D4F1113D9D8B004C9284 /* MessagePartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePartController.h; sourceTree = "<group>"; };
 		3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePartController.m; sourceTree = "<group>"; };
 		3AA2D697113EF936004C9284 /* software-update-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "software-update-icon.png"; sourceTree = "<group>"; };
+		3AA2D85A1140161F004C9284 /* SmtpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmtpClient.h; sourceTree = "<group>"; };
+		3AA2D85B1140161F004C9284 /* SmtpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmtpClient.m; sourceTree = "<group>"; };
+		3AA2D8CE114029D4004C9284 /* DnsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DnsClient.h; sourceTree = "<group>"; };
+		3AA2D8CF114029D4004C9284 /* DnsClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DnsClient.m; sourceTree = "<group>"; };
+		3AA2D93F11404413004C9284 /* EDSMTPStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSMTPStream.h; sourceTree = "<group>"; };
+		3AA2D94011404413004C9284 /* EDSMTPStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSMTPStream.m; sourceTree = "<group>"; };
+		3AA2D94111404413004C9284 /* EDMailAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDMailAgent.h; sourceTree = "<group>"; };
+		3AA2D94211404413004C9284 /* EDMailAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDMailAgent.m; sourceTree = "<group>"; };
+		3AA2D974114044DE004C9284 /* EDIPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDIPSocket.m; sourceTree = "<group>"; };
+		3AA2D975114044DE004C9284 /* EDSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSocket.m; sourceTree = "<group>"; };
+		3AA2D976114044DE004C9284 /* EDIPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDIPSocket.h; sourceTree = "<group>"; };
+		3AA2D977114044DE004C9284 /* EDSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSocket.h; sourceTree = "<group>"; };
+		3AA2D97A11404529004C9284 /* EDTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDTCPSocket.m; sourceTree = "<group>"; };
+		3AA2D97B11404529004C9284 /* EDTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDTCPSocket.h; sourceTree = "<group>"; };
+		3AA2D97D11404557004C9284 /* EDStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDStream.m; sourceTree = "<group>"; };
+		3AA2D97E11404557004C9284 /* EDStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDStream.h; sourceTree = "<group>"; };
+		3AA2D98111404591004C9284 /* functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functions.h; sourceTree = "<group>"; };
+		3AA2D98211404591004C9284 /* functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = functions.m; sourceTree = "<group>"; };
+		3AA2D985114045AD004C9284 /* NSFileHandle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+Extensions.m"; sourceTree = "<group>"; };
+		3AA2D986114045AD004C9284 /* NSFileHandle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+Extensions.h"; sourceTree = "<group>"; };
+		3AA2D9A1114045EB004C9284 /* EDTextWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDTextWriter.h; sourceTree = "<group>"; };
+		3AA2D9AE1140463B004C9284 /* EDSecureSMTPStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSecureSMTPStream.m; sourceTree = "<group>"; };
+		3AA2D9AF1140463B004C9284 /* EDSecureSMTPStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSecureSMTPStream.h; sourceTree = "<group>"; };
+		3AA2D9B311404658004C9284 /* OPSSLSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPSSLSocket.h; sourceTree = "<group>"; };
+		3AA2D9B411404658004C9284 /* NSString+OPOSErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+OPOSErrors.h"; sourceTree = "<group>"; };
+		3AA2D9B511404658004C9284 /* NSString+OPOSErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+OPOSErrors.m"; sourceTree = "<group>"; };
+		3AA2D9B611404658004C9284 /* OPSSLSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPSSLSocket.m; sourceTree = "<group>"; };
+		3AA2D9C5114046B3004C9284 /* NSHost+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHost+Extensions.m"; sourceTree = "<group>"; };
+		3AA2D9C6114046B3004C9284 /* NSHost+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHost+Extensions.h"; sourceTree = "<group>"; };
+		3AA2D9F211412488004C9284 /* libresolv.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.9.dylib; path = usr/lib/libresolv.9.dylib; sourceTree = SDKROOT; };
+		3AA2DB5511417A27004C9284 /* LogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogController.h; sourceTree = "<group>"; };
+		3AA2DB5611417A27004C9284 /* LogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogController.m; sourceTree = "<group>"; };
 		3AA8801A10D01E74000F9C5E /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		3AA8805710D02198000F9C5E /* log_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log_off.png; sourceTree = "<group>"; };
 		3AA8805810D02198000F9C5E /* log.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = log.png; sourceTree = "<group>"; };
@@ -412,6 +460,7 @@
 				775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */,
 				3ADBCFD210AC6C96006C9DBE /* WebKit.framework in Frameworks */,
 				3A8E127B10E117FF00A0CFBC /* Security.framework in Frameworks */,
+				3AA2D9F311412488004C9284 /* libresolv.9.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +484,7 @@
 		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2D9F211412488004C9284 /* libresolv.9.dylib */,
 				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
@@ -474,8 +524,7 @@
 				3ABD07C110CFDF0E00213059 /* Transformers */,
 				3A55FA3010B41B77001B095C /* Controllers */,
 				3A55FA4110B41BBF001B095C /* Views */,
-				3A8C8A4410F4DC21007680DF /* JSON */,
-				3A55FF0410B570D1001B095C /* Smtp */,
+				3AA2D8CD11402999004C9284 /* Networking */,
 				514E9E0C081EC698009B8CD9 /* Importer */,
 				2A37F4AEFDCFA73011CA2CEA /* Document.h */,
 				2A37F4ACFDCFA73011CA2CEA /* Document.m */,
@@ -554,6 +603,8 @@
 				3A877F99113D2EEA00E2D371 /* MessageContentLayoutController.m */,
 				3AA2D4F1113D9D8B004C9284 /* MessagePartController.h */,
 				3AA2D4F2113D9D8B004C9284 /* MessagePartController.m */,
+				3AA2DB5511417A27004C9284 /* LogController.h */,
+				3AA2DB5611417A27004C9284 /* LogController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -588,6 +639,8 @@
 				3A5500B410B6BEA0001B095C /* SmtpSession.m */,
 				3A5500B610B6DE96001B095C /* SmtpSessionState.h */,
 				3A5500B710B6DE96001B095C /* SmtpSessionState.m */,
+				3AA2D85A1140161F004C9284 /* SmtpClient.h */,
+				3AA2D85B1140161F004C9284 /* SmtpClient.m */,
 			);
 			path = Smtp;
 			sourceTree = "<group>";
@@ -680,6 +733,58 @@
 			name = LogFileLogger;
 			sourceTree = "<group>";
 		};
+		3AA2D8CC1140297F004C9284 /* Dns */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2D8CE114029D4004C9284 /* DnsClient.h */,
+				3AA2D8CF114029D4004C9284 /* DnsClient.m */,
+			);
+			name = Dns;
+			sourceTree = "<group>";
+		};
+		3AA2D8CD11402999004C9284 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C8A4410F4DC21007680DF /* JSON */,
+				3A55FF0410B570D1001B095C /* Smtp */,
+				3AA2D8CC1140297F004C9284 /* Dns */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		3AA2D935114043F4004C9284 /* MailAgent */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2DA4511412A65004C9284 /* Headers */,
+				3AA2DA4611412A70004C9284 /* Classes */,
+			);
+			name = MailAgent;
+			sourceTree = "<group>";
+		};
+		3AA2DA4511412A65004C9284 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2D9B311404658004C9284 /* OPSSLSocket.h */,
+				3AA2D9B411404658004C9284 /* NSString+OPOSErrors.h */,
+				3AA2D9AF1140463B004C9284 /* EDSecureSMTPStream.h */,
+				3AA2D93F11404413004C9284 /* EDSMTPStream.h */,
+				3AA2D94111404413004C9284 /* EDMailAgent.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		3AA2DA4611412A70004C9284 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2D9B611404658004C9284 /* OPSSLSocket.m */,
+				3AA2D9B511404658004C9284 /* NSString+OPOSErrors.m */,
+				3AA2D9AE1140463B004C9284 /* EDSecureSMTPStream.m */,
+				3AA2D94011404413004C9284 /* EDSMTPStream.m */,
+				3AA2D94211404413004C9284 /* EDMailAgent.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		3ABD000410CD294A00213059 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +814,8 @@
 		3ABD002010CD2A4800213059 /* EDCommon */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2D98111404591004C9284 /* functions.h */,
+				3AA2D98211404591004C9284 /* functions.m */,
 				3ABD002C10CD2C3000213059 /* Global Headers */,
 				3ABD002E10CD2C5E00213059 /* Foundation Extensions */,
 				3ABD004310CD2CEE00213059 /* Data Structures */,
@@ -741,6 +848,13 @@
 		3ABD003010CD2C8000213059 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2D9C6114046B3004C9284 /* NSHost+Extensions.h */,
+				3AA2D9A1114045EB004C9284 /* EDTextWriter.h */,
+				3AA2D986114045AD004C9284 /* NSFileHandle+Extensions.h */,
+				3AA2D97E11404557004C9284 /* EDStream.h */,
+				3AA2D97B11404529004C9284 /* EDTCPSocket.h */,
+				3AA2D976114044DE004C9284 /* EDIPSocket.h */,
+				3AA2D977114044DE004C9284 /* EDSocket.h */,
 				3ABD020B10CD390600213059 /* NSScanner+Extensions.h */,
 				3ABD020510CD38C500213059 /* NSArray+Extensions.h */,
 				3ABD036D10CD739000213059 /* NSAttributedString+Extensions.h */,
@@ -754,6 +868,12 @@
 		3ABD003110CD2C8F00213059 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3AA2D9C5114046B3004C9284 /* NSHost+Extensions.m */,
+				3AA2D985114045AD004C9284 /* NSFileHandle+Extensions.m */,
+				3AA2D97D11404557004C9284 /* EDStream.m */,
+				3AA2D97A11404529004C9284 /* EDTCPSocket.m */,
+				3AA2D974114044DE004C9284 /* EDIPSocket.m */,
+				3AA2D975114044DE004C9284 /* EDSocket.m */,
 				3ABD036E10CD739C00213059 /* NSAttributedString+Extensions.m */,
 				3ABD020C10CD391300213059 /* NSScanner+Extensions.m */,
 				3ABD020910CD38F400213059 /* NSData+Extensions.m */,
@@ -889,6 +1009,7 @@
 				3ABDFFC610CD26C500213059 /* Message */,
 				3ABDFFE210CD288500213059 /* HeaderFieldCoder */,
 				3ABD032B10CD714200213059 /* ContentCoder */,
+				3AA2D935114043F4004C9284 /* MailAgent */,
 			);
 			path = EDMessage;
 			sourceTree = "<group>";
@@ -1267,6 +1388,21 @@
 				3A877EA1113C2C9900E2D371 /* MessageReadController.m in Sources */,
 				3A877F9A113D2EEA00E2D371 /* MessageContentLayoutController.m in Sources */,
 				3AA2D4F3113D9D8B004C9284 /* MessagePartController.m in Sources */,
+				3AA2D85C1140161F004C9284 /* SmtpClient.m in Sources */,
+				3AA2D8D0114029D4004C9284 /* DnsClient.m in Sources */,
+				3AA2D94311404413004C9284 /* EDSMTPStream.m in Sources */,
+				3AA2D94411404413004C9284 /* EDMailAgent.m in Sources */,
+				3AA2D978114044DE004C9284 /* EDIPSocket.m in Sources */,
+				3AA2D979114044DE004C9284 /* EDSocket.m in Sources */,
+				3AA2D97C11404529004C9284 /* EDTCPSocket.m in Sources */,
+				3AA2D97F11404557004C9284 /* EDStream.m in Sources */,
+				3AA2D98311404591004C9284 /* functions.m in Sources */,
+				3AA2D987114045AD004C9284 /* NSFileHandle+Extensions.m in Sources */,
+				3AA2D9B01140463B004C9284 /* EDSecureSMTPStream.m in Sources */,
+				3AA2D9B711404658004C9284 /* NSString+OPOSErrors.m in Sources */,
+				3AA2D9B811404658004C9284 /* OPSSLSocket.m in Sources */,
+				3AA2D9C7114046B3004C9284 /* NSHost+Extensions.m in Sources */,
+				3AA2DB5711417A27004C9284 /* LogController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

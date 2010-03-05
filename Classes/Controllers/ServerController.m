@@ -15,18 +15,19 @@
 #import "User.h"
 #import "Message.h"
 #import "MainWindowController.h"
+#import "LogController.h"
 
 #import "EDMessage.h"
 
 @implementation ServerController
 
 @synthesize smtpServer = mSmtpServer;
+@synthesize logController = mLogController;
 @synthesize startToolbarItem = mStartToolbarItem;
 @synthesize stopToolbarItem = mStopToolbarItem;
 @synthesize logToolbarItem = mLogToolbarItem;
 @synthesize statusText = mStatusText;
 @synthesize mainWindowController = mMainWindowController;
-@synthesize logString = mLogString;
 @synthesize defaultsController = mDefaultsController;
 
 - (void)awakeFromNib
@@ -44,9 +45,7 @@
     [mSmtpServer setPort:port];
     [mSmtpServer setDelegate:self];
     
-    mLog = [[NSMutableString alloc] init];
-    
-    [self start:self];
+    [self performSelectorOnMainThread:@selector(start:) withObject:self waitUntilDone:NO];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -67,14 +66,7 @@
 
 - (void)log:(NSString *)msg
 {
-    [mLog appendFormat:@"%@ - %@\n", [[NSDate alloc] init], msg];
-    [self setLogString:[mLog copy]];
-}
-
-- (IBAction)clearLog:(id)sender
-{
-    [mLog setString:@""];
-    [self setLogString:[mLog copy]];
+    [mLogController logComponent:@"Server" info:msg];
 }
 
 - (IBAction)start:(id)sender

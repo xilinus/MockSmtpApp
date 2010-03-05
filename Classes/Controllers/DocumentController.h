@@ -42,4 +42,6 @@
 - (IBAction)showPrevAlternative:(id)sender;
 - (IBAction)showBestAlternative:(id)sender;
 
+- (IBAction)deliver:(id)sender;
+
 @end

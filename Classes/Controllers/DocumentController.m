@@ -209,6 +209,11 @@
     [self.document copy:sender];
 }
 
+- (IBAction)deliver:(id)sender
+{
+    [self.document deliver:sender];
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
     [SoftwareUpdateController completeUpdateIfNeeded];

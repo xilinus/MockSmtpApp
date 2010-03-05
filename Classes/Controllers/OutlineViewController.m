@@ -16,6 +16,8 @@
 
 @implementation OutlineViewController
 
+@synthesize smtpClient = mSmtpClient;
+
 - (BOOL)canDelete
 {
     if ([[self selectedObjects] count] == 0)
@@ -63,6 +65,20 @@
 }
 
 - (BOOL)canCopy
+{
+    if ([[self selectedObjects] count] == 0)
+    {
+        return NO;
+    }
+    
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    NSUInteger count = [messages count];
+    
+    return count > 0;
+}
+
+- (BOOL)canDeliver
 {
     if ([[self selectedObjects] count] == 0)
     {
@@ -190,6 +206,17 @@
     NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
     [pb declareTypes:types owner:self];
     [pb setString:string forType:NSStringPboardType];
+}
+
+- (IBAction)deliver:(id)sender
+{
+    id<TableViewContent> item = [[self selectedObjects] objectAtIndex:0];
+    NSArray *messages = [[item tableViewItems] allObjects];
+    
+    if ([messages count])
+    {
+        [mSmtpClient deliverMessages:messages];
+    }
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView

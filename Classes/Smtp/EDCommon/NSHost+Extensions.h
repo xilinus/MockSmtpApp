@@ -1,8 +1,8 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  NSHost+Extensions.h created by erik on Fri 15-Oct-1999
+//  @(#)$Id: NSHost+Extensions.h,v 2.0 2002-08-16 18:12:48 erik Exp $
 //
-//  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
+//  Copyright (c) 1999 by Erik Doernenburg. All rights reserved.
 //
 //  Permission to use, copy, modify and distribute this software and its documentation
 //  is hereby granted, provided that both the copyright notice and this permission
@@ -18,35 +18,17 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+/*" Various common extensions to #NSHost. "*/
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
+@interface NSHost(EDExtensions)
 
-- (NSString *)stringByRemovingBracketComments;
++ (NSHost *)hostWithNameOrAddress:(NSString *)string;
++ (NSHost *)localhost;
 
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
-
-- (NSString *)domainFromAddressString;
-
-- (NSString *)stringByRemovingReplyPrefix;
-
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
-
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
-
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
-
-
-@interface NSMutableString(EDMessageUtilities)
-
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
++ (NSString *)loopbackAddress;
++ (NSString *)broadcastAddress;
++ (NSString *)localDomain;
+- (NSString *)fullyQualifiedName;
+- (NSString *)domain;
 
 @end

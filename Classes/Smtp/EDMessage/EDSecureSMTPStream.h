@@ -1,8 +1,8 @@
 //---------------------------------------------------------------------------------------
-//  NSString+MessageUtils.h created by erik on Sun 23-Mar-1997
-//  @(#)$Id: NSString+MessageUtils.h,v 2.1 2003/09/08 21:01:50 erik Exp $
+//  EDSMTPSStream.h created by erik on Wed 08-Oct-2008
+//  $Id: EDSecureSMTPStream.h 346 2008-10-10 08:20:42Z erik $
 //
-//  Copyright (c) 1997-2000 by Erik Doernenburg. All rights reserved.
+//  Copyright (c) 2008 by Erik Doernenburg. All rights reserved.
 //
 //  Permission to use, copy, modify and distribute this software and its documentation
 //  is hereby granted, provided that both the copyright notice and this permission
@@ -18,35 +18,16 @@
 //  OR OF ANY DERIVATIVE WORK.
 //---------------------------------------------------------------------------------------
 
-@interface NSString(EDMessageUtilities) 
+#import "EDSMTPStream.h"
 
-- (BOOL)isValidMessageID;
-- (NSString *)getURLFromArticleID;
+@class OPSSLSocket;
 
-- (NSString *)stringByRemovingBracketComments;
+@interface EDSecureSMTPStream : EDSMTPStream 
+{
+}
 
-- (NSString *)realnameFromEMailString;
-- (NSString *)addressFromEMailString;
-- (NSArray *)addressListFromEMailString;
+- (OPSSLSocket *)socket;
 
-- (NSString *)domainFromAddressString;
-
-- (NSString *)stringByRemovingReplyPrefix;
-
-- (NSString *)stringByApplyingROT13;
-- (NSString *)stringWithCanonicalLinebreaks;
-
-- (NSString *)stringByUnwrappingParagraphs;
-- (NSString *)stringByWrappingToLineLength:(unsigned int)length;
-- (NSString *)stringByPrefixingLinesWithString:(NSString *)prefix;
-
-- (NSString *)stringByFoldingToLimit:(unsigned int)limit;
-- (NSString *)stringByUnfoldingString;
-@end
-
-
-@interface NSMutableString(EDMessageUtilities)
-
-- (void)appendAsLine:(NSString *)line withPrefix:(NSString *)prefix;
+- (BOOL)supportsTLS;
 
 @end
