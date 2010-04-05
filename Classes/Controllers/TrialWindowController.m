@@ -48,18 +48,25 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
 {
     NSFileManager *manager = [NSFileManager defaultManager];
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Checking if license file exists...");
+	
     NSString *licensePath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
     if (![manager fileExistsAtPath:licensePath])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"No license file exists at path %@", licensePath);
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
         return NO;
     }
     
     NSString *sigPath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_SIG] stringByStandardizingPath];
     if (![manager fileExistsAtPath:sigPath])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"No signature file exists at path %@", sigPath);
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
         return NO;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Ok");
     return YES;
 }
 
@@ -67,23 +74,32 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
 {
     NSFileManager *manager = [NSFileManager defaultManager];
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Checking if temp license file exists...");
+	
     NSString *licensePath = [[LICENSE_TMP_DIR stringByAppendingPathComponent:LICENSE_FILE] stringByStandardizingPath];
     if (![manager fileExistsAtPath:licensePath])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"No license file exists at path %@", licensePath);
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
         return NO;
     }
     
     NSString *sigPath = [[LICENSE_TMP_DIR stringByAppendingPathComponent:LICENSE_SIG] stringByStandardizingPath];
     if (![manager fileExistsAtPath:sigPath])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"No signature file exists at path %@", sigPath);
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
         return NO;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Ok");
     return YES;
 }
 
 + (BOOL)checkSignature:(NSString *)sigPath ofFile:(NSString *)filePath
 {
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Checking file signature: %@", filePath);
+	
     NSData *key = [PUB_KEY dataUsingEncoding:NSUTF8StringEncoding];
     NSString *keyPath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_KEY_FILE] stringByStandardizingPath];
     [key writeToFile:keyPath atomically:YES];
@@ -91,22 +107,33 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     NSString *keyCheck = [NSString stringWithContentsOfFile:keyPath];
     if (![PUB_KEY isEqualToString:keyCheck])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Invalid public key.");
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
         return NO;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Starting openssl...");
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/usr/bin/openssl"];
     [task setArguments:[NSArray arrayWithObjects:@"dgst", @"-sha1", @"-verify", keyPath, @"-signature", sigPath, filePath, nil]];
     
     [task launch];
-    [task waitUntilExit];
+	int pid = [task processIdentifier];
+	
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Started. pid = %d", pid);
+    
+	[task waitUntilExit];
     int status = [task terminationStatus];
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Terminated. status = %d", status);
+	
     if (status == 0)
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Ok");
         return YES;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
     return NO;
 }
 
@@ -251,53 +278,81 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
 
 + (BOOL)unpackFile:(NSString *)file
 {
+    lcl_log(lcl_cLicenseController, lcl_vTrace, @"Unpacking license file %@", file);
+	
     NSString *licenseDir = [LICENSE_DIR stringByStandardizingPath];
     
-    if (![NSFileManager createDirectoryAtPathIfNotExists:licenseDir error:NULL])
+	NSError *error = nil;
+    if (![NSFileManager createDirectoryAtPathIfNotExists:licenseDir error:&error])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Cant create directory. Error: %@", error);
         return NO;
     }
     
     //tar -xzf license.key license.plist license.plist.sha1 -C dir
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Starting tar...");
+	
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/usr/bin/tar"];
     [task setArguments:[NSArray arrayWithObjects:@"-xvzf", file, @"-C", licenseDir, @"license.plist", @"license.plist.sha1", nil]];
     
     [task launch];
+	
+	int pid = [task processIdentifier];
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Started. pid = %d", pid);
+	
     [task waitUntilExit];
     int status = [task terminationStatus];
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Terminated. status = %d", status);
+	
     if (status == 0)
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Ok");
         return YES;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
     return NO;
 }
 
 + (BOOL)unpackTmpFile:(NSString *)file
 {
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Unpacking license file %@", file);
+	
     NSString *licenseDir = [LICENSE_TMP_DIR stringByStandardizingPath];
     
-    if (![NSFileManager createDirectoryAtPathIfNotExists:licenseDir error:NULL])
+	NSError *error = nil;
+    if (![NSFileManager createDirectoryAtPathIfNotExists:licenseDir error:&error])
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Cant create directory. Error: %@", error);
         return NO;
     }
     
     //tar -xzf license.key license.plist license.plist.sha1 -C dir
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Starting tar...");
+	
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/usr/bin/tar"];
     [task setArguments:[NSArray arrayWithObjects:@"-xvzf", file, @"-C", licenseDir, @"license.plist", @"license.plist.sha1", nil]];
     
     [task launch];
+	
+	int pid = [task processIdentifier];
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Started. pid = %d", pid);
+	
     [task waitUntilExit];
     int status = [task terminationStatus];
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Terminated. status = %d", status);
+	
     if (status == 0)
     {
+		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Ok");
         return YES;
     }
     
+	lcl_log(lcl_cLicenseController, lcl_vTrace, @"Failed");
     return NO;
 }
 

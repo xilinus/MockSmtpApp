@@ -24,4 +24,5 @@
 // THE SOFTWARE.
 
 _lcl_component(Main, "Main", "MockSmtp/Main")
-_lcl_component(Server, "Server", "MockSmtp/Server") 
+_lcl_component(Server, "Server", "MockSmtp/Server")
+_lcl_component(LicenseController, "LicenseController", "MockSmtp/LicenseController")

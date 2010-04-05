@@ -10,8 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-    lcl_configure_by_name("MockSmtp/*", lcl_vInfo);
-    lcl_configure_by_name("MockSmtp/*", lcl_vDebug);
+    lcl_configure_by_name("MockSmtp/*", lcl_vTrace);
     
     lcl_log(lcl_cMain, lcl_vInfo, @"Application launched.");
     
