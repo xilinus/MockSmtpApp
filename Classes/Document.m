@@ -115,19 +115,6 @@
     [super saveDocument:self];
 }
 
-- (void)close
-{
-    [super close];
-    
-    NSDocumentController *dc = [NSDocumentController sharedDocumentController];
-    
-    NSArray *docs = [dc documents];
-    if ([docs count] == 0)
-    {
-        [[NSApplication sharedApplication] terminate:self];
-    }
-}
-
 - (BOOL)isViewWithIndexHidden:(NSUInteger)index
 {
     return mSelectedView != index;

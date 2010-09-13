@@ -12,6 +12,7 @@
 #import "Document.h"
 #import "SoftwareUpdateController.h"
 
+#import "MainWindowController.h"
 #import "MessageTransformer.h"
 #import "MessagePartTransformer.h"
 #import "MessageAttachmentTransformer.h"
@@ -171,7 +172,13 @@
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender
 {
+	[self.document.mainWindowController.window orderFront:self];
     return NO;
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+	return NO;
 }
 
 - (IBAction)showNextAlternative:(id)sender

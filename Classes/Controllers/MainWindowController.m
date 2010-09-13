@@ -186,4 +186,10 @@
     [[self document] saveDocument:self];
 }
 
+- (BOOL)windowShouldClose:(id)sender
+{
+	[self.window orderOut:self];
+	return NO;
+}
+
 @end
