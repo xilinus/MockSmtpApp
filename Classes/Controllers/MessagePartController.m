@@ -26,8 +26,13 @@
     NSArray *parts = [message subparts];
     MessagePart *bestPart = [message bestPart];
     mPartsCount = [parts count];
-    mBestPartIndex = [parts indexOfObject:bestPart];
-    [self setCurrentPartIndex:mBestPartIndex];
+	mBestPartIndex = NSNotFound;
+	if (bestPart)
+	{
+		mBestPartIndex = [parts indexOfObject:bestPart];
+    }
+	
+	[self setCurrentPartIndex:mBestPartIndex];
 }
 
 - (IBAction)showNextAlternative:(id)sender
@@ -76,6 +81,11 @@
 
 - (MessagePart *)currentPart
 {
+	if (mCurrentPartIndex == NSNotFound)
+	{
+		return nil;
+	}
+	
     Message *message = (Message *)self.content;
     NSArray *parts = [message subparts];
     MessagePart *part = [parts objectAtIndex:mCurrentPartIndex];

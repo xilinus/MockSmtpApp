@@ -141,7 +141,7 @@
         
         if (!mBestPart)
         {
-            if (mSubparts)
+            if (mSubparts.count)
             {
                 mBestPart = [mSubparts objectAtIndex:0];
             }
