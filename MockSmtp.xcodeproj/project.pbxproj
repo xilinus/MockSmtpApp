@@ -137,6 +137,9 @@
 		514EA015081EC7C3009B8CD9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */; };
 		514EA082081ECB54009B8CD9 /* MockSmtp.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 514E9DF9081EBF9C009B8CD9 /* MockSmtp.mdimporter */; };
 		775DFF38067A968500C5B868 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		7CE379CF123E64CA00EE1CA8 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE379CE123E64CA00EE1CA8 /* Growl.framework */; };
+		7CE379DD123E657900EE1CA8 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7CE379CE123E64CA00EE1CA8 /* Growl.framework */; };
+		7CE37A39123E703000EE1CA8 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 7CE379E3123E688E00EE1CA8 /* Growl Registration Ticket.growlRegDict */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* Document.m */; settings = {ATTRIBUTES = (); }; };
@@ -185,6 +188,16 @@
 			dstSubfolderSpec = 7;
 			files = (
 				514EA082081ECB54009B8CD9 /* MockSmtp.mdimporter in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CE379DC123E655F00EE1CA8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CE379DD123E657900EE1CA8 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +450,12 @@
 		514EA014081EC7C3009B8CD9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
 		775BDEF0067A8BF0009058FE /* Document.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		7788DA0506752A1600599AAD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		7CE379CE123E64CA00EE1CA8 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		7CE379E3123E688E00EE1CA8 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		7CE37A04123E6C7F00EE1CA8 /* GrowlDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlDefines.h; path = Growl.framework/Versions/A/Headers/GrowlDefines.h; sourceTree = "<group>"; };
+		7CE37A05123E6C7F00EE1CA8 /* GrowlApplicationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlApplicationBridge.h; path = Growl.framework/Versions/A/Headers/GrowlApplicationBridge.h; sourceTree = "<group>"; };
+		7CE37A06123E6C7F00EE1CA8 /* GrowlApplicationBridge-Carbon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GrowlApplicationBridge-Carbon.h"; path = "Growl.framework/Versions/A/Headers/GrowlApplicationBridge-Carbon.h"; sourceTree = "<group>"; };
+		7CE37A07123E6C7F00EE1CA8 /* Growl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Growl.h; path = Growl.framework/Versions/A/Headers/Growl.h; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* MockSmtp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSmtp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -461,6 +480,7 @@
 				3ADBCFD210AC6C96006C9DBE /* WebKit.framework in Frameworks */,
 				3A8E127B10E117FF00A0CFBC /* Security.framework in Frameworks */,
 				3AA2D9F311412488004C9284 /* libresolv.9.dylib in Frameworks */,
+				7CE379CF123E64CA00EE1CA8 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +497,7 @@
 				514E9E2D081EC793009B8CD9 /* CoreServices.framework */,
 				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
 				7788DA0506752A1600599AAD /* CoreData.framework */,
+				7CE379CE123E64CA00EE1CA8 /* Growl.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -535,6 +556,7 @@
 		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7CE37A03123E6C6D00EE1CA8 /* Growl */,
 				32DBCF750370BD2300C91783 /* MockSmtp_Prefix.pch */,
 				2A37F4B0FDCFA73011CA2CEA /* main.m */,
 				3A8C88EC10F22115007680DF /* license.sh */,
@@ -555,6 +577,7 @@
 				8D15AC360486D014006FF6A4 /* Info.plist */,
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 				514E9DFA081EBF9C009B8CD9 /* Importer-Info.plist */,
+				7CE379E3123E688E00EE1CA8 /* Growl Registration Ticket.growlRegDict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1163,6 +1186,17 @@
 			path = ../Importer;
 			sourceTree = "<group>";
 		};
+		7CE37A03123E6C6D00EE1CA8 /* Growl */ = {
+			isa = PBXGroup;
+			children = (
+				7CE37A04123E6C7F00EE1CA8 /* GrowlDefines.h */,
+				7CE37A05123E6C7F00EE1CA8 /* GrowlApplicationBridge.h */,
+				7CE37A06123E6C7F00EE1CA8 /* GrowlApplicationBridge-Carbon.h */,
+				7CE37A07123E6C7F00EE1CA8 /* Growl.h */,
+			);
+			name = Growl;
+			sourceTree = "<group>";
+		};
 		E1B74B1A0667B4A90069E3BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1200,6 +1234,7 @@
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				514EA07C081ECB3F009B8CD9 /* CopyFiles */,
 				3A5505B310BC0E30001B095C /* CopyFiles */,
+				7CE379DC123E655F00EE1CA8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1269,6 +1304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE37A39123E703000EE1CA8 /* Growl Registration Ticket.growlRegDict in Resources */,
 				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				2F7446C30DB6CCE400F9684A /* MainMenu.xib in Resources */,

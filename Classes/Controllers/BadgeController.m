@@ -8,7 +8,6 @@
 
 #import "BadgeController.h"
 
-
 @implementation BadgeController
 
 - (void)setContent:(id)content

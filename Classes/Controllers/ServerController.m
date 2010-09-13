@@ -10,6 +10,8 @@
 
 #import "ServerController.h"
 
+#import "Growl.h"
+
 #import "SmtpServer.h"
 #import "Server.h"
 #import "User.h"
@@ -150,9 +152,6 @@
          inSession:(SmtpSession *)session
      forConnection:(SmtpConnection *)connection
 {
-    //[self log:[NSString stringWithFormat:@"Received message from %@ with content:\n%@",
-    //           sender, [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding]]];
-    
     sender = [sender stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     
     NSManagedObjectContext *moc = [self managedObjectContext];
@@ -190,7 +189,16 @@
     
     [moc processPendingChanges];
     
-    [[mMainWindowController document] saveDocument:self];    
+    [[mMainWindowController document] saveDocument:self];
+	
+	NSURL *objectURI = [[message objectID] URIRepresentation];
+	[GrowlApplicationBridge notifyWithTitle:message.from
+								description:message.subject
+						   notificationName:@"New message received"
+								   iconData:nil
+								   priority:0
+								   isSticky:NO
+							   clickContext:[objectURI absoluteString]];
 }
 
 @end

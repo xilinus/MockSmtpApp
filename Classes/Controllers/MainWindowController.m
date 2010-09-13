@@ -13,6 +13,8 @@
 #import "TableView.h"
 #import "OutlineView.h"
 
+#import "Message.h"
+
 @implementation MainWindowController
 
 @synthesize serverController = mServerController;
@@ -24,7 +26,7 @@
 {
     if (self = [super initWithWindowNibName:@"MainWindow"])
     {
-        
+        [GrowlApplicationBridge setGrowlDelegate:self];
     }
     
     return self;
@@ -178,6 +180,42 @@
     }
     
     return NO;
+}
+
+- (void)growlNotificationWasClicked:(id)clickContext
+{
+	NSLog(@"growl clicked %@", clickContext);
+	[self.window makeKeyAndOrderFront:self];
+	[NSApp activateIgnoringOtherApps:YES];
+	
+	NSManagedObjectContext *moc = [self.serverController managedObjectContext];
+	NSPersistentStoreCoordinator *psc = [moc persistentStoreCoordinator];
+	NSManagedObjectID *messageId = [psc managedObjectIDForURIRepresentation:[NSURL URLWithString:clickContext]];
+	
+	Message *message = (Message *)[moc objectWithID:messageId];
+	NSLog(@"message folder: %@", message.user);
+	
+	id arrangedObjects = [self.outlineViewController arrangedObjects];
+	id messagesNode = [[arrangedObjects childNodes] objectAtIndex:0];
+	NSLog(@"arranged objects: %@", [messagesNode childNodes]);
+	
+	NSArray *childNodes = [messagesNode childNodes];
+	
+	NSUInteger i;
+	for (i = 0; i < childNodes.count; i++)
+	{
+		NSTreeNode *node = [childNodes objectAtIndex:i];
+		id representedObject = [node representedObject];
+		id user = [representedObject user];
+		if (user == message.user)
+		{
+			break;
+		}
+	}
+	
+	NSIndexPath *path = [[NSIndexPath indexPathWithIndex:0] indexPathByAddingIndex:i];
+	[self.outlineViewController setSelectionIndexPath:path];
+	[self.tableViewController setSelectedObjects:[NSArray arrayWithObject:message]];
 }
 
 - (void)windowWillClose:(NSNotification *)notification

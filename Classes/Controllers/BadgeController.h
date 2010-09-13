@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface BadgeController : NSObjectController
 {
+	
 }
 
 @end

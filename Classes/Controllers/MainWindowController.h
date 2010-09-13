@@ -9,12 +9,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "Growl.h"
+
 @class ServerController;
 @class TableViewController;
 @class OutlineViewController;
 @class MessagePartController;
 
-@interface MainWindowController : NSWindowController
+@interface MainWindowController : NSWindowController <GrowlApplicationBridgeDelegate>
 {
 @private
     
