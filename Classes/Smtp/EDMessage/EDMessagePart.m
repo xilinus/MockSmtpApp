@@ -402,7 +402,7 @@
             fbodyPtr = p + 1;
             if((fbodyPtr < pmax) && (iswhitespace(*fbodyPtr)))
                 fbodyPtr += 1;
-            name = [NSString stringWithCString:fnamePtr length:(p - fnamePtr)];
+				name = [NSString stringWithCString:fnamePtr length:(p - fnamePtr)];
             }
         else if(iscrlf(*p))
             {

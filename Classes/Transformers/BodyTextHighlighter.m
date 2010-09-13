@@ -30,14 +30,10 @@
     
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *templatePath = [mainBundle pathForResource:@"syntax" ofType:@"html"];
-    NSString *templateString = [NSString stringWithContentsOfFile:templatePath];
+    NSString *templateString = [NSString stringWithContentsOfFile:templatePath encoding:NSASCIIStringEncoding error:nil];
     
     NSString *string = (NSString *)value;
-    return [NSString stringWithFormat:templateString, string];
-    
-    //return [[NSAttributedString alloc] initWithString:string
-    //                                       attributes:[NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Monaco" size:12.0f]
-    //                                                                              forKey:NSFontAttributeName]];
+    return [NSString stringWithFormat:templateString, string];    
 }
 
 - (id)reverseTransformedValue:(id)value

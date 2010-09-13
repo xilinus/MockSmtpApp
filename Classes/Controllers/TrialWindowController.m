@@ -104,7 +104,7 @@ Vo1X9ZXjv3igiFT94vpwqKMCAwEAAQ==\n\
     NSString *keyPath = [[LICENSE_DIR stringByAppendingPathComponent:LICENSE_KEY_FILE] stringByStandardizingPath];
     [key writeToFile:keyPath atomically:YES];
     
-    NSString *keyCheck = [NSString stringWithContentsOfFile:keyPath];
+    NSString *keyCheck = [NSString stringWithContentsOfFile:keyPath encoding:NSASCIIStringEncoding error:nil];
     if (![PUB_KEY isEqualToString:keyCheck])
     {
 		lcl_log(lcl_cLicenseController, lcl_vTrace, @"Invalid public key.");

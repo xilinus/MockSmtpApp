@@ -10,7 +10,7 @@
 
 @class LicenseController;
 
-@interface LicenseInstallController : NSObject
+@interface LicenseInstallController : NSObject <NSOpenSavePanelDelegate>
 {
 @private
     

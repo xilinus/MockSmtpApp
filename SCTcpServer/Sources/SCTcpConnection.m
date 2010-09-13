@@ -56,7 +56,7 @@
     struct sockaddr_in addr4;
     memcpy(&addr4, [mPeerAddress bytes], sizeof(addr4));
     struct in_addr a = addr4.sin_addr;
-    NSString *addressString = [NSString stringWithCString:inet_ntoa(a)];
+    NSString *addressString =  [NSString stringWithCString:inet_ntoa(a) encoding:NSASCIIStringEncoding];
     return addressString;
 }
 
@@ -65,16 +65,6 @@
     NSUInteger inputLength = [mInputBuffer length];
     if (inputLength > 0)
     {
-        //NSLog(@"Client: %@", [[NSString alloc] initWithData:mInputBuffer encoding:NSASCIIStringEncoding]);
-        //NSUInteger processed = 0;
-        //NSUInteger processed = [mSession processData:mInputBuffer];
-        
-        //NSInteger rest = inputLength - processed;
-        //if (rest > 0)
-        //{
-        //    memmove([mInputBuffer mutableBytes], [mInputBuffer mutableBytes] + processed, rest);
-        //}
-        
         if ([mDelegate respondsToSelector:@selector(tcpConnection:didReceiveData:)])
         {
             [mDelegate tcpConnection:self didReceiveData:mInputBuffer];

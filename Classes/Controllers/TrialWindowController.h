@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface TrialWindowController : NSWindowController
+@interface TrialWindowController : NSWindowController <NSOpenSavePanelDelegate>
 {
 @private
     
