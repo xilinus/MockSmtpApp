@@ -184,7 +184,6 @@
 
 - (void)growlNotificationWasClicked:(id)clickContext
 {
-	NSLog(@"growl clicked %@", clickContext);
 	[self.window makeKeyAndOrderFront:self];
 	[NSApp activateIgnoringOtherApps:YES];
 	
@@ -193,11 +192,9 @@
 	NSManagedObjectID *messageId = [psc managedObjectIDForURIRepresentation:[NSURL URLWithString:clickContext]];
 	
 	Message *message = (Message *)[moc objectWithID:messageId];
-	NSLog(@"message folder: %@", message.user);
 	
 	id arrangedObjects = [self.outlineViewController arrangedObjects];
 	id messagesNode = [[arrangedObjects childNodes] objectAtIndex:0];
-	NSLog(@"arranged objects: %@", [messagesNode childNodes]);
 	
 	NSArray *childNodes = [messagesNode childNodes];
 	
