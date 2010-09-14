@@ -15,6 +15,16 @@
 
 @synthesize webView = _webView;
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	if (self = [super initWithCoder:aDecoder])
+	{
+		//[[[self.webView mainFrame] frameView] setAllowsScrolling:NO];
+	}
+	
+	return self;
+}
+
 - (void)setContent:(id)content
 {
     [super setContent:content];
@@ -23,7 +33,7 @@
     NSString *resourcesPath = [mainBundle resourcePath];
     NSURL *resourcesUrl = [NSURL fileURLWithPath:resourcesPath];
     
-    NSString *html = (NSString *)content;
+	NSString *html = (NSString *)content;
     [[_webView mainFrame] loadHTMLString:html baseURL:resourcesUrl];
 }
 
@@ -43,6 +53,27 @@ decisionListener:(id <WebPolicyDecisionListener>)listener
     {
         [listener use];
     }
+}
+
+- (void)webView:(WebView *)webView didFinishLoadForFrame:(WebFrame *)webFrame
+{
+	/*if([webFrame isEqual:[webView mainFrame]])
+    {
+        //get the rect for the rendered frame
+        NSRect webFrameRect = [[[webFrame frameView] documentView] frame];
+        //get the rect of the current webview
+        NSRect webViewRect = [webView frame];
+		
+        //calculate the new frame
+        NSRect newWebViewRect = NSMakeRect(webViewRect.origin.x, 
+                                           0, //webViewRect.origin.y - (NSHeight(webFrameRect) - NSHeight(webViewRect)), 
+                                           NSWidth(webViewRect), 
+                                           NSHeight(webFrameRect));
+        //set the frame
+        [webView setFrame:newWebViewRect];
+		
+        NSLog(@"The dimensions of the page are: %@", NSStringFromRect(webFrameRect));
+    }*/
 }
 
 @end

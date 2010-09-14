@@ -8,6 +8,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 #import "Growl.h"
 
@@ -25,6 +26,15 @@
     TableViewController *mTableViewController;
     OutlineViewController *mOutlineViewController;
     MessagePartController *mMessagePartController;
+	
+	NSScrollView *mScrollView;
+	
+	NSView *mHeaderView;
+	NSCollectionView *mAttachmentsView;
+	
+	NSView *mContentView;
+	WebView *mWebView;
+	NSTextView *mTextView;
 }
 
 - (id)init;
@@ -46,5 +56,14 @@
 @property (nonatomic, assign) IBOutlet TableViewController *tableViewController;
 @property (nonatomic, assign) IBOutlet OutlineViewController *outlineViewController;
 @property (nonatomic, assign) IBOutlet MessagePartController *messagePartController;
+
+@property (nonatomic, assign) IBOutlet NSScrollView *scrollView;
+
+@property (nonatomic, assign) IBOutlet NSView *headerView;
+@property (nonatomic, assign) IBOutlet NSCollectionView *attachmentsView;
+
+@property (nonatomic, assign) IBOutlet NSView *contentView;
+@property (nonatomic, assign) IBOutlet WebView *webView;
+@property (nonatomic, assign) IBOutlet NSTextView *textView;
 
 @end

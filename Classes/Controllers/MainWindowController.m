@@ -22,6 +22,15 @@
 @synthesize outlineViewController = mOutlineViewController;
 @synthesize messagePartController = mMessagePartController;
 
+@synthesize scrollView = mScrollView;
+
+@synthesize headerView = mHeaderView;
+@synthesize attachmentsView = mAttachmentsView;
+
+@synthesize contentView = mContentView;
+@synthesize webView = mWebView;
+@synthesize textView = mTextView;
+
 - (id)init
 {
     if (self = [super initWithWindowNibName:@"MainWindow"])
@@ -30,6 +39,75 @@
     }
     
     return self;
+}
+
+- (void)windowDidLoad
+{
+	[super windowDidLoad];
+	
+	[self.scrollView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+	[self.webView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+	/*NSLog(@"key path: %@", keyPath);
+	
+	NSArray *subviews = [self.attachmentsView subviews];
+	NSUInteger count = subviews.count;
+	float subviewsWidth = 150 * count;
+	float width = self.attachmentsView.frame.size.width;
+	
+	NSUInteger rows = round(subviewsWidth / width + 0.5);
+	float height = 100 + rows * 80;
+	
+	NSRect frame = [[self.scrollView documentView] frame];
+	if ([self.textView isHidden])
+	{
+		frame.size.height = MAX(NSHeight(self.scrollView.frame), height + NSHeight(self.webView.frame));
+		//frame.size.width = MAX(NSWidth(self.scrollView.frame), NSWidth(self.webView.frame));
+	}
+	else
+	{
+		frame.size.height = MAX(NSHeight(self.scrollView.frame), height + NSHeight(self.textView.frame));
+		//frame.size.width = NSWidth(self.scrollView.frame);
+	}
+	
+	[[self.scrollView documentView] setFrame:frame];	
+	
+	frame = self.contentView.frame;
+	frame.origin.y = 0;
+	if (self.textView.isHidden)
+	{
+		frame.size.height = NSHeight(self.webView.frame);
+		//frame.size.width = NSWidth(self.webView.frame);
+	}
+	else
+	{
+		frame.size.height = NSHeight(self.textView.frame);
+	}
+	frame.size.height = NSHeight([[self.scrollView documentView] frame]) - height;
+	
+	[self.contentView setFrame:frame];
+	
+	frame = self.textView.frame;
+	frame.size.width = NSWidth(self.contentView.frame);
+	self.textView.frame = frame;
+	
+	NSLog(@"content rect: %@", NSStringFromRect(self.contentView.frame));
+	NSLog(@"web vew rect: %@", NSStringFromRect(self.webView.frame));
+	NSLog(@"text view rect: %@", NSStringFromRect(self.textView.frame));
+	
+	frame = self.headerView.frame;
+	frame.size.height = height;
+	frame.origin.y = NSHeight([self.headerView superview].frame) - NSHeight(frame);
+	[self.headerView setFrame:frame];
+	//[[self.headerView animator] setFrame:frame];
+	
+	[self.webView setHidden:!self.textView.isHidden];*/
 }
 
 - (IBAction)delete:(id)sender

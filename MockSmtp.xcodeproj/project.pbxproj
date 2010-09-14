@@ -140,6 +140,7 @@
 		7CE379CF123E64CA00EE1CA8 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE379CE123E64CA00EE1CA8 /* Growl.framework */; };
 		7CE379DD123E657900EE1CA8 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7CE379CE123E64CA00EE1CA8 /* Growl.framework */; };
 		7CE37A39123E703000EE1CA8 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 7CE379E3123E688E00EE1CA8 /* Growl Registration Ticket.growlRegDict */; };
+		7CE37BCE123F6E5E00EE1CA8 /* AttachmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CE37BCD123F6E5E00EE1CA8 /* AttachmentView.xib */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC310486D014006FF6A4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* Document.m */; settings = {ATTRIBUTES = (); }; };
@@ -456,6 +457,7 @@
 		7CE37A05123E6C7F00EE1CA8 /* GrowlApplicationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlApplicationBridge.h; path = Growl.framework/Versions/A/Headers/GrowlApplicationBridge.h; sourceTree = "<group>"; };
 		7CE37A06123E6C7F00EE1CA8 /* GrowlApplicationBridge-Carbon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GrowlApplicationBridge-Carbon.h"; path = "Growl.framework/Versions/A/Headers/GrowlApplicationBridge-Carbon.h"; sourceTree = "<group>"; };
 		7CE37A07123E6C7F00EE1CA8 /* Growl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Growl.h; path = Growl.framework/Versions/A/Headers/Growl.h; sourceTree = "<group>"; };
+		7CE37BCD123F6E5E00EE1CA8 /* AttachmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentView.xib; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* MockSmtp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockSmtp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -578,6 +580,7 @@
 				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 				514E9DFA081EBF9C009B8CD9 /* Importer-Info.plist */,
 				7CE379E3123E688E00EE1CA8 /* Growl Registration Ticket.growlRegDict */,
+				7CE37BCD123F6E5E00EE1CA8 /* AttachmentView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1328,6 +1331,7 @@
 				3A877EC0113C30E600E2D371 /* shThemeDefault.css in Resources */,
 				3A877F14113C36B500E2D371 /* syntax.html in Resources */,
 				3AA2D698113EF936004C9284 /* software-update-icon.png in Resources */,
+				7CE37BCE123F6E5E00EE1CA8 /* AttachmentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,5 +21,6 @@
 
 @property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) NSString *fileName;
+@property (nonatomic, readonly) NSImage *icon;
 
 @end

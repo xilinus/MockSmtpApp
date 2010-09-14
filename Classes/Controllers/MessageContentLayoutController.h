@@ -13,6 +13,8 @@
 {
 @private
     
+	BOOL _hidden;
+	
     NSView *mHeaderView;
     NSView *mSeparatorView;
     NSView *mContentView;
@@ -23,6 +25,8 @@
     NSView *mDateView;
     NSView *mDateLabel;
     
+	NSView *mAttachmentsLabel;
+	NSView *mAttachmentsButton;
     NSView *mAttachmentsView;
 }
 
@@ -36,6 +40,8 @@
 @property (nonatomic, assign) IBOutlet NSView *dateView;
 @property (nonatomic, assign) IBOutlet NSView *dateLabel;
 
+@property (nonatomic, assign) IBOutlet NSView *attachmentsLabel;
+@property (nonatomic, assign) IBOutlet NSView *attachmentsButton;
 @property (nonatomic, assign) IBOutlet NSView *attachmentsView;
 
 @end
