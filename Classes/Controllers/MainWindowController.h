@@ -35,6 +35,9 @@
 	NSView *mContentView;
 	WebView *mWebView;
 	NSTextView *mTextView;
+	
+	WebView *mBodyWebView;
+	NSTextView *mRawTextView;
 }
 
 - (id)init;
@@ -65,5 +68,8 @@
 @property (nonatomic, assign) IBOutlet NSView *contentView;
 @property (nonatomic, assign) IBOutlet WebView *webView;
 @property (nonatomic, assign) IBOutlet NSTextView *textView;
+
+@property (nonatomic, assign) IBOutlet WebView *bodyWebView;
+@property (nonatomic, assign) IBOutlet NSTextView *rawTextView;
 
 @end

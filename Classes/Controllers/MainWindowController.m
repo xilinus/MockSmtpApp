@@ -8,12 +8,17 @@
 //
 
 #import "MainWindowController.h"
+
 #import "TableViewController.h"
 #import "OutlineViewController.h"
+#import "MessagePartController.h"
+
 #import "TableView.h"
 #import "OutlineView.h"
 
+#import "Document.h"
 #import "Message.h"
+#import "MessagePart.h"
 
 @implementation MainWindowController
 
@@ -31,6 +36,9 @@
 @synthesize webView = mWebView;
 @synthesize textView = mTextView;
 
+@synthesize bodyWebView = mBodyWebView;
+@synthesize rawTextView = mRawTextView;
+
 - (id)init
 {
     if (self = [super initWithWindowNibName:@"MainWindow"])
@@ -39,75 +47,6 @@
     }
     
     return self;
-}
-
-- (void)windowDidLoad
-{
-	[super windowDidLoad];
-	
-	[self.scrollView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
-	[self.webView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-					  ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-	/*NSLog(@"key path: %@", keyPath);
-	
-	NSArray *subviews = [self.attachmentsView subviews];
-	NSUInteger count = subviews.count;
-	float subviewsWidth = 150 * count;
-	float width = self.attachmentsView.frame.size.width;
-	
-	NSUInteger rows = round(subviewsWidth / width + 0.5);
-	float height = 100 + rows * 80;
-	
-	NSRect frame = [[self.scrollView documentView] frame];
-	if ([self.textView isHidden])
-	{
-		frame.size.height = MAX(NSHeight(self.scrollView.frame), height + NSHeight(self.webView.frame));
-		//frame.size.width = MAX(NSWidth(self.scrollView.frame), NSWidth(self.webView.frame));
-	}
-	else
-	{
-		frame.size.height = MAX(NSHeight(self.scrollView.frame), height + NSHeight(self.textView.frame));
-		//frame.size.width = NSWidth(self.scrollView.frame);
-	}
-	
-	[[self.scrollView documentView] setFrame:frame];	
-	
-	frame = self.contentView.frame;
-	frame.origin.y = 0;
-	if (self.textView.isHidden)
-	{
-		frame.size.height = NSHeight(self.webView.frame);
-		//frame.size.width = NSWidth(self.webView.frame);
-	}
-	else
-	{
-		frame.size.height = NSHeight(self.textView.frame);
-	}
-	frame.size.height = NSHeight([[self.scrollView documentView] frame]) - height;
-	
-	[self.contentView setFrame:frame];
-	
-	frame = self.textView.frame;
-	frame.size.width = NSWidth(self.contentView.frame);
-	self.textView.frame = frame;
-	
-	NSLog(@"content rect: %@", NSStringFromRect(self.contentView.frame));
-	NSLog(@"web vew rect: %@", NSStringFromRect(self.webView.frame));
-	NSLog(@"text view rect: %@", NSStringFromRect(self.textView.frame));
-	
-	frame = self.headerView.frame;
-	frame.size.height = height;
-	frame.origin.y = NSHeight([self.headerView superview].frame) - NSHeight(frame);
-	[self.headerView setFrame:frame];
-	//[[self.headerView animator] setFrame:frame];
-	
-	[self.webView setHidden:!self.textView.isHidden];*/
 }
 
 - (IBAction)delete:(id)sender
@@ -192,11 +131,90 @@
     {
         [mTableViewController copy:sender];
     }
-    
-    if ([responder isKindOfClass:[OutlineView class]])
+    else if ([responder isKindOfClass:[OutlineView class]])
     {
         [mOutlineViewController copy:sender];
     }
+	else
+	{
+		Document *document = self.document;
+		switch (document.selectedView)
+		{
+			case 0:
+			{
+				NSLog(@"copy html");
+				MessagePart *currentPart = [self.messagePartController currentPart];
+				if ([currentPart isKindOfClass:HtmlMessagePart.class])
+				{
+					if([[[self.webView selectedDOMRange] text] length])
+					{
+						[self.webView copy:self];
+					}
+					else
+					{
+						NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+						NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+						[pb declareTypes:types owner:self];
+						[pb setString:currentPart.content forType:NSStringPboardType];
+						
+					}
+				}
+				else
+				{
+					NSRange selectedRange = [self.textView selectedRange];
+					if (selectedRange.length)
+					{
+						[self.textView copy:self];
+					}
+					else
+					{
+						NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+						NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+						[pb declareTypes:types owner:self];
+						[pb setString:currentPart.content forType:NSStringPboardType];
+					}
+				}
+				break;
+			}
+			case 1:
+			{
+				NSLog(@"copy body");
+				MessagePart *currentPart = [self.messagePartController currentPart];
+				if([[[self.bodyWebView selectedDOMRange] text] length])
+				{
+					[self.bodyWebView copy:self];
+				}
+				else
+				{
+					NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+					NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+					[pb declareTypes:types owner:self];
+					[pb setString:currentPart.content forType:NSStringPboardType];
+				}
+				break;
+			}
+			case 2:
+			{
+				NSLog(@"copy raw");
+				NSRange selectedRange = [self.rawTextView selectedRange];
+				if (selectedRange.length)
+				{
+					[self.rawTextView copy:self];
+				}
+				else
+				{
+					Message *message = [self.messagePartController content];
+					NSPasteboard *pb = [NSPasteboard generalPasteboard]; 
+					NSArray *types = [NSArray arrayWithObjects: NSStringPboardType, NSRTFPboardType, nil]; 
+					[pb declareTypes:types owner:self];
+					[pb setString:message.transferText forType:NSStringPboardType];
+				}
+				break;
+			}
+			default:
+				break;
+		}
+	}
 }
 
 + (NSSet *)keyPathsForValuesAffectingCanCopy
@@ -218,9 +236,7 @@
         return [mOutlineViewController canCopy];
     }
     
-    NSMenuItem *item = [[NSMenuItem alloc] init];
-    [item setAction:@selector(copy:)];
-    return [responder validateMenuItem:item];
+	return YES;
 }
 
 - (IBAction)deliver:(id)sender
