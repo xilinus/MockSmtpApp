@@ -346,7 +346,6 @@
 
 - (void)updateStatus
 {
-    
     if (self.taskCount == 0)
     {
         NSMutableAttributedString *newStatus = [[NSMutableAttributedString alloc] initWithString:@"Delivering queue is empty."];
